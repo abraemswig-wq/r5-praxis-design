@@ -134,14 +134,27 @@
   /* H1-H3 generell Uppercase + Barlow Bold */
   h1, h2, h3 { font-family: 'Barlow', sans-serif; font-weight: 800; text-transform: uppercase; letter-spacing: -0.01em; }
 
-  /* Footer-Lesbarkeits-Polish — min. 16px (von 13–14px hoch) */
-  footer ul li { font-size: 16px !important; line-height: 1.65 !important; }
-  footer h5 { font-size: 13px !important; }
-  footer .footer-bottom span { font-size: 14px !important; }
+  /* Footer-Lesbarkeits-Polish — min. 18px */
+  footer ul li { font-size: 18px !important; line-height: 1.65 !important; }
+  footer h5 { font-size: 13px !important; }                    /* Eyebrow-Caps bleiben klein */
+  footer .footer-bottom span { font-size: 18px !important; }
 
-  /* Card-Body & Sektions-Texte — min. 17–18px */
-  .card-glass p, section p:not(.micro):not(.eyebrow) { font-size: 17px; line-height: 1.6; }
+  /* Card-Body & Sektions-Texte — min. 18px */
+  .card-glass p, section p:not(.micro):not(.eyebrow) { font-size: 18px; line-height: 1.6; }
   .card-glass h3, .card-glass h4 { font-size: 22px !important; }
+
+  /* Globale Enforcement: alle Inline-Tailwind-Klassen zwischen 14–17px werden auf 18px hochgezogen.
+     Eyebrow-Caps (.micro 13px, .eyebrow 12px) bleiben bewusst klein. */
+  [class*="text-[14px"], [class*="text-[14."],
+  [class*="text-[15px"], [class*="text-[15."],
+  [class*="text-[16px"], [class*="text-[16."],
+  [class*="text-[17px"], [class*="text-[17."],
+  .text-sm, .text-base {
+    font-size: 18px !important;
+  }
+  /* Aber Form-Inputs/Buttons mit text-sm/base sollen passend bleiben */
+  button.text-sm, .btn.text-sm, input.text-sm,
+  a.text-sm.font-bold, a.text-sm.font-semibold { font-size: 14px !important; }
 
   /* Reveal-Animationen — staggered fade + rise */
   @keyframes rise { from { transform: translateY(24px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
