@@ -1,0 +1,510 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Finale Markennamen — REHAB FIVE HEALTH CLUB · NUTRITION MÜNSTER</title>
+<style>
+  :root {
+    --orange: #E85D2C;
+    --orange-dark: #C8491F;
+    --dark: #1A1A1A;
+    --grey: #5C5C5C;
+    --light-grey: #9A9A9A;
+    --cream: #FAF8F4;
+    --warm: #F4EFE8;
+    --beige: #EDE6DC;
+    --olive: #8B7355;
+    --border: #E5DDD5;
+    --green: #2E8B57;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', 'Helvetica Neue', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #F2EEE8;
+    color: var(--dark);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .topbar {
+    background: var(--dark);
+    color: white;
+    padding: 28px 40px;
+  }
+  .topbar h1 {
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .topbar h2 {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .topbar p {
+    font-size: 14px;
+    color: #BBB;
+    max-width: 860px;
+  }
+  .topbar .brands {
+    margin-top: 18px;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .topbar .brands .pill {
+    background: rgba(255,255,255,0.08);
+    padding: 8px 14px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    border: 1px solid rgba(255,255,255,0.12);
+  }
+  .topbar .brands .pill.praxis { border-color: var(--orange); background: var(--orange); }
+  .topbar .brands .pill .meta {
+    color: rgba(255,255,255,0.55);
+    font-weight: 400;
+    margin-left: 6px;
+    font-size: 11px;
+  }
+
+  .section-label {
+    max-width: 1240px;
+    margin: 56px auto 24px;
+    padding: 0 40px;
+  }
+  .section-label .tag {
+    display: inline-block;
+    background: var(--orange);
+    color: white;
+    padding: 4px 12px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .section-label h3 {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 6px;
+    letter-spacing: -0.01em;
+  }
+  .section-label .lead {
+    color: var(--grey);
+    font-size: 14px;
+    max-width: 760px;
+  }
+
+  .mockup {
+    max-width: 1240px;
+    margin: 0 auto 16px;
+    padding: 0 40px;
+  }
+  .mockup-frame {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 24px 60px rgba(0,0,0,0.10);
+  }
+  .mockup-browser-bar {
+    background: #F0EDE8;
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+  .mockup-browser-bar .dot {
+    width: 11px; height: 11px; border-radius: 50%; background: #D5CFC8;
+  }
+  .mockup-browser-bar .url {
+    margin-left: 16px;
+    background: white;
+    color: var(--grey);
+    font-size: 12px;
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-family: 'SF Mono', 'Menlo', monospace;
+    flex: 1;
+    max-width: 480px;
+  }
+
+  .mock-nav {
+    padding: 22px 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(0,0,0,0.04);
+  }
+  .mock-nav .nav-logo { line-height: 1; }
+  .mock-nav .nav-links {
+    display: flex;
+    gap: 24px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--dark);
+  }
+  .mock-nav .nav-cta {
+    background: var(--orange);
+    color: white;
+    padding: 10px 18px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 600;
+  }
+
+  .mock-hero {
+    padding: 64px 56px 72px;
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    gap: 44px;
+    align-items: center;
+  }
+  @media (max-width: 720px) {
+    .mock-hero { grid-template-columns: 1fr; padding: 36px 24px; }
+  }
+  .mock-hero-text .eyebrow {
+    color: var(--orange);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .mock-hero-text h1 {
+    font-size: 44px;
+    line-height: 1.04;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+    color: var(--dark);
+  }
+  .mock-hero-text .sub {
+    font-size: 16px;
+    color: var(--grey);
+    line-height: 1.55;
+    margin-bottom: 24px;
+    max-width: 420px;
+  }
+  .mock-hero-text .ctas {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+  .primary {
+    background: var(--orange); color: white;
+    padding: 12px 20px; border-radius: 4px;
+    font-weight: 600; font-size: 13px;
+  }
+  .secondary {
+    background: transparent; border: 1.5px solid var(--dark); color: var(--dark);
+    padding: 11px 19px; border-radius: 4px;
+    font-weight: 600; font-size: 13px;
+  }
+  .trust {
+    font-size: 13px; color: var(--grey);
+    display: flex; align-items: center; gap: 6px;
+  }
+  .trust .stars { color: var(--orange); letter-spacing: 2px; }
+
+  .mock-hero-img {
+    border-radius: 6px;
+    aspect-ratio: 4/5;
+    display: flex;
+    align-items: flex-end;
+    padding: 28px;
+    color: white;
+    font-size: 13px;
+    font-weight: 500;
+    position: relative;
+    overflow: hidden;
+    min-height: 320px;
+  }
+  .mock-hero-img::before {
+    content: "";
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(circle at 25% 30%, rgba(255,255,255,0.18), transparent 55%),
+      radial-gradient(circle at 80% 80%, rgba(0,0,0,0.22), transparent 50%);
+  }
+  .mock-hero-img span { position: relative; z-index: 1; opacity: 0.8; }
+
+  /* HEALTH CLUB Style */
+  .hc .mock-hero-img {
+    background: linear-gradient(135deg, var(--orange) 0%, var(--orange-dark) 100%);
+  }
+  .hc .nav-logo .l1 {
+    font-size: 10px; letter-spacing: 2.5px; font-weight: 700;
+    color: var(--orange); text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .hc .nav-logo .l2 {
+    font-size: 19px; font-weight: 800; letter-spacing: 0.5px;
+    color: var(--dark); text-transform: uppercase;
+  }
+
+  /* NUTRITION MÜNSTER Style — warm beige/olive */
+  .nm .mock-hero-img {
+    background: linear-gradient(135deg, var(--olive) 0%, #5C4F3A 100%);
+  }
+  .nm .nav-logo .l2 {
+    font-size: 22px; font-weight: 800; letter-spacing: 0.5px;
+    color: var(--dark); text-transform: uppercase;
+  }
+  .nm .nav-logo .l3 {
+    font-size: 10px; letter-spacing: 2.5px; color: var(--orange);
+    text-transform: uppercase; margin-top: 4px; font-weight: 700;
+  }
+  .nm .nav-logo .lfooter {
+    font-size: 8px; letter-spacing: 1.5px; color: var(--light-grey);
+    text-transform: uppercase; margin-top: 4px; font-weight: 500;
+  }
+
+  /* Family overview */
+  .family {
+    max-width: 1240px;
+    margin: 64px auto 0;
+    padding: 0 40px;
+  }
+  .family-title {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--light-grey);
+    margin-bottom: 14px;
+  }
+  .family-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 18px;
+  }
+  @media (max-width: 720px) {
+    .family-grid { grid-template-columns: 1fr; }
+  }
+  .family-card {
+    background: white;
+    border-radius: 8px;
+    padding: 28px;
+    box-shadow: 0 12px 32px rgba(0,0,0,0.06);
+    border-top: 4px solid var(--orange);
+  }
+  .family-card .role {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--grey);
+    margin-bottom: 12px;
+  }
+  .family-card .name {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+  }
+  .family-card .sub {
+    font-size: 13px;
+    color: var(--grey);
+    margin-bottom: 14px;
+    line-height: 1.55;
+  }
+  .family-card .domain {
+    font-family: 'SF Mono', 'Menlo', monospace;
+    font-size: 12px;
+    color: var(--grey);
+    background: var(--cream);
+    padding: 6px 10px;
+    border-radius: 3px;
+  }
+
+  .check {
+    max-width: 1240px;
+    margin: 56px auto 0;
+    padding: 32px 40px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 12px 32px rgba(0,0,0,0.06);
+    border-left: 4px solid var(--orange);
+  }
+  .check h3 {
+    font-size: 17px;
+    margin-bottom: 12px;
+  }
+  .check ul {
+    list-style: none;
+    font-size: 14px;
+    line-height: 1.65;
+    color: var(--dark);
+  }
+  .check ul li {
+    padding-left: 22px;
+    position: relative;
+    margin-bottom: 6px;
+  }
+  .check ul li::before {
+    content: "→"; color: var(--orange); font-weight: 700;
+    position: absolute; left: 0;
+  }
+
+  .pagefoot {
+    text-align: center;
+    padding: 60px 40px;
+    color: var(--grey);
+    font-size: 13px;
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <h1>Markenwahl · finale Visualisierung</h1>
+  <h2>REHAB FIVE HEALTH CLUB · NUTRITION MÜNSTER</h2>
+  <p>Die Markenfamilie nach deiner Entscheidung — bewusst asymmetrisch. Health Club bindet eng an die Praxis (Trust-Transfer), Nutrition wird eigenständige Schwesternmarke mit lokalem Anker und „by REHAB FIVE"-Endorsement.</p>
+  <div class="brands">
+    <span class="pill praxis">REHAB FIVE <span class="meta">Praxis (Dachmarke)</span></span>
+    <span class="pill">REHAB FIVE HEALTH CLUB <span class="meta">Selbstzahler-Premium</span></span>
+    <span class="pill">NUTRITION MÜNSTER <span class="meta">Ernährungs-Coaching</span></span>
+  </div>
+</div>
+
+<!-- ============================================================
+     REHAB FIVE HEALTH CLUB
+     ============================================================ -->
+<div class="section-label">
+  <span class="tag">Marke 1</span>
+  <h3>REHAB FIVE HEALTH CLUB</h3>
+  <p class="lead">Voller Familien-Stamm. Membership, Personal Training, Athletik, Diagnostik. Wirkt wie die Premium-Schwester der Praxis — gleiche Reputation, neue Welt.</p>
+</div>
+
+<div class="mockup">
+  <div class="mockup-frame hc">
+    <div class="mockup-browser-bar">
+      <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+      <div class="url">rehab-five-healthclub.de</div>
+    </div>
+    <div class="mock-nav">
+      <div class="nav-logo">
+        <div class="l1">REHAB FIVE</div>
+        <div class="l2">HEALTH CLUB</div>
+      </div>
+      <div class="nav-links">
+        <span>Membership</span><span>Personal Training</span><span>Diagnostik</span><span>Team</span>
+      </div>
+      <div class="nav-cta">Probetraining buchen</div>
+    </div>
+    <div class="mock-hero">
+      <div class="mock-hero-text">
+        <div class="eyebrow">Membership · Training · Diagnostik</div>
+        <h1>Gesundheit ist die beste Form.</h1>
+        <p class="sub">Der Premium-Bereich der REHAB FIVE Gruppe. Personal Training, Athletik und Leistungsdiagnostik — auf höchstem Niveau, in Münster, mit dem Rückhalt der Praxis, die du kennst.</p>
+        <div class="ctas">
+          <span class="primary">Mitglied werden</span>
+          <span class="secondary">Probetraining buchen</span>
+        </div>
+        <div class="trust"><span class="stars">★★★★★</span> Aus der REHAB FIVE Familie — 5,0 bei 100+ Bewertungen</div>
+      </div>
+      <div class="mock-hero-img"><span>Foto-Bereich</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     NUTRITION MÜNSTER
+     ============================================================ -->
+<div class="section-label">
+  <span class="tag">Marke 2</span>
+  <h3>NUTRITION MÜNSTER</h3>
+  <p class="lead">Eigenständige Schwesternmarke mit lokalem Anker. Ernährungs-Coaching, Programme, 1:1-Begleitung. „by REHAB FIVE" als Endorsement im Header — Trust-Transfer bewusst aktiv kommuniziert.</p>
+</div>
+
+<div class="mockup">
+  <div class="mockup-frame nm">
+    <div class="mockup-browser-bar">
+      <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+      <div class="url">nutrition-muenster.de</div>
+    </div>
+    <div class="mock-nav">
+      <div class="nav-logo">
+        <div class="l2">NUTRITION</div>
+        <div class="l3">MÜNSTER</div>
+        <div class="lfooter">by REHAB FIVE</div>
+      </div>
+      <div class="nav-links">
+        <span>Coaching</span><span>Programme</span><span>Rezepte</span><span>Team</span>
+      </div>
+      <div class="nav-cta">Erstgespräch buchen</div>
+    </div>
+    <div class="mock-hero">
+      <div class="mock-hero-text">
+        <div class="eyebrow">Coaching · 1:1-Programme · Workshops</div>
+        <h1>Ernährung, die zu deinem Münster passt.</h1>
+        <p class="sub">Kein Diät-Plan. Keine Versprechen. Persönliches Coaching für dein Ziel — ob Gewicht, Performance oder einfach besseres Essen im Alltag. Aus der REHAB FIVE Gruppe.</p>
+        <div class="ctas">
+          <span class="primary">Programm starten</span>
+          <span class="secondary">Erstgespräch buchen</span>
+        </div>
+        <div class="trust"><span class="stars">★★★★★</span> Begleitet durch zertifizierte Ernährungs-Coaches</div>
+      </div>
+      <div class="mock-hero-img"><span>Foto-Bereich</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     FAMILY OVERVIEW
+     ============================================================ -->
+<div class="family">
+  <div class="family-title">Die Markenfamilie auf einen Blick</div>
+  <div class="family-grid">
+    <div class="family-card">
+      <div class="role">Praxis · Therapie · B2B</div>
+      <div class="name">REHAB FIVE</div>
+      <div class="sub">Physiotherapie, Krankengymnastik, Manuelle Therapie, BGM, Vereinsleistungen, Reha. Rezeptbasiert und Privatabrechnung.</div>
+      <div class="domain">rehab-five.com</div>
+    </div>
+    <div class="family-card">
+      <div class="role">Selbstzahler-Premium</div>
+      <div class="name">REHAB FIVE<br>HEALTH CLUB</div>
+      <div class="sub">Membership, Personal Training, Athletik, Diagnostik, Präventionskurse. Selbstzahler, Premium-Pricing.</div>
+      <div class="domain">rehab-five-healthclub.de</div>
+    </div>
+    <div class="family-card">
+      <div class="role">Ernährungs-Coaching</div>
+      <div class="name">NUTRITION<br>MÜNSTER</div>
+      <div class="sub">1:1-Coaching, Programme, Workshops. Eigenständige Marke mit „by REHAB FIVE"-Endorsement. Skalierbar (auch digital).</div>
+      <div class="domain">nutrition-muenster.de</div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     CHECK - Was als nächstes
+     ============================================================ -->
+<div class="check">
+  <h3>Was als Nächstes zu klären / zu prüfen ist</h3>
+  <ul>
+    <li><strong>Domain-Verfügbarkeit:</strong> <code>rehab-five-healthclub.de</code>, <code>rehabfive-healthclub.de</code>, <code>nutrition-muenster.de</code>, <code>nutritionmuenster.de</code> — alle vor Logo-Design registrieren.</li>
+    <li><strong>Markenrecht (DPMA):</strong> Wort-Bild-Marken-Recherche für „REHAB FIVE HEALTH CLUB" und „NUTRITION MÜNSTER". „REHAB FIVE" hast du wahrscheinlich schon — Health Club als Zusatz schützen.</li>
+    <li><strong>Instagram-Handle:</strong> @rehabfive_healthclub und @nutrition.muenster (oder @nutritionmuenster) prüfen und ggf. reservieren.</li>
+    <li><strong>Logo-Lockup:</strong> „REHAB FIVE" als kleinere Eyebrow + „HEALTH CLUB" groß. Für Nutrition: „NUTRITION MÜNSTER" als Hauptmarke, „by REHAB FIVE" als kleines Endorsement im Footer/Header.</li>
+    <li><strong>Asymmetrie kommunikativ aufnehmen:</strong> Bei jeder Erstkommunikation der Nutrition-Marke aktiv erwähnen, dass sie zur REHAB FIVE Gruppe gehört — sonst geht der Trust-Transfer verloren.</li>
+    <li><strong>Cross-Sell-Sprache definieren:</strong> Standard-Sätze für Praxis → Health Club, Health Club → Nutrition, Praxis → Nutrition. Damit alle Mitarbeitenden einheitlich verweisen.</li>
+  </ul>
+</div>
+
+<div class="pagefoot">
+  Erstellt 18. Mai 2026 · REHAB FIVE Brand-Architektur Projekt
+</div>
+
+</body>
+</html>

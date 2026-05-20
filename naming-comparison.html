@@ -1,0 +1,659 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>REHAB FIVE — Naming-Vergleich Mockups</title>
+<style>
+  :root {
+    --orange: #E85D2C;
+    --orange-dark: #C8491F;
+    --dark: #1A1A1A;
+    --charcoal: #1F2937;
+    --grey: #5C5C5C;
+    --light-grey: #9A9A9A;
+    --cream: #FAF8F4;
+    --warm: #F4EFE8;
+    --border: #E5DDD5;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', 'Helvetica Neue', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #F2EEE8;
+    color: var(--dark);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ---------- Top bar ---------- */
+  .topbar {
+    background: var(--dark);
+    color: white;
+    padding: 22px 40px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .topbar h1 {
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .topbar p {
+    font-size: 13px;
+    color: #BBB;
+    max-width: 800px;
+  }
+
+  /* ---------- Section labels ---------- */
+  .section-label {
+    max-width: 1200px;
+    margin: 56px auto 24px;
+    padding: 0 40px;
+  }
+  .section-label .tag {
+    display: inline-block;
+    background: var(--orange);
+    color: white;
+    padding: 4px 12px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .section-label h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 8px;
+  }
+  .section-label p {
+    color: var(--grey);
+    font-size: 15px;
+    max-width: 800px;
+  }
+
+  /* ---------- Mockup card ---------- */
+  .mockup {
+    max-width: 1200px;
+    margin: 0 auto 32px;
+    padding: 0 40px;
+  }
+  .mockup-frame {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+  }
+  .mockup-browser-bar {
+    background: #F0EDE8;
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+  .mockup-browser-bar .dot {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: #D5CFC8;
+  }
+  .mockup-browser-bar .url {
+    margin-left: 16px;
+    background: white;
+    color: var(--grey);
+    font-size: 12px;
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-family: 'SF Mono', 'Menlo', monospace;
+    flex: 1;
+    max-width: 480px;
+  }
+
+  /* ---------- Mockup header (nav) ---------- */
+  .mock-nav {
+    padding: 22px 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid transparent;
+  }
+  .mock-nav .nav-logo {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+  }
+  .mock-nav .nav-links {
+    display: flex;
+    gap: 28px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--dark);
+  }
+  .mock-nav .nav-cta {
+    background: var(--orange);
+    color: white;
+    padding: 10px 18px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 600;
+  }
+
+  /* ---------- Hero ---------- */
+  .mock-hero {
+    padding: 72px 56px 80px;
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 48px;
+    align-items: center;
+  }
+  .mock-hero-text .eyebrow {
+    color: var(--orange);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .mock-hero-text h1 {
+    font-size: 52px;
+    line-height: 1.05;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin-bottom: 18px;
+    color: var(--dark);
+  }
+  .mock-hero-text .sub {
+    font-size: 17px;
+    color: var(--grey);
+    line-height: 1.5;
+    margin-bottom: 28px;
+    max-width: 440px;
+  }
+  .mock-hero-text .ctas {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+  .mock-hero-text .ctas .primary {
+    background: var(--orange);
+    color: white;
+    padding: 14px 24px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 14px;
+  }
+  .mock-hero-text .ctas .secondary {
+    background: transparent;
+    border: 1.5px solid var(--dark);
+    color: var(--dark);
+    padding: 13px 22px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 14px;
+  }
+  .mock-hero-text .trust {
+    font-size: 13px;
+    color: var(--grey);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .mock-hero-text .trust .stars {
+    color: var(--orange);
+    letter-spacing: 2px;
+  }
+
+  .mock-hero-img {
+    background: linear-gradient(135deg, var(--orange) 0%, var(--orange-dark) 100%);
+    border-radius: 6px;
+    aspect-ratio: 4/5;
+    display: flex;
+    align-items: flex-end;
+    padding: 32px;
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    position: relative;
+    overflow: hidden;
+  }
+  .mock-hero-img::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 20% 30%, rgba(255,255,255,0.15), transparent 50%),
+      radial-gradient(circle at 80% 80%, rgba(0,0,0,0.2), transparent 50%);
+  }
+  .mock-hero-img span { position: relative; z-index: 1; opacity: 0.75; }
+
+  /* ---------- WEG A — REHAB FIVE CLUB ---------- */
+  .a-club .nav-logo .logo-line1 {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--grey);
+    text-transform: uppercase;
+  }
+  .a-club .nav-logo .logo-line2 {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    color: var(--dark);
+  }
+  .a-club .nav-logo .logo-line2 span { color: var(--orange); }
+
+  /* ---------- WEG A — REHAB FIVE KITCHEN ---------- */
+  .a-kitchen .nav-logo .logo-line1 {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--grey);
+    text-transform: uppercase;
+  }
+  .a-kitchen .nav-logo .logo-line2 {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    color: var(--dark);
+  }
+  .a-kitchen .nav-logo .logo-line2 span { color: var(--orange); }
+  .a-kitchen .mock-hero-img {
+    background: linear-gradient(135deg, #D97847 0%, #C2602F 100%);
+  }
+
+  /* ---------- WEG B — HABIT LAB (Premium, Charcoal + Orange) ---------- */
+  .b-lab {
+    background: var(--charcoal);
+    color: white;
+  }
+  .b-lab .mock-nav { padding: 22px 56px; }
+  .b-lab .mock-nav .nav-logo .logo-line1 {
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    color: white;
+  }
+  .b-lab .mock-nav .nav-logo .logo-line2 {
+    font-size: 9px;
+    letter-spacing: 2px;
+    font-weight: 500;
+    color: var(--orange);
+    text-transform: uppercase;
+    margin-top: 4px;
+  }
+  .b-lab .mock-nav .nav-links { color: rgba(255,255,255,0.85); }
+  .b-lab .mock-nav .nav-cta { background: var(--orange); }
+  .b-lab .mock-hero { color: white; }
+  .b-lab .mock-hero-text .eyebrow { color: var(--orange); }
+  .b-lab .mock-hero-text h1 { color: white; }
+  .b-lab .mock-hero-text .sub { color: rgba(255,255,255,0.7); }
+  .b-lab .mock-hero-text .ctas .secondary { border-color: white; color: white; }
+  .b-lab .mock-hero-text .trust { color: rgba(255,255,255,0.7); }
+  .b-lab .mock-hero-img {
+    background: linear-gradient(135deg, #2A3441 0%, #0F1722 100%);
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+  .b-lab .mock-hero-img::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, transparent 0%, transparent 60%, rgba(232,93,44,0.18) 100%);
+  }
+
+  /* ---------- WEG B — HABIT KITCHEN (Cream + Olive + Orange) ---------- */
+  .b-kitchen {
+    background: var(--warm);
+  }
+  .b-kitchen .mock-nav .nav-logo .logo-line1 {
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    color: var(--dark);
+  }
+  .b-kitchen .mock-nav .nav-logo .logo-line2 {
+    font-size: 9px;
+    letter-spacing: 2px;
+    font-weight: 500;
+    color: var(--orange);
+    text-transform: uppercase;
+    margin-top: 4px;
+  }
+  .b-kitchen .mock-hero-img {
+    background: linear-gradient(135deg, #8B7355 0%, #6B5D45 100%);
+  }
+
+  /* ---------- Notes under mockup ---------- */
+  .mock-notes {
+    max-width: 1200px;
+    margin: -16px auto 0;
+    padding: 0 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  .note-col h4 {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--grey);
+    margin-bottom: 8px;
+  }
+  .note-col ul {
+    list-style: none;
+    font-size: 13px;
+    color: var(--dark);
+    line-height: 1.55;
+  }
+  .note-col ul li {
+    padding-left: 16px;
+    position: relative;
+    margin-bottom: 4px;
+  }
+  .note-col.pro ul li::before {
+    content: "+";
+    color: #2E8B57;
+    font-weight: 700;
+    position: absolute;
+    left: 0;
+  }
+  .note-col.con ul li::before {
+    content: "−";
+    color: #C8491F;
+    font-weight: 700;
+    position: absolute;
+    left: 0;
+  }
+
+  /* ---------- Divider ---------- */
+  .way-divider {
+    max-width: 1200px;
+    margin: 80px auto 0;
+    padding: 0 40px;
+    text-align: center;
+  }
+  .way-divider .line {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    color: var(--grey);
+    font-size: 11px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  .way-divider .line::before,
+  .way-divider .line::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  /* ---------- Footer ---------- */
+  .pagefoot {
+    text-align: center;
+    padding: 80px 40px 60px;
+    color: var(--grey);
+    font-size: 13px;
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <h1>Naming-Vergleich · Brand-Identity-Mockups</h1>
+  <p>Vier Hero-Layouts im Vergleich. Weg A behält den vollen Stamm „REHAB FIVE" und differenziert sich klar von „five home" / „five physio". Weg B nutzt eigenständige Markennamen mit sichtbarem „by REHAB FIVE"-Endorsement und positioniert den Premium-Bereich ohne Reha-Konnotation.</p>
+</div>
+
+<!-- ===========================================
+     WEG A — REHAB FIVE CLUB + REHAB FIVE KITCHEN
+     =========================================== -->
+
+<div class="section-label">
+  <span class="tag">Weg A</span>
+  <h2>REHAB FIVE als voller Stamm</h2>
+  <p>Maximale Markenfamilie-Sichtbarkeit. Differenziert sich von „five home" / „five physio" durch das vollständige „REHAB FIVE". „REHAB" trägt das Krankheits-Assoziations-Risiko bei Premium-Käufern.</p>
+</div>
+
+<!-- ===== A-Club ===== -->
+<div class="mockup">
+  <div class="mockup-frame a-club">
+    <div class="mockup-browser-bar">
+      <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+      <div class="url">rehab-five-club.de</div>
+    </div>
+    <div class="mock-nav">
+      <div class="nav-logo">
+        <div class="logo-line1">REHAB FIVE</div>
+        <div class="logo-line2">CLUB<span>.</span></div>
+      </div>
+      <div class="nav-links">
+        <span>Training</span><span>Membership</span><span>Diagnostik</span><span>Team</span>
+      </div>
+      <div class="nav-cta">Probetraining buchen</div>
+    </div>
+    <div class="mock-hero">
+      <div class="mock-hero-text">
+        <div class="eyebrow">Membership · Personaltraining · Athletik</div>
+        <h1>Training, das dich messbar weiterbringt.</h1>
+        <p class="sub">Der Premium-Bereich der REHAB FIVE Gruppe. Personaltraining, Athletik und Diagnostik aus einer Hand — wissenschaftlich, persönlich, in Münster.</p>
+        <div class="ctas">
+          <span class="primary">Mitglied werden</span>
+          <span class="secondary">Probetraining buchen</span>
+        </div>
+        <div class="trust"><span class="stars">★★★★★</span> 5,0 bei 100+ Bewertungen für die REHAB FIVE Gruppe</div>
+      </div>
+      <div class="mock-hero-img"><span>Foto-Bereich</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="mock-notes">
+  <div class="note-col pro">
+    <h4>Pro</h4>
+    <ul>
+      <li>Direkter Familienbezug zur Praxis sofort sichtbar</li>
+      <li>Vollst. Trust-Transfer der 100+ Google-Reviews</li>
+      <li>Klare Abgrenzung von „five home" / „five physio"</li>
+      <li>Geringerer Marketing-Aufwand zur Etablierung</li>
+    </ul>
+  </div>
+  <div class="note-col con">
+    <h4>Contra</h4>
+    <ul>
+      <li>Wort „REHAB" im Premium-Kontext bremst Pricing-Anker</li>
+      <li>S&C-Coaches/High-End-Bewerber assoziieren „Reha" mit Krankheit</li>
+      <li>Lange Domain — schwerer zu tippen, fehleranfälliger</li>
+      <li>Visuell weiterhin „eine Marke mit Bereichen", nicht „drei Marken"</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ===== A-Kitchen ===== -->
+<div class="mockup" style="margin-top:56px">
+  <div class="mockup-frame a-kitchen">
+    <div class="mockup-browser-bar">
+      <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+      <div class="url">rehab-five-kitchen.de</div>
+    </div>
+    <div class="mock-nav">
+      <div class="nav-logo">
+        <div class="logo-line1">REHAB FIVE</div>
+        <div class="logo-line2">KITCHEN<span>.</span></div>
+      </div>
+      <div class="nav-links">
+        <span>Coaching</span><span>Programme</span><span>Rezepte</span><span>Team</span>
+      </div>
+      <div class="nav-cta">Erstgespräch buchen</div>
+    </div>
+    <div class="mock-hero">
+      <div class="mock-hero-text">
+        <div class="eyebrow">Ernährungs-Coaching · 1:1-Programme</div>
+        <h1>Ernährung, die im Alltag funktioniert.</h1>
+        <p class="sub">Der Ernährungsbereich der REHAB FIVE Gruppe. Persönliches Coaching für dein Ziel — ob Gewicht, Performance oder einfach besseres Essen im Alltag.</p>
+        <div class="ctas">
+          <span class="primary">Programm starten</span>
+          <span class="secondary">Erstgespräch buchen</span>
+        </div>
+        <div class="trust"><span class="stars">★★★★★</span> Begleitet durch zertifizierte Ernährungsberater*innen</div>
+      </div>
+      <div class="mock-hero-img"><span>Foto-Bereich</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="mock-notes">
+  <div class="note-col pro">
+    <h4>Pro</h4>
+    <ul>
+      <li>Familienbezug erkennbar, einfache Zuordnung</li>
+      <li>„KITCHEN" ist freundlicher und weniger klinisch als „NUTRITION"</li>
+      <li>Bestandsmarke trägt Vertrauen für ein neues Themenfeld</li>
+    </ul>
+  </div>
+  <div class="note-col con">
+    <h4>Contra</h4>
+    <ul>
+      <li>„REHAB" + „KITCHEN" klingt nach Reha-Kantine</li>
+      <li>Lifestyle-Käufer (Gewicht, Performance) zögern beim Wort „REHAB"</li>
+      <li>Auch hier: Differenzierung „eigene Marke" wird visuell nicht eingelöst</li>
+    </ul>
+  </div>
+</div>
+
+<div class="way-divider">
+  <div class="line">Weg B</div>
+</div>
+
+<!-- ===========================================
+     WEG B — HABIT LAB + HABIT KITCHEN by REHAB FIVE
+     =========================================== -->
+
+<div class="section-label">
+  <span class="tag">Weg B</span>
+  <h2>Eigenständige Marken · by REHAB FIVE</h2>
+  <p>Eigene Markennamen ohne „REHAB"-Konnotation. „by REHAB FIVE" als sichtbares Endorsement bringt Trust-Transfer. Klar abgegrenzt von „five home" / „five physio". Premium-Pricing-Bühne ohne Reha-Bremsklotz. Höherer initialer Marketing-Aufwand.</p>
+</div>
+
+<!-- ===== B-Lab ===== -->
+<div class="mockup">
+  <div class="mockup-frame b-lab">
+    <div class="mockup-browser-bar">
+      <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+      <div class="url">habitlab.de</div>
+    </div>
+    <div class="mock-nav">
+      <div class="nav-logo">
+        <div class="logo-line1">HABIT LAB</div>
+        <div class="logo-line2">by REHAB FIVE</div>
+      </div>
+      <div class="nav-links">
+        <span>Membership</span><span>Personal Training</span><span>Lab · Diagnostik</span><span>Team</span>
+      </div>
+      <div class="nav-cta">Probetraining buchen</div>
+    </div>
+    <div class="mock-hero">
+      <div class="mock-hero-text">
+        <div class="eyebrow">Training · Diagnostik · Habit Coaching</div>
+        <h1>Stärker werden ist eine Gewohnheit. Wir bauen sie.</h1>
+        <p class="sub">Münsters Premium-Studio für messbares Training. Personal Coaching, Athletik und Leistungsdiagnostik — verbunden durch wissenschaftliches Habit-Tracking, das wirklich funktioniert.</p>
+        <div class="ctas">
+          <span class="primary">Mitglied werden</span>
+          <span class="secondary">Probetraining buchen</span>
+        </div>
+        <div class="trust"><span class="stars">★★★★★</span> Eine Marke der REHAB FIVE Gruppe — Münster</div>
+      </div>
+      <div class="mock-hero-img"><span>Foto-Bereich</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="mock-notes">
+  <div class="note-col pro">
+    <h4>Pro</h4>
+    <ul>
+      <li>Premium-Bühne ohne „REHAB"-Bremsklotz im Pricing</li>
+      <li>Recruiting: S&C-Coaches/Sportwissenschaftler eher angesprochen</li>
+      <li>Kurze, prägnante Domain</li>
+      <li>„Habit"-Konzept ist sportwissenschaftlich glaubhaft und differenzierend</li>
+      <li>Visuell sichtbar: das ist eine andere Welt als die Praxis</li>
+    </ul>
+  </div>
+  <div class="note-col con">
+    <h4>Contra</h4>
+    <ul>
+      <li>Marketing-Aufwand zur Bekanntmachung neuer Marke</li>
+      <li>Bestandskund*innen brauchen Übergangskommunikation</li>
+      <li>„by REHAB FIVE"-Endorsement muss aktiv kommuniziert werden</li>
+      <li>Englischer Name könnte Teile der älteren Zielgruppe abschrecken</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ===== B-Kitchen ===== -->
+<div class="mockup" style="margin-top:56px">
+  <div class="mockup-frame b-kitchen">
+    <div class="mockup-browser-bar">
+      <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+      <div class="url">habitkitchen.de</div>
+    </div>
+    <div class="mock-nav">
+      <div class="nav-logo">
+        <div class="logo-line1">HABIT KITCHEN</div>
+        <div class="logo-line2">by REHAB FIVE</div>
+      </div>
+      <div class="nav-links">
+        <span>Coaching</span><span>Programme</span><span>Rezepte</span><span>Team</span>
+      </div>
+      <div class="nav-cta">Erstgespräch buchen</div>
+    </div>
+    <div class="mock-hero">
+      <div class="mock-hero-text">
+        <div class="eyebrow">Ernährungs-Coaching · 1:1-Programme</div>
+        <h1>Iss so, wie du dich fühlen willst.</h1>
+        <p class="sub">Ernährung ist kein Plan, sondern eine Gewohnheit. Wir helfen dir, sie zu bauen — 1:1, alltagstauglich und ohne Diät-Bullshit. Schwesternmarke zum HABIT LAB.</p>
+        <div class="ctas">
+          <span class="primary">Programm starten</span>
+          <span class="secondary">Erstgespräch buchen</span>
+        </div>
+        <div class="trust"><span class="stars">★★★★★</span> Eine Marke der REHAB FIVE Gruppe — Münster</div>
+      </div>
+      <div class="mock-hero-img"><span>Foto-Bereich</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="mock-notes">
+  <div class="note-col pro">
+    <h4>Pro</h4>
+    <ul>
+      <li>Frische Marke, klare Positionierung „Lifestyle ohne Diät"</li>
+      <li>Konzeptuelle Klammer mit HABIT LAB (Cross-Sell-Logik selbsterklärend)</li>
+      <li>Kurze Domain, eigenständige Bühne</li>
+      <li>Keine „REHAB"-Assoziation in der Ernährungswelt</li>
+    </ul>
+  </div>
+  <div class="note-col con">
+    <h4>Contra</h4>
+    <ul>
+      <li>Auch hier Marketing-Aufwand zur Etablierung</li>
+      <li>Beide neuen Marken zusammen = doppelter Brand-Building-Aufwand</li>
+      <li>Konzeptuelle Klammer „Habit" muss inhaltlich gefüllt werden (Coaching-Format)</li>
+    </ul>
+  </div>
+</div>
+
+<div class="pagefoot">
+  Mockups · Erstellt 18. Mai 2026 · REHAB FIVE Brand-Architektur Projekt
+</div>
+
+</body>
+</html>

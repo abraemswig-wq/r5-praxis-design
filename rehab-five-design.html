@@ -1,0 +1,1169 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>REHAB FIVE · Therapie ist nur eine von fünf Säulen · Physiotherapie Münster</title>
+<meta name="description" content="REHAB FIVE in Münster — Therapie, Training, Athletik, Prävention, Diagnostik unter einem Dach. Mit oder ohne Rezept."/>
+<meta name="theme-color" content="#1F342D"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700;800;900&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;1,9..144,400;1,9..144,700;1,9..144,800;1,9..144,900&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = { theme: { extend: {
+    colors: {
+      ink:    { 50:'#FAFAFA', 100:'#F5F5F5', 200:'#C9C9C9', 700:'#4A4A4A', 900:'#1A1A1A' },
+      forest: { 700:'#1F342D' },
+      brand:  { 100:'#FBF1E0', 500:'#D99129', 600:'#C57F1F' }
+    },
+    fontFamily: {
+      sans:    ['Barlow','system-ui','sans-serif'],
+      display: ['Fraunces','Georgia','serif']
+    }
+  }}}
+</script>
+<script type="application/ld+json">
+{ "@context":"https://schema.org","@type":"MedicalBusiness","name":"REHAB FIVE","url":"https://rehab-five.com/","aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","reviewCount":"100"},"address":{"@type":"PostalAddress","streetAddress":"Friedrich-Ebert-Straße 122","addressLocality":"Münster","postalCode":"48153","addressCountry":"DE"},"telephone":"+49-251-74788200" }
+</script>
+
+<!-- DocMedico Online-Terminbuchung (Auto-Embed-Widget, wie in allen Landingpages) -->
+<script async src="https://cdn.docmedico-rezeption.de/j9u4c9m7a/reception_embed.js"></script>
+<style>
+  :root {
+    --green:   #1F342D;
+    --orange:  #D99129;
+    --cream:   #FBF1E0;
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Barlow', system-ui, sans-serif;
+    background: var(--green);
+    color: #FBF1E0;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  ::selection { background: var(--orange); color: var(--green); }
+
+  /* Atmospheric grain overlay — gibt der grünen Fläche Tiefe */
+  body::before {
+    content:""; position: fixed; inset:0; pointer-events:none; z-index:1;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' seed='3'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.045 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+    opacity: .55; mix-blend-mode: overlay;
+  }
+  main, header, footer { position: relative; z-index: 2; }
+
+  /* Display Typography */
+  .display { font-family: 'Fraunces', Georgia, serif; font-style: italic; font-weight: 800; letter-spacing: -0.04em; line-height: 0.92; }
+  .display-up { font-family: 'Barlow', sans-serif; font-weight: 900; letter-spacing: 0.005em; text-transform: uppercase; }
+  .micro { font-family: 'Barlow', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.28em; text-transform: uppercase; }
+  .ital  { font-family: 'Fraunces', Georgia, serif; font-style: italic; font-weight: 800; }
+
+  /* Reveal-Animationen — staggered fade + rise */
+  @keyframes rise { from { transform: translateY(24px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+  .rise { animation: rise .9s cubic-bezier(.2,.7,.2,1) both; }
+  .delay-1 { animation-delay: .05s; }
+  .delay-2 { animation-delay: .18s; }
+  .delay-3 { animation-delay: .32s; }
+  .delay-4 { animation-delay: .50s; }
+  .delay-5 { animation-delay: .68s; }
+  .delay-6 { animation-delay: .85s; }
+
+  @keyframes draw { from { stroke-dashoffset: 1000; } to { stroke-dashoffset: 0; } }
+  .draw-line { stroke-dasharray: 1000; animation: draw 2.2s 1s ease-out both; }
+
+  /* Scroll-reveal helper — intersection */
+  .reveal { opacity: 0; transform: translateY(36px); transition: opacity .9s ease, transform .9s cubic-bezier(.2,.7,.2,1); }
+  .reveal.in { opacity: 1; transform: none; }
+
+  /* Hairlines zwischen Sektionen statt Farbwechsel */
+  section + section,
+  header + section { position: relative; }
+  section + section::before,
+  header + section::before {
+    content:""; position: absolute; top:0; left:5vw; right:5vw; height:1px;
+    background: linear-gradient(90deg, transparent, rgba(251,241,224,0.18) 18%, rgba(251,241,224,0.18) 82%, transparent);
+  }
+
+  /* Section-Marker — vertical rule auf der linken Seite */
+  .section-rule { position: relative; }
+  .section-rule::before {
+    content:""; position: absolute; left:0; top:0; bottom:0; width:1px;
+    background: linear-gradient(to bottom, transparent, rgba(217,145,41,0.55) 30%, rgba(217,145,41,0.55) 70%, transparent);
+  }
+
+  /* Card translucent on green */
+  .card-glass {
+    background: rgba(251,241,224,0.03);
+    border: 1px solid rgba(251,241,224,0.12);
+    backdrop-filter: blur(2px);
+    transition: background .35s ease, border-color .35s ease, transform .35s ease;
+  }
+  .card-glass:hover {
+    background: rgba(251,241,224,0.06);
+    border-color: rgba(217,145,41,0.4);
+    transform: translateY(-4px);
+  }
+
+  /* Riesige Nummern als Sculpture */
+  .num-sculpture {
+    font-family: 'Fraunces', Georgia, serif;
+    font-style: italic;
+    font-weight: 900;
+    color: var(--orange);
+    line-height: 0.78;
+    letter-spacing: -0.06em;
+  }
+
+  /* Hero-Headline-Tweak */
+  .hero-h1 {
+    font-family: 'Barlow', sans-serif;
+    font-weight: 900;
+    letter-spacing: -0.045em;
+    line-height: 0.88;
+    text-wrap: balance;
+  }
+  .hero-h1 em {
+    font-family: 'Fraunces', Georgia, serif;
+    font-style: italic;
+    font-weight: 900;
+    color: var(--orange);
+    letter-spacing: -0.05em;
+  }
+
+  /* Underline animation für Links */
+  .ulink { position: relative; display: inline-block; padding-bottom: 4px; }
+  .ulink::after { content:""; position: absolute; left:0; bottom:0; width:100%; height:1px;
+    background: currentColor; transform: scaleX(.35); transform-origin: left; transition: transform .35s ease; }
+  .ulink:hover::after { transform: scaleX(1); }
+
+  /* Image treatment */
+  .img-vignette { position: relative; }
+  .img-vignette::after {
+    content:""; position: absolute; inset:0; pointer-events:none;
+    background:
+      linear-gradient(180deg, transparent 55%, rgba(31,52,45,0.55) 100%),
+      radial-gradient(80% 60% at 50% 40%, transparent 50%, rgba(31,52,45,0.35) 100%);
+  }
+
+  /* Mark-Index Side — "01 · 02 · 03" Numerik-Akzent */
+  .mark-index { writing-mode: vertical-rl; transform: rotate(180deg); font-feature-settings: "tnum"; }
+</style>
+</head>
+
+<body>
+
+<!-- ============= HEADER ============= -->
+<header class="sticky top-0 z-50 backdrop-blur bg-[#1F342D]/85 border-b border-[#FBF1E0]/10">
+  <div class="max-w-[1480px] mx-auto px-6 lg:px-10 h-[68px] flex items-center justify-between">
+    <a href="/" class="flex items-center gap-4">
+      <img src="img/logo-white.png" alt="REHAB FIVE" class="h-7 w-auto"/>
+      <span class="hidden md:inline-block micro text-[#FBF1E0]/55 border-l border-[#FBF1E0]/20 pl-4">Physiotherapie · Münster</span>
+    </a>
+    <nav class="hidden lg:flex items-center gap-8 text-sm">
+      <a href="#methode" class="ulink text-[#FBF1E0]/85 hover:text-[#FBF1E0]">Methode</a>
+      <a href="#manifest" class="ulink text-[#FBF1E0]/85 hover:text-[#FBF1E0]">Manifest</a>
+      <a href="#diagnostik" class="ulink text-[#FBF1E0]/85 hover:text-[#FBF1E0]">Diagnostik</a>
+      <a href="#team" class="ulink text-[#FBF1E0]/85 hover:text-[#FBF1E0]">Team</a>
+    </nav>
+    <div class="flex items-center gap-4">
+      <a href="tel:+4925174788200" class="hidden md:inline-flex items-center gap-2 text-sm text-[#FBF1E0]/70 hover:text-[#FBF1E0]">
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
+        0251 74788 200
+      </a>
+      <a href="#termin" class="group inline-flex items-center gap-2 bg-[#D99129] hover:bg-[#C57F1F] transition px-5 py-2.5 rounded-full text-[#1F342D] text-sm font-bold">
+        Termin vereinbaren
+        <svg class="w-4 h-4 transition-transform group-hover:translate-x-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ============= HERO — Full-Bleed-Bild als Hintergrund ============= -->
+<section class="relative min-h-[calc(100vh-68px)] overflow-hidden">
+
+  <!-- HINTERGRUND-BILD full-bleed -->
+  <div class="absolute inset-0 z-0">
+    <img src="img/scenes/community.jpg" alt="REHAB FIVE Münster" class="w-full h-full object-cover object-center"/>
+    <!-- Petrol-Overlays für Lesbarkeit: links stark, rechts transparent; unten verschwommen ins Petrol -->
+    <div class="absolute inset-0" style="background: linear-gradient(95deg, #1F342D 0%, rgba(31,52,45,0.92) 28%, rgba(31,52,45,0.65) 55%, rgba(31,52,45,0.35) 80%, rgba(31,52,45,0.2) 100%);"></div>
+    <div class="absolute inset-0" style="background: linear-gradient(180deg, rgba(31,52,45,0.45) 0%, transparent 25%, transparent 65%, rgba(31,52,45,0.85) 100%);"></div>
+  </div>
+
+  <!-- Mark-Index links — Editorial-Akzent -->
+  <div class="hidden xl:block absolute left-6 top-1/2 -translate-y-1/2 mark-index micro text-[#FBF1E0]/45 tracking-[0.4em] z-20">
+    Edition № <span class="text-[#D99129]">5 / V</span> · Münster · Seit 2018
+  </div>
+
+  <!-- Comeback-Counter — Editorial Floating-Marker oben rechts -->
+  <div class="hidden sm:block absolute top-10 right-6 lg:right-10 rotate-[2deg] z-20 rise delay-4">
+    <div class="card-glass rounded-sm px-5 py-3 text-right">
+      <div class="micro text-[#D99129]">Comeback</div>
+      <div class="num-sculpture text-[44px] mt-1">№ 312</div>
+      <div class="text-[10px] text-[#FBF1E0]/65 tracking-widest uppercase mt-1">Patient*innen<br/>zurück 2026</div>
+    </div>
+  </div>
+
+  <!-- Content über dem Bild -->
+  <div class="relative z-10 max-w-[1480px] mx-auto px-6 lg:px-10 min-h-[calc(100vh-68px)] flex flex-col justify-end pt-[clamp(120px,18vw,200px)] pb-[clamp(48px,8vw,96px)]">
+
+    <div class="max-w-[1000px]">
+      <div class="rise delay-1 flex items-center gap-3 mb-8">
+        <span class="micro text-[#D99129]">Fünf Säulen · Ein Weg</span>
+        <span class="h-px w-12 bg-[#D99129]/60"></span>
+        <span class="micro text-[#FBF1E0]/55">Physiotherapie · Münster</span>
+      </div>
+
+      <h1 class="hero-h1 text-[clamp(46px,9.5vw,156px)] text-[#FBF1E0]" style="text-shadow: 0 2px 30px rgba(0,0,0,0.25);">
+        <span class="block rise delay-2">Therapie ist nur</span>
+        <span class="block rise delay-3"><em>eine</em> von</span>
+        <span class="block rise delay-4">fünf Säulen.</span>
+      </h1>
+
+      <p class="rise delay-5 mt-8 max-w-xl text-[17px] md:text-[19px] leading-[1.45] text-[#FBF1E0]/90">
+        Wir hören nicht auf, wo andere aufhören. Eine Praxis in Münster für Menschen, die mehr wollen als ein Rezept — und mehr als sechs Sitzungen, bevor sie wieder allein gelassen werden.
+      </p>
+
+      <div class="rise delay-6 mt-10 flex flex-wrap items-center gap-5">
+        <a href="#termin" class="group inline-flex items-center gap-3 bg-[#D99129] hover:bg-[#C57F1F] transition px-7 py-4 rounded-full text-[#1F342D] font-bold text-base">
+          Termin vereinbaren
+          <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#methode" class="group inline-flex items-center gap-3 text-[#FBF1E0] font-semibold text-base ulink">
+          <span class="ital text-[#D99129]">→</span> Die Methode lesen
+        </a>
+      </div>
+    </div>
+
+    <!-- Bottom-Bar: Trust-Strip links + Manifest-Quote rechts -->
+    <div class="mt-16 grid lg:grid-cols-12 gap-10 items-end">
+
+      <!-- Trust als Editorial-Footnote -->
+      <div class="rise delay-6 lg:col-span-7 pt-6 border-t border-[#FBF1E0]/20 grid grid-cols-3 gap-6 max-w-[680px]">
+        <div>
+          <div class="micro text-[#D99129]">Rating</div>
+          <div class="mt-2 flex items-baseline gap-1 text-[#FBF1E0]">
+            <span class="ital text-3xl">5,0</span>
+            <span class="text-xs text-[#FBF1E0]/65">/5</span>
+          </div>
+          <div class="text-xs text-[#FBF1E0]/70 mt-1">Bei 100+ Google-Reviews</div>
+        </div>
+        <div>
+          <div class="micro text-[#D99129]">Standorte</div>
+          <div class="mt-2 flex items-baseline gap-1 text-[#FBF1E0]">
+            <span class="ital text-3xl">2</span>
+            <span class="text-xs text-[#FBF1E0]/65">in Münster</span>
+          </div>
+          <div class="text-xs text-[#FBF1E0]/70 mt-1">Friedrich-Ebert · Scharnhorst</div>
+        </div>
+        <div>
+          <div class="micro text-[#D99129]">Seit</div>
+          <div class="mt-2 flex items-baseline gap-1 text-[#FBF1E0]">
+            <span class="ital text-3xl">2018</span>
+          </div>
+          <div class="text-xs text-[#FBF1E0]/70 mt-1">8 Jahre Praxis-Erfahrung</div>
+        </div>
+      </div>
+
+      <!-- Manifest-Quote als Glass-Card rechts -->
+      <div class="rise delay-6 lg:col-span-5">
+        <div class="card-glass rounded-sm p-7 border-l-2 border-[#D99129] max-w-[440px] ml-auto">
+          <div class="micro text-[#D99129] mb-3">Unser Manifest</div>
+          <blockquote class="text-[#FBF1E0] text-[22px] leading-[1.18] font-medium">
+            Sechs Termine sind <span class="ital text-[#D99129]">kein Plan.</span><br/>
+            Sie sind ein Anfang.
+          </blockquote>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============= METHODE — 5-SÄULEN ============= -->
+<section id="methode" class="relative py-[clamp(96px,14vw,180px)]">
+
+  <div class="max-w-[1480px] mx-auto px-6 lg:px-10">
+
+    <!-- Section-Intro: Index + Eyebrow + Display-Headline -->
+    <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 mb-20">
+      <div class="lg:col-span-3 flex items-start gap-4">
+        <span class="ital text-[#D99129] text-6xl leading-[0.8]">§</span>
+        <div>
+          <div class="micro text-[#D99129]">Methode</div>
+          <div class="micro text-[#FBF1E0]/45 mt-1">Sektion 01</div>
+        </div>
+      </div>
+      <div class="lg:col-span-9">
+        <h2 class="display text-[clamp(40px,7vw,108px)] text-[#FBF1E0] reveal">
+          Fünf Säulen.<br/>
+          <span class="text-[#D99129]">Ein Weg.</span>
+        </h2>
+        <p class="reveal max-w-2xl mt-8 text-[17px] leading-[1.55] text-[#FBF1E0]/70">
+          Niemand sonst in Münster hat alle fünf Bereiche unter einem Dach. Therapie übergibt an Training, Training an Athletik, Athletik an Prävention — Diagnostik beobachtet den gesamten Bogen.
+        </p>
+      </div>
+    </div>
+
+    <!-- Säulen-Grid — asymmetrische Kachel-Anordnung -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-3">
+
+      <!-- Säule 01 — large hero card -->
+      <article class="reveal card-glass rounded-sm p-8 lg:col-span-5 lg:row-span-2 flex flex-col justify-between min-h-[400px]">
+        <div class="num-sculpture text-[120px] md:text-[200px]">01</div>
+        <div>
+          <div class="micro text-[#D99129] mb-3">Säule 01</div>
+          <h3 class="display-up text-2xl text-[#FBF1E0] tracking-wide">Therapie</h3>
+          <p class="mt-3 text-[15px] text-[#FBF1E0]/65 leading-[1.55]">
+            Klassische Physio, manuelle Therapie, Lymphdrainage. Das, was bei anderen <span class="ital text-[#FBF1E0]">das Ganze</span> ist, ist bei uns der Anfang.
+          </p>
+        </div>
+      </article>
+
+      <!-- Säule 02 -->
+      <article class="reveal card-glass rounded-sm p-7 lg:col-span-4">
+        <div class="flex items-start justify-between">
+          <div class="num-sculpture text-[80px]">02</div>
+          <span class="micro text-[#FBF1E0]/45 mt-3">→ aus 01</span>
+        </div>
+        <h3 class="display-up text-xl text-[#FBF1E0] mt-3">Training</h3>
+        <p class="mt-2 text-[14px] text-[#FBF1E0]/65 leading-[1.55]">Wo Therapie endet, beginnt Bewegung. Strukturiert, betreut, mit Plan — keine generischen Übungsblätter.</p>
+      </article>
+
+      <!-- Säule 03 -->
+      <article class="reveal card-glass rounded-sm p-7 lg:col-span-3">
+        <div class="flex items-start justify-between">
+          <div class="num-sculpture text-[80px]">03</div>
+          <span class="micro text-[#FBF1E0]/45 mt-3">↑</span>
+        </div>
+        <h3 class="display-up text-xl text-[#FBF1E0] mt-3">Athletik</h3>
+        <p class="mt-2 text-[14px] text-[#FBF1E0]/65 leading-[1.55]">Aufbau über das Vor-Schmerz-Niveau hinaus. Für die, die nicht nur zurück wollen — sondern weiter.</p>
+      </article>
+
+      <!-- Säule 04 -->
+      <article class="reveal card-glass rounded-sm p-7 lg:col-span-3">
+        <div class="flex items-start justify-between">
+          <div class="num-sculpture text-[80px]">04</div>
+          <span class="micro text-[#FBF1E0]/45 mt-3">∞</span>
+        </div>
+        <h3 class="display-up text-xl text-[#FBF1E0] mt-3">Prävention</h3>
+        <p class="mt-2 text-[14px] text-[#FBF1E0]/65 leading-[1.55]">Damit die Geschichte nicht von vorne beginnt. Mit Wissen über deinen Körper, das andere Praxen nicht vermitteln.</p>
+      </article>
+
+      <!-- Säule 05 — wide card with CTA -->
+      <article class="reveal card-glass rounded-sm p-7 lg:col-span-4 relative overflow-hidden min-h-[200px]">
+        <div class="num-sculpture text-[80px]">05</div>
+        <h3 class="display-up text-xl text-[#FBF1E0] mt-3">Diagnostik</h3>
+        <p class="mt-2 text-[14px] text-[#FBF1E0]/65 leading-[1.55]">Was dein MRT nicht zeigt, sehen wir in Bewegung. Datenbasis statt Bauchgefühl. Begleitet den gesamten Weg.</p>
+        <a href="#diagnostik" class="ulink mt-4 inline-flex items-center gap-2 text-[13px] font-bold text-[#D99129]">Diagnostik buchen · 149 € →</a>
+      </article>
+    </div>
+
+    <p class="reveal mt-24 text-center display text-[clamp(28px,4vw,52px)] text-[#FBF1E0]">
+      „Fünf Säulen. <span class="text-[#D99129]">Ein Weg.</span>"
+    </p>
+  </div>
+</section>
+
+<!-- ============= MANIFEST ============= -->
+<section id="manifest" class="relative py-[clamp(96px,14vw,180px)]">
+  <div class="max-w-[1480px] mx-auto px-6 lg:px-10">
+
+    <div class="grid lg:grid-cols-12 gap-10 lg:gap-16">
+      <div class="lg:col-span-3 flex items-start gap-4">
+        <span class="ital text-[#D99129] text-6xl leading-[0.8]">¶</span>
+        <div>
+          <div class="micro text-[#D99129]">Manifest</div>
+          <div class="micro text-[#FBF1E0]/45 mt-1">Sektion 02</div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-9">
+        <h2 class="reveal display text-[clamp(36px,6vw,92px)] text-[#FBF1E0] leading-[0.94]">
+          Das Problem ist die <span class="text-[#D99129]">Norm</span>.<br/>
+          Nicht der Körper.
+        </h2>
+
+        <!-- Drei Akte als Editorial-Story -->
+        <div class="reveal mt-16 grid md:grid-cols-3 gap-10 md:gap-6 max-w-5xl">
+          <div class="border-t border-[#FBF1E0]/15 pt-6">
+            <div class="micro text-[#D99129]">I.</div>
+            <p class="mt-4 text-[#FBF1E0] text-2xl display leading-[1.1]">Rezept.</p>
+            <p class="mt-3 text-[14px] text-[#FBF1E0]/65 leading-[1.55]">Hausarzt. Sieben Minuten. „Versuchen wir mal Physio."</p>
+          </div>
+          <div class="border-t border-[#FBF1E0]/15 pt-6">
+            <div class="micro text-[#D99129]">II.</div>
+            <p class="mt-4 text-[#FBF1E0] text-2xl display leading-[1.1]">Sechs Sitzungen.</p>
+            <p class="mt-3 text-[14px] text-[#FBF1E0]/65 leading-[1.55]">Weiße Wände, beige Liege, Patient als Fall-Nummer.</p>
+          </div>
+          <div class="border-t border-[#FBF1E0]/15 pt-6">
+            <div class="micro text-[#D99129]">III.</div>
+            <p class="mt-4 text-[#FBF1E0] text-2xl display leading-[1.1]">Entlassen.</p>
+            <p class="mt-3 text-[14px] text-[#FBF1E0]/65 leading-[1.55]">„In sechs Wochen wieder, wenn's nicht besser wird."</p>
+          </div>
+        </div>
+
+        <!-- Pull-Quote — Identitätsverlust-Hook -->
+        <blockquote class="reveal mt-20 max-w-3xl">
+          <div class="ital text-[#D99129] text-7xl leading-[0.5]">"</div>
+          <p class="mt-2 display text-[clamp(28px,4vw,48px)] text-[#FBF1E0] leading-[1.1]">
+            Ich war mit 42 mal Läuferin.<br/>
+            <span class="text-[#D99129]">Ist das jetzt einfach so?</span>
+          </p>
+          <p class="mt-6 text-[14px] text-[#FBF1E0]/55 micro tracking-widest">— Die Frage, die niemand stellt</p>
+        </blockquote>
+
+        <!-- Closing -->
+        <div class="reveal mt-20 max-w-2xl">
+          <p class="text-[18px] leading-[1.6] text-[#FBF1E0]/75">
+            Die deutsche Physio-Norm behandelt die Abwesenheit von Symptomen als Endzustand. <span class="ital text-[#D99129]">Wir nicht.</span>
+          </p>
+          <p class="mt-6 text-[18px] leading-[1.6] text-[#FBF1E0]/75">
+            Wir glauben, das reicht nicht — nicht für die, die mit 42 mal Läufer waren, nicht für die, die nach einer OP nicht „rehabilitiert" werden wollen, sondern wieder selbst entscheiden, was ihr Körper morgen kann.
+          </p>
+          <a href="#methode" class="ulink mt-10 inline-flex items-center gap-3 text-[#D99129] font-bold">
+            <span class="ital">→</span> Unsere Methode kennenlernen
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============= DIAGNOSTIK ============= -->
+<section id="diagnostik" class="relative py-[clamp(96px,14vw,180px)]">
+  <div class="max-w-[1480px] mx-auto px-6 lg:px-10">
+
+    <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 mb-20">
+      <div class="lg:col-span-3 flex items-start gap-4">
+        <span class="ital text-[#D99129] text-6xl leading-[0.8]">⌖</span>
+        <div>
+          <div class="micro text-[#D99129]">Einstieg</div>
+          <div class="micro text-[#FBF1E0]/45 mt-1">Sektion 03</div>
+        </div>
+      </div>
+      <div class="lg:col-span-9">
+        <h2 class="reveal display text-[clamp(40px,7vw,108px)] text-[#FBF1E0] leading-[0.94]">
+          Was dein MRT <span class="text-[#D99129]">nicht zeigt.</span>
+        </h2>
+        <p class="reveal max-w-2xl mt-8 text-[17px] leading-[1.55] text-[#FBF1E0]/70">
+          Eine bezahlte Bewegungsdiagnostik. Rezeptfrei. Datenbasiert. Mit Bericht zum Mitnehmen — und einem Plan, der nicht nach sechs Sitzungen endet.
+        </p>
+      </div>
+    </div>
+
+    <!-- Diagnostik-Hero-Card -->
+    <div class="reveal grid lg:grid-cols-12 gap-3">
+      <div class="card-glass rounded-sm p-8 sm:p-12 lg:col-span-7 flex flex-col justify-between min-h-[420px]">
+        <div>
+          <div class="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-[#D99129]/15 border border-[#D99129]/30">
+            <span class="micro text-[#D99129]">Selbstzahler · 149 €</span>
+          </div>
+          <h3 class="display-up text-2xl md:text-3xl text-[#FBF1E0] mt-6 leading-tight">Eine Sitzung.<br/><span class="ital text-[#D99129] normal-case tracking-normal" style="font-family:'Fraunces',Georgia,serif;">Datenbasis fürs ganze Jahr.</span></h3>
+          <p class="mt-6 text-[15px] text-[#FBF1E0]/70 leading-[1.6] max-w-xl">
+            Dein Knie tut weh. Dein MRT sagt: alles in Ordnung. Wir zeigen dir, warum beides stimmen kann — und was eine echte Bewegungsdiagnostik aufdeckt, das ein dreiminütiger Orthopäden-Termin nicht zeigen kann.
+          </p>
+        </div>
+        <div class="mt-8 pt-6 border-t border-[#FBF1E0]/12">
+          <div class="micro text-[#D99129] mb-4">Was du bekommst</div>
+          <ul class="grid sm:grid-cols-3 gap-4 text-[14px] text-[#FBF1E0]/80">
+            <li class="flex items-start gap-2"><span class="ital text-[#D99129] mt-[-2px]">·</span> 60 Min Diagnostik</li>
+            <li class="flex items-start gap-2"><span class="ital text-[#D99129] mt-[-2px]">·</span> Schriftlicher Befund</li>
+            <li class="flex items-start gap-2"><span class="ital text-[#D99129] mt-[-2px]">·</span> Plan über alle 5 Säulen</li>
+          </ul>
+          <a href="#termin" class="mt-8 inline-flex items-center gap-3 bg-[#D99129] hover:bg-[#C57F1F] transition px-6 py-3.5 rounded-full text-[#1F342D] font-bold text-base">
+            Diagnostik buchen
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Visual right -->
+      <div class="card-glass rounded-sm overflow-hidden lg:col-span-5 relative min-h-[420px]">
+        <img src="img/scenes/kraft.jpg" alt="Bewegungsdiagnostik in der Praxis" class="absolute inset-0 w-full h-full object-cover opacity-70"/>
+        <div class="absolute inset-0" style="background: linear-gradient(190deg, rgba(31,52,45,0.3) 0%, rgba(31,52,45,0.95) 100%);"></div>
+        <div class="relative z-10 p-8 sm:p-10 h-full flex flex-col justify-between">
+          <div class="micro text-[#D99129]">Säule 05</div>
+          <div>
+            <p class="display text-[clamp(38px,5vw,68px)] text-[#FBF1E0] leading-[0.95]">Daten<br/>statt<br/><span class="text-[#D99129]">Bauchgefühl.</span></p>
+            <p class="mt-6 text-[13px] text-[#FBF1E0]/65 leading-[1.6] max-w-xs">Belastungs-Mapping, Bewegungsanalyse, EMG. Datengrundlage für deinen ganzen Therapieweg.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============= BESCHWERDEN ============= -->
+<section id="beschwerden" class="relative py-[clamp(96px,14vw,180px)]">
+  <div class="max-w-[1480px] mx-auto px-6 lg:px-10">
+
+    <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 mb-20">
+      <div class="lg:col-span-3 flex items-start gap-4">
+        <span class="ital text-[#D99129] text-6xl leading-[0.8]">⌃</span>
+        <div>
+          <div class="micro text-[#D99129]">Beschwerden</div>
+          <div class="micro text-[#FBF1E0]/45 mt-1">Sektion 04</div>
+        </div>
+      </div>
+      <div class="lg:col-span-9">
+        <h2 class="reveal display text-[clamp(40px,7vw,108px)] text-[#FBF1E0] leading-[0.94]">
+          Was <span class="text-[#D99129]">tut weh?</span>
+        </h2>
+        <p class="reveal max-w-2xl mt-8 text-[17px] leading-[1.55] text-[#FBF1E0]/70">
+          Die häufigsten Wege zu uns. Klick rein, wenn dich etwas anspricht — oder buch direkt eine Diagnostik, wenn du nicht weißt, wo du anfangen sollst.
+        </p>
+      </div>
+    </div>
+
+    <!-- Beschwerden-Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+
+      <a href="#" class="reveal card-glass rounded-sm p-7 flex flex-col group">
+        <div class="flex items-start justify-between">
+          <div class="num-sculpture text-[56px]">01</div>
+          <span class="micro text-[#D99129] mt-3">Rücken</span>
+        </div>
+        <h3 class="display-up text-lg text-[#FBF1E0] mt-5">Rücken &amp; Bandscheibe</h3>
+        <p class="mt-2 text-[14px] text-[#FBF1E0]/65 leading-[1.55] flex-1">Bandscheibenvorfall, chronischer Rücken, ISG — wir bringen Stabilität zurück und halten sie.</p>
+        <span class="ulink mt-4 inline-flex text-[13px] font-bold text-[#D99129]">Mehr erfahren →</span>
+      </a>
+
+      <a href="#" class="reveal card-glass rounded-sm p-7 flex flex-col group">
+        <div class="flex items-start justify-between">
+          <div class="num-sculpture text-[56px]">02</div>
+          <span class="micro text-[#D99129] mt-3">Knie / Hüfte</span>
+        </div>
+        <h3 class="display-up text-lg text-[#FBF1E0] mt-5">Knie &amp; Hüfte</h3>
+        <p class="mt-2 text-[14px] text-[#FBF1E0]/65 leading-[1.55] flex-1">Vor und nach OP, Meniskus, Kreuzband, Arthrose. Strukturierte Reha mit klarem Ziel.</p>
+        <span class="ulink mt-4 inline-flex text-[13px] font-bold text-[#D99129]">Mehr erfahren →</span>
+      </a>
+
+      <a href="#" class="reveal card-glass rounded-sm p-7 flex flex-col group">
+        <div class="flex items-start justify-between">
+          <div class="num-sculpture text-[56px]">03</div>
+          <span class="micro text-[#D99129] mt-3">Schulter</span>
+        </div>
+        <h3 class="display-up text-lg text-[#FBF1E0] mt-5">Schulter &amp; Nacken</h3>
+        <p class="mt-2 text-[14px] text-[#FBF1E0]/65 leading-[1.55] flex-1">Impingement, Frozen Shoulder, chronische Verspannungen. Befund, Therapie, Aufbau.</p>
+        <span class="ulink mt-4 inline-flex text-[13px] font-bold text-[#D99129]">Mehr erfahren →</span>
+      </a>
+
+      <a href="#" class="reveal card-glass rounded-sm p-7 flex flex-col group">
+        <div class="flex items-start justify-between">
+          <div class="num-sculpture text-[56px]">04</div>
+          <span class="micro text-[#D99129] mt-3">Sport</span>
+        </div>
+        <h3 class="display-up text-lg text-[#FBF1E0] mt-5">Sportverletzungen</h3>
+        <p class="mt-2 text-[14px] text-[#FBF1E0]/65 leading-[1.55] flex-1">Bänderriss, Muskelfaserriss. Return-to-Sport — nicht „in sechs Wochen wieder", sondern wenn der Körper bereit ist.</p>
+        <span class="ulink mt-4 inline-flex text-[13px] font-bold text-[#D99129]">Mehr erfahren →</span>
+      </a>
+
+      <a href="#" class="reveal card-glass rounded-sm p-7 flex flex-col group">
+        <div class="flex items-start justify-between">
+          <div class="num-sculpture text-[56px]">05</div>
+          <span class="micro text-[#D99129] mt-3">Reha</span>
+        </div>
+        <h3 class="display-up text-lg text-[#FBF1E0] mt-5">Nach OP / Reha</h3>
+        <p class="mt-2 text-[14px] text-[#FBF1E0]/65 leading-[1.55] flex-1">Strukturierte Nachsorge, die nicht endet, wenn die Rezeptbox leer ist. Therapie → Training → Athletik.</p>
+        <span class="ulink mt-4 inline-flex text-[13px] font-bold text-[#D99129]">Mehr erfahren →</span>
+      </a>
+
+      <a href="#" class="reveal card-glass rounded-sm p-7 flex flex-col group">
+        <div class="flex items-start justify-between">
+          <div class="num-sculpture text-[56px]">06</div>
+          <span class="micro text-[#D99129] mt-3">Andere</span>
+        </div>
+        <h3 class="display-up text-lg text-[#FBF1E0] mt-5">Andere Beschwerden</h3>
+        <p class="mt-2 text-[14px] text-[#FBF1E0]/65 leading-[1.55] flex-1">Lymphdrainage, Kiefer, neurologische Therapie, Migräne. Sprich mit uns — wir sagen ehrlich, ob wir der richtige Ort sind.</p>
+        <span class="ulink mt-4 inline-flex text-[13px] font-bold text-[#D99129]">Mehr erfahren →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============= COMEBACK WALL ============= -->
+<section id="comebacks" class="relative py-[clamp(96px,14vw,180px)]">
+  <div class="max-w-[1480px] mx-auto px-6 lg:px-10">
+
+    <!-- Section-Intro -->
+    <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 mb-20">
+      <div class="lg:col-span-3 flex items-start gap-4">
+        <span class="ital text-[#D99129] text-6xl leading-[0.8]">№</span>
+        <div>
+          <div class="micro text-[#D99129]">Comebacks</div>
+          <div class="micro text-[#FBF1E0]/45 mt-1">Sektion 03</div>
+        </div>
+      </div>
+      <div class="lg:col-span-9">
+        <h2 class="reveal display text-[clamp(40px,7vw,108px)] text-[#FBF1E0] leading-[0.94]">
+          312 Geschichten <span class="text-[#D99129]">von Menschen,</span><br/>
+          die zurück sind.
+        </h2>
+        <p class="reveal max-w-2xl mt-8 text-[17px] leading-[1.55] text-[#FBF1E0]/70">
+          Jede unserer Comeback Cards markiert einen Moment: Ein Patient hat sein Return-to-X-Ziel erreicht. Vom Therapeuten signiert, fortlaufend nummeriert, in unserer Praxis und hier öffentlich. Wenn du wissen willst, was Comeback heißt — diese Wand sagt es.
+        </p>
+      </div>
+    </div>
+
+    <!-- Comeback-Cards Grid — asymmetrische Editorial-Anordnung -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-3">
+
+      <!-- Card 312 — large hero card mit Bild -->
+      <article class="reveal card-glass rounded-sm overflow-hidden lg:col-span-5 lg:row-span-2 relative min-h-[420px] flex flex-col">
+        <div class="absolute inset-0 z-0">
+          <img src="img/scenes/training.jpg" alt="" class="w-full h-full object-cover opacity-50"/>
+          <div class="absolute inset-0" style="background: linear-gradient(180deg, rgba(31,52,45,0.5) 0%, rgba(31,52,45,0.9) 100%);"></div>
+        </div>
+        <div class="relative z-10 p-8 flex flex-col justify-between flex-1">
+          <div class="num-sculpture text-[120px] md:text-[200px]">№ 312</div>
+          <div>
+            <div class="micro text-[#D99129] mb-3">Marathon nach Kreuzband-OP</div>
+            <p class="display-up text-2xl text-[#FBF1E0]">14 Monate.<br/><span class="text-[#FBF1E0]/65 font-medium normal-case tracking-normal" style="font-family: 'Barlow', sans-serif;">Zurück auf der Promenade.</span></p>
+            <p class="mt-3 text-[13px] text-[#FBF1E0]/55 micro tracking-widest">Mai 2026 · vom Therapeuten signiert</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 311 -->
+      <article class="reveal card-glass rounded-sm p-7 lg:col-span-4">
+        <div class="flex items-start justify-between">
+          <div class="num-sculpture text-[72px]">№ 311</div>
+          <span class="micro text-[#FBF1E0]/45 mt-3">Mai 26</span>
+        </div>
+        <div class="micro text-[#D99129] mt-4">Volleyball · Bundesliga</div>
+        <h3 class="display-up text-lg text-[#FBF1E0] mt-2">Zurück auf der Platte</h3>
+        <p class="mt-2 text-[14px] text-[#FBF1E0]/65 leading-[1.55]">Neun Monate Schulter-Reha — über alle fünf Säulen begleitet. Erstes Spiel: 14 Punkte.</p>
+      </article>
+
+      <!-- Card 308 -->
+      <article class="reveal card-glass rounded-sm p-7 lg:col-span-3">
+        <div class="flex items-start justify-between">
+          <div class="num-sculpture text-[72px]">№ 308</div>
+          <span class="micro text-[#FBF1E0]/45 mt-3">Apr 26</span>
+        </div>
+        <div class="micro text-[#D99129] mt-4">Bandscheibe L4/L5</div>
+        <h3 class="display-up text-lg text-[#FBF1E0] mt-2">Heben ohne Schmerz</h3>
+        <p class="mt-2 text-[14px] text-[#FBF1E0]/65 leading-[1.55]">Zurück im Alltag, zurück mit den Kindern auf dem Arm.</p>
+      </article>
+
+      <!-- Card 305 -->
+      <article class="reveal card-glass rounded-sm p-7 lg:col-span-4">
+        <div class="flex items-start justify-between">
+          <div class="num-sculpture text-[72px]">№ 305</div>
+          <span class="micro text-[#FBF1E0]/45 mt-3">Apr 26</span>
+        </div>
+        <div class="micro text-[#D99129] mt-4">Hüft-Arthrose · 58 Jahre</div>
+        <h3 class="display-up text-lg text-[#FBF1E0] mt-2">10 km Münster Marathon</h3>
+        <p class="mt-2 text-[14px] text-[#FBF1E0]/65 leading-[1.55]">Zurück auf der Strecke, mit besserer Bestzeit als drei Jahre vorher.</p>
+      </article>
+
+      <!-- Card 302 -->
+      <article class="reveal card-glass rounded-sm p-7 lg:col-span-3">
+        <div class="flex items-start justify-between">
+          <div class="num-sculpture text-[72px]">№ 302</div>
+          <span class="micro text-[#FBF1E0]/45 mt-3">Mär 26</span>
+        </div>
+        <div class="micro text-[#D99129] mt-4">Achillessehnen-Ruptur</div>
+        <h3 class="display-up text-lg text-[#FBF1E0] mt-2">Erste Runde im Park</h3>
+        <p class="mt-2 text-[14px] text-[#FBF1E0]/65 leading-[1.55]">11 Monate strukturierte Reha, eccentric loading, Plan über alle Säulen.</p>
+      </article>
+    </div>
+
+    <!-- Counter-Bar als Editorial-Pull -->
+    <div class="reveal mt-16 grid lg:grid-cols-12 gap-8 items-end pt-8 border-t border-[#FBF1E0]/12">
+      <div class="lg:col-span-7">
+        <div class="micro text-[#D99129]">Lauf 2026</div>
+        <p class="display text-[clamp(36px,5vw,72px)] text-[#FBF1E0] mt-2 leading-[0.95]">
+          <span class="text-[#D99129]">+47</span> Comeback Cards <span class="ital">seit Jahresbeginn.</span>
+        </p>
+      </div>
+      <div class="lg:col-span-5">
+        <p class="text-[16px] leading-[1.6] text-[#FBF1E0]/75 max-w-md">
+          Jede Karte ist ein Mensch, der nicht „behandelt" wurde — sondern <span class="ital text-[#D99129]">zurückgekommen</span> ist. Wenn du deine Karte willst, fangen wir mit einer Diagnostik an.
+        </p>
+        <a href="#diagnostik" class="ulink mt-6 inline-flex items-center gap-3 text-[#D99129] font-bold">
+          <span class="ital">→</span> Diagnostik buchen · 149 €
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============= PROZESS ============= -->
+<section id="prozess" class="relative py-[clamp(96px,14vw,180px)]">
+  <div class="max-w-[1480px] mx-auto px-6 lg:px-10">
+
+    <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 mb-20">
+      <div class="lg:col-span-3 flex items-start gap-4">
+        <span class="ital text-[#D99129] text-6xl leading-[0.8]">↗</span>
+        <div>
+          <div class="micro text-[#D99129]">So läuft's ab</div>
+          <div class="micro text-[#FBF1E0]/45 mt-1">Sektion 06</div>
+        </div>
+      </div>
+      <div class="lg:col-span-9">
+        <h2 class="reveal display text-[clamp(40px,7vw,108px)] text-[#FBF1E0] leading-[0.94]">
+          Vom ersten Termin <span class="text-[#D99129]">zur Comeback Card.</span>
+        </h2>
+      </div>
+    </div>
+
+    <div class="grid lg:grid-cols-3 gap-6">
+      <div class="reveal card-glass rounded-sm p-8 border-t-2 border-[#D99129]/60">
+        <div class="num-sculpture text-[80px]">01</div>
+        <div class="micro text-[#D99129] mt-4">Schritt 01</div>
+        <h3 class="display-up text-xl text-[#FBF1E0] mt-2">Termin oder Diagnostik</h3>
+        <p class="mt-3 text-[14px] text-[#FBF1E0]/65 leading-[1.55]">Mit Rezept oder direkt zur Diagnostik. Beim Erstgespräch nehmen wir uns Zeit für deine Geschichte — nicht nur für deinen Befund.</p>
+      </div>
+      <div class="reveal card-glass rounded-sm p-8 border-t-2 border-[#D99129]/60">
+        <div class="num-sculpture text-[80px]">02</div>
+        <div class="micro text-[#D99129] mt-4">Schritt 02</div>
+        <h3 class="display-up text-xl text-[#FBF1E0] mt-2">Plan über fünf Säulen</h3>
+        <p class="mt-3 text-[14px] text-[#FBF1E0]/65 leading-[1.55]">Wir entscheiden gemeinsam: Wo fangen wir an, wo gehen wir hin? Therapie, Training, Athletik, Prävention — du weißt am Ende, was wann kommt.</p>
+      </div>
+      <div class="reveal card-glass rounded-sm p-8 border-t-2 border-[#D99129]/60">
+        <div class="num-sculpture text-[80px]">03</div>
+        <div class="micro text-[#D99129] mt-4">Schritt 03</div>
+        <h3 class="display-up text-xl text-[#FBF1E0] mt-2">Begleitung, die bleibt</h3>
+        <p class="mt-3 text-[14px] text-[#FBF1E0]/65 leading-[1.55]">Wir entlassen dich nicht nach Sitzung sechs. Wir bleiben dran, übergeben sauber zwischen den Säulen — bis zur Comeback Card.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============= TEAM ============= -->
+<section id="team" class="relative py-[clamp(96px,14vw,180px)]">
+  <div class="max-w-[1480px] mx-auto px-6 lg:px-10">
+
+    <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 mb-20">
+      <div class="lg:col-span-3 flex items-start gap-4">
+        <span class="ital text-[#D99129] text-6xl leading-[0.8]">☉</span>
+        <div>
+          <div class="micro text-[#D99129]">Das Team</div>
+          <div class="micro text-[#FBF1E0]/45 mt-1">Sektion 07</div>
+        </div>
+      </div>
+      <div class="lg:col-span-9">
+        <h2 class="reveal display text-[clamp(40px,7vw,108px)] text-[#FBF1E0] leading-[0.94]">
+          Therapeut*innen, <span class="text-[#D99129]">die deinen Körper</span><br/>über alle Säulen kennen.
+        </h2>
+        <p class="reveal max-w-2xl mt-8 text-[17px] leading-[1.55] text-[#FBF1E0]/70">
+          Spezialisierungen statt Generalisten. Wir matchen dich mit der Person, die zu deiner Beschwerde passt — und die mit dir den gesamten Weg geht.
+        </p>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <article class="reveal group">
+        <div class="aspect-[3/4] overflow-hidden rounded-sm bg-[#FBF1E0]/5 border border-[#FBF1E0]/10">
+          <img src="img/team/aric-bramswig.jpg" alt="Aric Brämswig" class="w-full h-full object-cover group-hover:scale-[1.03] transition duration-500"/>
+        </div>
+        <div class="mt-4">
+          <div class="micro text-[#D99129]">Gründer · CEO</div>
+          <h4 class="display-up text-base text-[#FBF1E0] mt-1">Aric Brämswig</h4>
+          <p class="mt-1 text-[13px] text-[#FBF1E0]/65">Manuelle Therapie · Athletik</p>
+        </div>
+      </article>
+      <article class="reveal group">
+        <div class="aspect-[3/4] overflow-hidden rounded-sm bg-[#FBF1E0]/5 border border-[#FBF1E0]/10">
+          <img src="img/team/constantin-lingenfelser.jpg" alt="Constantin Lingenfelser" class="w-full h-full object-cover group-hover:scale-[1.03] transition duration-500"/>
+        </div>
+        <div class="mt-4">
+          <div class="micro text-[#D99129]">Head of Physio</div>
+          <h4 class="display-up text-base text-[#FBF1E0] mt-1">Constantin Lingenfelser</h4>
+          <p class="mt-1 text-[13px] text-[#FBF1E0]/65">Friedrich-Ebert-Str.</p>
+        </div>
+      </article>
+      <article class="reveal group">
+        <div class="aspect-[3/4] overflow-hidden rounded-sm bg-[#FBF1E0]/5 border border-[#FBF1E0]/10">
+          <img src="img/team/fiete-tewinkel.jpg" alt="Fiete Tewinkel" class="w-full h-full object-cover group-hover:scale-[1.03] transition duration-500"/>
+        </div>
+        <div class="mt-4">
+          <div class="micro text-[#D99129]">2nd Head Physio</div>
+          <h4 class="display-up text-base text-[#FBF1E0] mt-1">Fiete Tewinkel</h4>
+          <p class="mt-1 text-[13px] text-[#FBF1E0]/65">Friedrich-Ebert-Str.</p>
+        </div>
+      </article>
+      <article class="reveal group">
+        <div class="aspect-[3/4] overflow-hidden rounded-sm bg-[#FBF1E0]/5 border border-[#FBF1E0]/10">
+          <img src="img/team/carolin-thyssen.jpg" alt="Carolin Thyssen" class="w-full h-full object-cover group-hover:scale-[1.03] transition duration-500"/>
+        </div>
+        <div class="mt-4">
+          <div class="micro text-[#D99129]">Physiotherapeutin</div>
+          <h4 class="display-up text-base text-[#FBF1E0] mt-1">Carolin Thyssen</h4>
+          <p class="mt-1 text-[13px] text-[#FBF1E0]/65">Manuelle Therapie</p>
+        </div>
+      </article>
+      <article class="reveal group">
+        <div class="aspect-[3/4] overflow-hidden rounded-sm bg-[#FBF1E0]/5 border border-[#FBF1E0]/10">
+          <img src="img/team/maximilian-schmidt.jpg" alt="Maximilian Schmidt" class="w-full h-full object-cover group-hover:scale-[1.03] transition duration-500"/>
+        </div>
+        <div class="mt-4">
+          <div class="micro text-[#D99129]">Physiotherapeut</div>
+          <h4 class="display-up text-base text-[#FBF1E0] mt-1">Maximilian Schmidt</h4>
+          <p class="mt-1 text-[13px] text-[#FBF1E0]/65">Sport-Reha</p>
+        </div>
+      </article>
+      <article class="reveal group">
+        <div class="aspect-[3/4] overflow-hidden rounded-sm bg-[#FBF1E0]/5 border border-[#FBF1E0]/10">
+          <img src="img/team/simon-brueggemann.jpg" alt="Simon Brüggemann" class="w-full h-full object-cover group-hover:scale-[1.03] transition duration-500"/>
+        </div>
+        <div class="mt-4">
+          <div class="micro text-[#D99129]">Physio · B.A. Sportwiss.</div>
+          <h4 class="display-up text-base text-[#FBF1E0] mt-1">Simon Brüggemann</h4>
+          <p class="mt-1 text-[13px] text-[#FBF1E0]/65">Diagnostik · Athletik</p>
+        </div>
+      </article>
+      <article class="reveal group">
+        <div class="aspect-[3/4] overflow-hidden rounded-sm bg-[#FBF1E0]/5 border border-[#FBF1E0]/10">
+          <img src="img/team/hagen-heidinger.jpg" alt="Hagen Heidinger" class="w-full h-full object-cover group-hover:scale-[1.03] transition duration-500"/>
+        </div>
+        <div class="mt-4">
+          <div class="micro text-[#D99129]">COO</div>
+          <h4 class="display-up text-base text-[#FBF1E0] mt-1">Hagen Heidinger</h4>
+          <p class="mt-1 text-[13px] text-[#FBF1E0]/65">Operations &amp; Webflow</p>
+        </div>
+      </article>
+      <a href="#" class="reveal group card-glass rounded-sm p-7 flex flex-col justify-center text-center">
+        <div class="ital text-[#D99129] text-6xl leading-[0.7]">+15</div>
+        <div class="micro text-[#FBF1E0]/55 mt-4">Weitere</div>
+        <p class="display-up text-base text-[#FBF1E0] mt-3 leading-tight">Therapeut*innen<br/>im Team.</p>
+        <span class="ulink mt-5 inline-flex text-[13px] font-bold text-[#D99129] justify-center">Ganzes Team →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============= WISSEN / BLOG ============= -->
+<section id="wissen" class="relative py-[clamp(96px,14vw,180px)]">
+  <div class="max-w-[1480px] mx-auto px-6 lg:px-10">
+
+    <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 mb-20">
+      <div class="lg:col-span-3 flex items-start gap-4">
+        <span class="ital text-[#D99129] text-6xl leading-[0.8]">¶</span>
+        <div>
+          <div class="micro text-[#D99129]">Wissen</div>
+          <div class="micro text-[#FBF1E0]/45 mt-1">Sektion 08</div>
+        </div>
+      </div>
+      <div class="lg:col-span-9">
+        <h2 class="reveal display text-[clamp(40px,7vw,108px)] text-[#FBF1E0] leading-[0.94]">
+          Lies dich <span class="text-[#D99129]">tiefer ein.</span>
+        </h2>
+        <p class="reveal max-w-2xl mt-8 text-[17px] leading-[1.55] text-[#FBF1E0]/70">
+          Fundierte Artikel aus der Praxis — über Schmerzforschung, häufige Diagnosen und was die aktuelle Sportwissenschaft für deine Therapie bedeutet. Geschrieben von Therapeut*innen, nicht von SEO-Agenturen.
+        </p>
+      </div>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+      <a href="https://www.rehab-five.com/blog/schmerzen-verstehen-munster-physiotherapie-moderne-schmerzforschung" target="_blank" rel="noopener" class="reveal card-glass rounded-sm p-7 flex flex-col group">
+        <div class="micro text-[#D99129]">Schmerzforschung</div>
+        <h3 class="display-up text-base text-[#FBF1E0] mt-4 leading-snug flex-1">Schmerzen verstehen — Physiotherapie und moderne Schmerzforschung</h3>
+        <p class="mt-3 text-[13px] text-[#FBF1E0]/65 leading-[1.55]">Warum dein Schmerz nicht immer das Problem ist und was die Neurowissenschaft heute weiß.</p>
+        <span class="ulink mt-5 inline-flex text-[13px] font-bold text-[#D99129]">Artikel lesen →</span>
+      </a>
+      <a href="https://www.rehab-five.com/blog/achilles-tendinopathie-munster-effektive-hilfe-bei-achillessehnenschmerzen" target="_blank" rel="noopener" class="reveal card-glass rounded-sm p-7 flex flex-col group">
+        <div class="micro text-[#D99129]">Achillessehne</div>
+        <h3 class="display-up text-base text-[#FBF1E0] mt-4 leading-snug flex-1">Achilles-Tendinopathie — Effektive Hilfe bei Achillessehnenschmerzen</h3>
+        <p class="mt-3 text-[13px] text-[#FBF1E0]/65 leading-[1.55]">Eccentric Training, Belastungssteuerung und warum Ruhe meistens die falsche Antwort ist.</p>
+        <span class="ulink mt-5 inline-flex text-[13px] font-bold text-[#D99129]">Artikel lesen →</span>
+      </a>
+      <a href="https://www.rehab-five.com/blog/rotatorenmanschettenruptur-munster-hilfe-bei-sehnenriss-schulterschmerz" target="_blank" rel="noopener" class="reveal card-glass rounded-sm p-7 flex flex-col group">
+        <div class="micro text-[#D99129]">Schulter</div>
+        <h3 class="display-up text-base text-[#FBF1E0] mt-4 leading-snug flex-1">Rotatorenmanschettenruptur — Sehnenriss &amp; Schulterschmerz</h3>
+        <p class="mt-3 text-[13px] text-[#FBF1E0]/65 leading-[1.55]">Wann konservativ, wann OP — und was nach der ersten Diagnose wirklich passiert.</p>
+        <span class="ulink mt-5 inline-flex text-[13px] font-bold text-[#D99129]">Artikel lesen →</span>
+      </a>
+      <a href="https://www.rehab-five.com/blog/morbus-bechterew-therapie-munster-physiotherapie-bei-wirbelsaulenrheuma" target="_blank" rel="noopener" class="reveal card-glass rounded-sm p-7 flex flex-col group">
+        <div class="micro text-[#D99129]">Wirbelsäule</div>
+        <h3 class="display-up text-base text-[#FBF1E0] mt-4 leading-snug flex-1">Morbus Bechterew — Physiotherapie bei Wirbelsäulenrheuma</h3>
+        <p class="mt-3 text-[13px] text-[#FBF1E0]/65 leading-[1.55]">Wie aktive Therapie und gezieltes Training die Beweglichkeit erhalten.</p>
+        <span class="ulink mt-5 inline-flex text-[13px] font-bold text-[#D99129]">Artikel lesen →</span>
+      </a>
+      <a href="https://www.rehab-five.com/blog/achillessehnenruptur-therapie-munster-reha-nach-sehnenriss" target="_blank" rel="noopener" class="reveal card-glass rounded-sm p-7 flex flex-col group">
+        <div class="micro text-[#D99129]">Achillessehne · Reha</div>
+        <h3 class="display-up text-base text-[#FBF1E0] mt-4 leading-snug flex-1">Achillessehnenruptur — Reha nach Sehnenriss</h3>
+        <p class="mt-3 text-[13px] text-[#FBF1E0]/65 leading-[1.55]">Der Weg über alle fünf Säulen: Therapie → Training → Athletik → Comeback.</p>
+        <span class="ulink mt-5 inline-flex text-[13px] font-bold text-[#D99129]">Artikel lesen →</span>
+      </a>
+      <a href="https://www.rehab-five.com/blog" target="_blank" rel="noopener" class="reveal rounded-sm p-7 flex flex-col group bg-[#D99129] text-[#1F342D] hover:bg-[#C57F1F] transition">
+        <div class="micro text-[#1F342D]/70">Mehr</div>
+        <h3 class="display text-3xl text-[#1F342D] mt-4 leading-tight flex-1">Alle Artikel im Blog.</h3>
+        <p class="mt-3 text-[13px] text-[#1F342D]/80 leading-[1.55]">Studien, Erklärstücke, Patient*innen-Stories — wir veröffentlichen kontinuierlich.</p>
+        <span class="mt-5 inline-flex text-[13px] font-bold text-[#1F342D]">Zum Blog →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============= FAQ ============= -->
+<section id="faq" class="relative py-[clamp(96px,14vw,180px)]">
+  <div class="max-w-[1480px] mx-auto px-6 lg:px-10">
+
+    <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 mb-20">
+      <div class="lg:col-span-3 flex items-start gap-4">
+        <span class="ital text-[#D99129] text-6xl leading-[0.8]">?</span>
+        <div>
+          <div class="micro text-[#D99129]">FAQ</div>
+          <div class="micro text-[#FBF1E0]/45 mt-1">Sektion 09</div>
+        </div>
+      </div>
+      <div class="lg:col-span-9">
+        <h2 class="reveal display text-[clamp(40px,7vw,108px)] text-[#FBF1E0] leading-[0.94]">
+          Bevor du <span class="text-[#D99129]">anrufst.</span>
+        </h2>
+      </div>
+    </div>
+
+    <div class="max-w-4xl space-y-2">
+      <details class="reveal card-glass rounded-sm p-6 group" open>
+        <summary class="cursor-pointer flex justify-between items-center font-bold text-lg text-[#FBF1E0] list-none">
+          Brauche ich ein Rezept?
+          <span class="ital text-[#D99129] text-3xl chev">+</span>
+        </summary>
+        <p class="mt-4 text-[15px] text-[#FBF1E0]/70 leading-[1.65]">Nein, nicht zwingend. Über die Blankoverordnung kannst du auch ohne Rezept zu uns kommen. Oder du buchst direkt eine Diagnostik-Sitzung — ohne Umweg über Hausarzt und Orthopäde.</p>
+      </details>
+      <details class="reveal card-glass rounded-sm p-6 group">
+        <summary class="cursor-pointer flex justify-between items-center font-bold text-lg text-[#FBF1E0] list-none">
+          Welche Krankenkassen?
+          <span class="ital text-[#D99129] text-3xl chev">+</span>
+        </summary>
+        <p class="mt-4 text-[15px] text-[#FBF1E0]/70 leading-[1.65]">Alle gesetzlichen und privaten. Privatabrechnung übernehmen wir direkt. Selbstzahler-Leistungen sind klar ausgewiesen, Preise besprechen wir offen vor der ersten Sitzung.</p>
+      </details>
+      <details class="reveal card-glass rounded-sm p-6 group">
+        <summary class="cursor-pointer flex justify-between items-center font-bold text-lg text-[#FBF1E0] list-none">
+          Was unterscheidet euch von anderen Praxen?
+          <span class="ital text-[#D99129] text-3xl chev">+</span>
+        </summary>
+        <p class="mt-4 text-[15px] text-[#FBF1E0]/70 leading-[1.65]">Wir haben alle fünf Säulen unter einem Dach: Therapie, Training, Athletik, Prävention, Diagnostik. Niemand sonst in Münster hat das. Wir behandeln dich nicht und entlassen dich — wir bleiben dran.</p>
+      </details>
+      <details class="reveal card-glass rounded-sm p-6 group">
+        <summary class="cursor-pointer flex justify-between items-center font-bold text-lg text-[#FBF1E0] list-none">
+          Wie schnell bekomme ich einen Termin?
+          <span class="ital text-[#D99129] text-3xl chev">+</span>
+        </summary>
+        <p class="mt-4 text-[15px] text-[#FBF1E0]/70 leading-[1.65]">In der Regel innerhalb von 1–2 Wochen. Diagnostik-Sitzungen oft schneller, weil sie nicht auf Rezept laufen.</p>
+      </details>
+      <details class="reveal card-glass rounded-sm p-6 group">
+        <summary class="cursor-pointer flex justify-between items-center font-bold text-lg text-[#FBF1E0] list-none">
+          Was, wenn ich auch Training will?
+          <span class="ital text-[#D99129] text-3xl chev">+</span>
+        </summary>
+        <p class="mt-4 text-[15px] text-[#FBF1E0]/70 leading-[1.65]">Dafür haben wir den REHAB FIVE HEALTH CLUB — die Premium-Adresse für Personal Training, Athletik und Diagnostik. Wir übergeben sauber, du läufst nicht zwischen Welten verloren.</p>
+      </details>
+      <details class="reveal card-glass rounded-sm p-6 group">
+        <summary class="cursor-pointer flex justify-between items-center font-bold text-lg text-[#FBF1E0] list-none">
+          Was ist eine Comeback Card?
+          <span class="ital text-[#D99129] text-3xl chev">+</span>
+        </summary>
+        <p class="mt-4 text-[15px] text-[#FBF1E0]/70 leading-[1.65]">Eine signierte, fortlaufend nummerierte Karte für jeden Patienten, der sein Return-to-X-Ziel erreicht hat. Marathon nach Knie-OP, Bühne nach Bandscheibenvorfall, Volleyball nach Schulter — Comeback ist ein Status-Moment, und wir machen ihn sichtbar.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============= STANDORTE ============= -->
+<section id="standorte" class="relative py-[clamp(96px,14vw,180px)]">
+  <div class="max-w-[1480px] mx-auto px-6 lg:px-10">
+
+    <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 mb-20">
+      <div class="lg:col-span-3 flex items-start gap-4">
+        <span class="ital text-[#D99129] text-6xl leading-[0.8]">⌘</span>
+        <div>
+          <div class="micro text-[#D99129]">Standorte</div>
+          <div class="micro text-[#FBF1E0]/45 mt-1">Sektion 10</div>
+        </div>
+      </div>
+      <div class="lg:col-span-9">
+        <h2 class="reveal display text-[clamp(40px,7vw,108px)] text-[#FBF1E0] leading-[0.94]">
+          Zwei Praxen <span class="text-[#D99129]">in Münster.</span>
+        </h2>
+        <p class="reveal max-w-2xl mt-8 text-[17px] leading-[1.55] text-[#FBF1E0]/70">
+          Friedrich-Ebert-Straße &amp; Scharnhorststraße. Beide mit voller therapeutischer Ausstattung, eigenen Teams und langen Öffnungszeiten.
+        </p>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-4">
+      <a href="https://www.rehab-five.com/standorte/friedrich-ebert-strasse" target="_blank" rel="noopener" class="reveal card-glass rounded-sm overflow-hidden group flex flex-col">
+        <div class="aspect-[16/10] overflow-hidden relative">
+          <img src="img/standorte/friedrich-ebert-122/hero.jpg" alt="Praxis Friedrich-Ebert-Straße" class="w-full h-full object-cover group-hover:scale-[1.04] transition duration-700"/>
+          <div class="absolute inset-0" style="background: linear-gradient(180deg, transparent 50%, rgba(31,52,45,0.65) 100%);"></div>
+          <div class="absolute top-5 left-5">
+            <span class="inline-block bg-[#D99129] text-[#1F342D] micro px-3 py-1.5 rounded-full">Standort 01</span>
+          </div>
+        </div>
+        <div class="p-8 flex flex-col flex-1">
+          <h3 class="display text-3xl text-[#FBF1E0] leading-tight">Friedrich-Ebert-Straße 122</h3>
+          <p class="mt-1 text-sm text-[#FBF1E0]/55">48153 Münster · Aaseeviertel</p>
+          <div class="mt-5 grid grid-cols-2 gap-4 text-sm text-[#FBF1E0]/70">
+            <div>
+              <div class="micro text-[#D99129] mb-1">Öffnungszeiten</div>
+              <p>Mo–Fr 07:30–20:00<br/>Sa nach Vereinbarung</p>
+            </div>
+            <div>
+              <div class="micro text-[#D99129] mb-1">Telefon</div>
+              <p>0251 / 74788-200</p>
+            </div>
+          </div>
+          <span class="mt-6 pt-5 border-t border-[#FBF1E0]/12 ulink inline-flex text-sm font-bold text-[#D99129]">Mehr zum Standort →</span>
+        </div>
+      </a>
+
+      <a href="https://www.rehab-five.com/standorte/scharnhorststrasse" target="_blank" rel="noopener" class="reveal card-glass rounded-sm overflow-hidden group flex flex-col">
+        <div class="aspect-[16/10] overflow-hidden relative">
+          <img src="img/standorte/scharnhorst/hero.jpg" alt="Praxis Scharnhorststraße" class="w-full h-full object-cover group-hover:scale-[1.04] transition duration-700"/>
+          <div class="absolute inset-0" style="background: linear-gradient(180deg, transparent 50%, rgba(31,52,45,0.65) 100%);"></div>
+          <div class="absolute top-5 left-5">
+            <span class="inline-block bg-[#D99129] text-[#1F342D] micro px-3 py-1.5 rounded-full">Standort 02</span>
+          </div>
+        </div>
+        <div class="p-8 flex flex-col flex-1">
+          <h3 class="display text-3xl text-[#FBF1E0] leading-tight">Scharnhorststraße</h3>
+          <p class="mt-1 text-sm text-[#FBF1E0]/55">48149 Münster</p>
+          <div class="mt-5 grid grid-cols-2 gap-4 text-sm text-[#FBF1E0]/70">
+            <div>
+              <div class="micro text-[#D99129] mb-1">Öffnungszeiten</div>
+              <p>Mo–Fr 08:00–19:00</p>
+            </div>
+            <div>
+              <div class="micro text-[#D99129] mb-1">Telefon</div>
+              <p>0251 / 74788-100</p>
+            </div>
+          </div>
+          <span class="mt-6 pt-5 border-t border-[#FBF1E0]/12 ulink inline-flex text-sm font-bold text-[#D99129]">Mehr zum Standort →</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============= FAMILIE ============= -->
+<section id="familie" class="relative py-[clamp(96px,14vw,180px)]">
+  <div class="max-w-[1480px] mx-auto px-6 lg:px-10">
+
+    <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 mb-20">
+      <div class="lg:col-span-3 flex items-start gap-4">
+        <span class="ital text-[#D99129] text-6xl leading-[0.8]">⌘</span>
+        <div>
+          <div class="micro text-[#D99129]">Die Familie</div>
+          <div class="micro text-[#FBF1E0]/45 mt-1">Sektion 11</div>
+        </div>
+      </div>
+      <div class="lg:col-span-9">
+        <h2 class="reveal display text-[clamp(40px,7vw,108px)] text-[#FBF1E0] leading-[0.94]">
+          Therapie ist <span class="text-[#D99129]">eine Säule.</span><br/>
+          Wir haben drei weitere Adressen.
+        </h2>
+        <p class="reveal max-w-2xl mt-8 text-[17px] leading-[1.55] text-[#FBF1E0]/70">
+          REHAB FIVE ist Therapie. Für Training, Ernährung und Firmen haben wir Schwestermarken gebaut — jede mit eigener Welt, alle mit derselben Methode.
+        </p>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-4">
+      <a href="#" class="reveal card-glass rounded-sm p-8 group flex flex-col">
+        <div class="micro text-[#D99129]">Premium · Selbstzahler</div>
+        <h3 class="display-up text-xl text-[#FBF1E0] mt-4">REHAB FIVE HEALTH CLUB</h3>
+        <p class="mt-4 text-[14px] text-[#FBF1E0]/65 leading-[1.55] flex-1">Membership, Personal Training, Athletik, Diagnostik. Säulen 02–05 als eigenständiger Premium-Bereich.</p>
+        <span class="ulink mt-6 inline-flex text-sm font-bold text-[#D99129]">Zum Health Club →</span>
+      </a>
+      <a href="#" class="reveal card-glass rounded-sm p-8 group flex flex-col">
+        <div class="micro text-[#D99129]">by REHAB FIVE</div>
+        <h3 class="display-up text-xl text-[#FBF1E0] mt-4">NUTRITION MÜNSTER</h3>
+        <p class="mt-4 text-[14px] text-[#FBF1E0]/65 leading-[1.55] flex-1">Ernährungs-Coaching und 1:1-Programme — eigenständige Schwesternmarke der Gruppe.</p>
+        <span class="ulink mt-6 inline-flex text-sm font-bold text-[#D99129]">Zur Nutrition →</span>
+      </a>
+      <a href="rehab-five-business.html" class="reveal card-glass rounded-sm p-8 group flex flex-col">
+        <div class="micro text-[#D99129]">B2B · Firmen &amp; Vereine</div>
+        <h3 class="display-up text-xl text-[#FBF1E0] mt-4">REHAB FIVE BUSINESS</h3>
+        <p class="mt-4 text-[14px] text-[#FBF1E0]/65 leading-[1.55] flex-1">BGM, Workshops, Gesundheitstage, Mannschaftstherapie. Fünf Säulen für ganze Belegschaften.</p>
+        <span class="ulink mt-6 inline-flex text-sm font-bold text-[#D99129]">Zum Business-Bereich →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============= FOOTER ============= -->
+<footer class="relative border-t border-[#FBF1E0]/12 py-16">
+  <div class="max-w-[1480px] mx-auto px-6 lg:px-10">
+
+    <!-- Final Manifest CTA -->
+    <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 mb-16 pb-16 border-b border-[#FBF1E0]/10">
+      <div class="lg:col-span-7">
+        <p class="display text-[clamp(32px,5vw,72px)] text-[#FBF1E0] leading-[0.95]">
+          „Therapie ist nur <span class="ital text-[#D99129]">eine</span><br/>
+          von fünf Säulen."
+        </p>
+      </div>
+      <div class="lg:col-span-5 flex flex-col justify-end">
+        <p class="text-[16px] text-[#FBF1E0]/70 max-w-md leading-[1.55]">
+          Wenn du wissen willst, was das für dich heißt — buch eine Diagnostik oder ruf uns an.
+        </p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a href="#termin" class="inline-flex items-center gap-2 bg-[#D99129] hover:bg-[#C57F1F] transition px-5 py-3 rounded-full text-[#1F342D] font-bold text-sm">Termin vereinbaren</a>
+          <a href="tel:+4925174788200" class="inline-flex items-center gap-2 border border-[#FBF1E0]/30 hover:bg-[#FBF1E0]/10 transition px-5 py-3 rounded-full text-[#FBF1E0] font-bold text-sm">0251 74788 200</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Grid -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-10">
+      <div class="lg:col-span-2">
+        <div class="flex items-center gap-4">
+          <img src="img/logo-white.png" alt="REHAB FIVE" class="h-7 w-auto"/>
+          <span class="micro text-[#FBF1E0]/45 border-l border-[#FBF1E0]/20 pl-4">Physiotherapie · Münster</span>
+        </div>
+        <p class="mt-5 text-sm text-[#FBF1E0]/55 max-w-xs leading-[1.6]">Die Therapie-Marke der REHAB FIVE Gruppe. Praxis in Münster seit 2018. Fünf Säulen unter einem Dach.</p>
+      </div>
+      <div>
+        <h5 class="micro text-[#FBF1E0]">Methode</h5>
+        <ul class="mt-4 space-y-2 text-sm text-[#FBF1E0]/65">
+          <li><a href="#methode" class="ulink">5-Säulen-Modell</a></li>
+          <li><a href="#diagnostik" class="ulink">Diagnostik</a></li>
+          <li><a href="#comebacks" class="ulink">Comeback Cards</a></li>
+          <li><a href="#wissen" class="ulink">Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5 class="micro text-[#FBF1E0]">Familie</h5>
+        <ul class="mt-4 space-y-2 text-sm text-[#FBF1E0]/65">
+          <li><a href="#" class="ulink">REHAB FIVE HEALTH CLUB</a></li>
+          <li><a href="#" class="ulink">NUTRITION MÜNSTER</a></li>
+          <li><a href="rehab-five-business.html" class="ulink">REHAB FIVE BUSINESS</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5 class="micro text-[#FBF1E0]">Recht</h5>
+        <ul class="mt-4 space-y-2 text-sm text-[#FBF1E0]/65">
+          <li><a href="#" class="ulink">Impressum</a></li>
+          <li><a href="#" class="ulink">Datenschutz</a></li>
+          <li><a href="#" class="ulink">Cookies</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-12 pt-8 border-t border-[#FBF1E0]/10 flex flex-wrap items-center justify-between gap-4 text-xs">
+      <span class="text-[#FBF1E0]/40">© 2026 REHAB FIVE · Eine Marke der REHAB FIVE Gruppe</span>
+      <span class="ital text-[#D99129]">Therapie ist nur eine von fünf Säulen.</span>
+    </div>
+  </div>
+</footer>
+
+</main>
+
+<script>
+  // Scroll-Reveal — Intersection Observer
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } });
+  }, { threshold: 0.15, rootMargin: '0px 0px -10% 0px' });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+
+</body>
+</html>

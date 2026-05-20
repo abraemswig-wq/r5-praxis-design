@@ -1,0 +1,785 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Weg X — Drei Sub-Varianten für „Health Club" und „Nutrition"</title>
+<style>
+  :root {
+    --orange: #E85D2C;
+    --orange-dark: #C8491F;
+    --orange-light: #F0825A;
+    --dark: #1A1A1A;
+    --grey: #5C5C5C;
+    --light-grey: #9A9A9A;
+    --cream: #FAF8F4;
+    --warm: #F4EFE8;
+    --beige: #EDE6DC;
+    --olive: #7B7A52;
+    --border: #E5DDD5;
+    --green: #2E8B57;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', 'Helvetica Neue', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #F2EEE8;
+    color: var(--dark);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ---------- Top bar ---------- */
+  .topbar {
+    background: var(--dark);
+    color: white;
+    padding: 22px 40px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .topbar h1 {
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .topbar p {
+    font-size: 13px;
+    color: #BBB;
+    max-width: 880px;
+  }
+  .topbar .nav-pills {
+    margin-top: 12px;
+    display: flex;
+    gap: 8px;
+  }
+  .topbar .nav-pills a {
+    background: rgba(255,255,255,0.08);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: background 0.15s;
+  }
+  .topbar .nav-pills a:hover { background: var(--orange); }
+
+  /* ---------- Section labels ---------- */
+  .section-label {
+    max-width: 1240px;
+    margin: 56px auto 24px;
+    padding: 0 40px;
+  }
+  .section-label .tag {
+    display: inline-block;
+    background: var(--orange);
+    color: white;
+    padding: 4px 12px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .section-label h2 {
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 8px;
+    letter-spacing: -0.01em;
+  }
+  .section-label .lead {
+    color: var(--grey);
+    font-size: 15px;
+    max-width: 880px;
+  }
+
+  /* ---------- Mockup grid ---------- */
+  .pair {
+    max-width: 1240px;
+    margin: 0 auto 16px;
+    padding: 0 40px;
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    gap: 24px;
+    align-items: stretch;
+  }
+  @media (max-width: 960px) {
+    .pair { grid-template-columns: 1fr; }
+  }
+  .mockup-frame {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.10);
+    display: flex;
+    flex-direction: column;
+  }
+  .mockup-browser-bar {
+    background: #F0EDE8;
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    border-bottom: 1px solid var(--border);
+    flex-shrink: 0;
+  }
+  .mockup-browser-bar .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #D5CFC8;
+  }
+  .mockup-browser-bar .url {
+    margin-left: 14px;
+    background: white;
+    color: var(--grey);
+    font-size: 12px;
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-family: 'SF Mono', 'Menlo', monospace;
+  }
+
+  /* ---------- Mockup header (nav) ---------- */
+  .mock-nav {
+    padding: 18px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(0,0,0,0.04);
+  }
+  .mock-nav .nav-logo {
+    line-height: 1;
+  }
+  .mock-nav .nav-links {
+    display: flex;
+    gap: 22px;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--dark);
+  }
+  @media (max-width: 720px) {
+    .mock-nav .nav-links { display: none; }
+  }
+  .mock-nav .nav-cta {
+    background: var(--orange);
+    color: white;
+    padding: 9px 16px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  /* ---------- Hero ---------- */
+  .mock-hero {
+    padding: 56px 40px 64px;
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 36px;
+    align-items: center;
+    flex: 1;
+  }
+  @media (max-width: 720px) {
+    .mock-hero { grid-template-columns: 1fr; padding: 36px 24px; }
+  }
+  .mock-hero-text .eyebrow {
+    color: var(--orange);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .mock-hero-text h1 {
+    font-size: 38px;
+    line-height: 1.05;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin-bottom: 14px;
+    color: var(--dark);
+  }
+  .mock-hero-text .sub {
+    font-size: 14px;
+    color: var(--grey);
+    line-height: 1.55;
+    margin-bottom: 22px;
+    max-width: 380px;
+  }
+  .mock-hero-text .ctas {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 18px;
+    flex-wrap: wrap;
+  }
+  .mock-hero-text .primary {
+    background: var(--orange);
+    color: white;
+    padding: 11px 18px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 13px;
+  }
+  .mock-hero-text .secondary {
+    background: transparent;
+    border: 1.5px solid var(--dark);
+    color: var(--dark);
+    padding: 10px 17px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 13px;
+  }
+  .mock-hero-text .trust {
+    font-size: 12px;
+    color: var(--grey);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .mock-hero-text .trust .stars {
+    color: var(--orange);
+    letter-spacing: 2px;
+  }
+
+  .mock-hero-img {
+    background: linear-gradient(135deg, var(--orange) 0%, var(--orange-dark) 100%);
+    border-radius: 6px;
+    aspect-ratio: 4/5;
+    display: flex;
+    align-items: flex-end;
+    padding: 24px;
+    color: white;
+    font-size: 13px;
+    font-weight: 500;
+    position: relative;
+    overflow: hidden;
+    min-height: 280px;
+  }
+  .mock-hero-img::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 25% 30%, rgba(255,255,255,0.18), transparent 55%),
+      radial-gradient(circle at 80% 80%, rgba(0,0,0,0.22), transparent 50%);
+  }
+  .mock-hero-img span { position: relative; z-index: 1; opacity: 0.75; }
+
+  /* ---------- Sidebar with companion brand ---------- */
+  .companion {
+    background: white;
+    border-radius: 8px;
+    padding: 28px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.06);
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .companion .label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--light-grey);
+  }
+  .companion .domain {
+    font-family: 'SF Mono', 'Menlo', monospace;
+    font-size: 12px;
+    color: var(--grey);
+    background: var(--cream);
+    padding: 6px 10px;
+    border-radius: 3px;
+    display: inline-block;
+  }
+  .companion .logo-block {
+    padding: 26px;
+    background: var(--warm);
+    border-radius: 6px;
+    text-align: center;
+    border: 1px dashed rgba(0,0,0,0.08);
+  }
+  .companion h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .companion p {
+    font-size: 13px;
+    color: var(--grey);
+    line-height: 1.5;
+  }
+
+  /* ---------- Notes ---------- */
+  .notes {
+    max-width: 1240px;
+    margin: 8px auto 0;
+    padding: 0 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+  }
+  @media (max-width: 720px) {
+    .notes { grid-template-columns: 1fr; }
+  }
+  .note h4 {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .note.pro h4 { color: var(--green); }
+  .note.con h4 { color: var(--orange-dark); }
+  .note.fact h4 { color: var(--grey); }
+  .note ul {
+    list-style: none;
+    font-size: 12.5px;
+    line-height: 1.55;
+    color: var(--dark);
+  }
+  .note ul li {
+    padding-left: 14px;
+    position: relative;
+    margin-bottom: 4px;
+  }
+  .note.pro ul li::before {
+    content: "+"; color: var(--green); font-weight: 700;
+    position: absolute; left: 0;
+  }
+  .note.con ul li::before {
+    content: "−"; color: var(--orange-dark); font-weight: 700;
+    position: absolute; left: 0;
+  }
+  .note.fact ul li::before {
+    content: "·"; color: var(--grey); font-weight: 700;
+    position: absolute; left: 0;
+  }
+
+  /* ---------- Logo Styles ---------- */
+  /* SV1 - THE HEALTH CLUB */
+  .sv1 .nav-logo .l1 {
+    font-size: 9px; letter-spacing: 3px; font-weight: 600;
+    color: var(--orange); text-transform: uppercase;
+    margin-bottom: 2px;
+  }
+  .sv1 .nav-logo .l2 {
+    font-size: 18px; font-weight: 800; letter-spacing: 0.5px;
+    color: var(--dark); text-transform: uppercase;
+  }
+  .sv1 .nav-logo .l3 {
+    font-size: 8px; letter-spacing: 1.5px; color: var(--light-grey);
+    text-transform: uppercase; margin-top: 3px; font-weight: 500;
+  }
+  .sv1 .companion .logo-block .lb1 {
+    font-size: 9px; letter-spacing: 3px; font-weight: 600;
+    color: var(--orange); text-transform: uppercase; margin-bottom: 4px;
+  }
+  .sv1 .companion .logo-block .lb2 {
+    font-size: 22px; font-weight: 800; letter-spacing: 0.5px;
+    color: var(--dark); text-transform: uppercase;
+  }
+  .sv1 .companion .logo-block .lb3 {
+    font-size: 9px; letter-spacing: 1.5px; color: var(--light-grey);
+    text-transform: uppercase; margin-top: 6px; font-weight: 500;
+  }
+
+  /* SV2 - HEALTH CLUB MÜNSTER */
+  .sv2 .nav-logo .l2 {
+    font-size: 18px; font-weight: 800; letter-spacing: 0.5px;
+    color: var(--dark); text-transform: uppercase;
+  }
+  .sv2 .nav-logo .l3 {
+    font-size: 9px; letter-spacing: 2px; color: var(--orange);
+    text-transform: uppercase; margin-top: 3px; font-weight: 700;
+  }
+  .sv2 .companion .logo-block .lb2 {
+    font-size: 22px; font-weight: 800; letter-spacing: 0.5px;
+    color: var(--dark); text-transform: uppercase;
+  }
+  .sv2 .companion .logo-block .lb3 {
+    font-size: 10px; letter-spacing: 2px; color: var(--orange);
+    text-transform: uppercase; margin-top: 6px; font-weight: 700;
+  }
+  .sv2 .companion .logo-block .lbfooter {
+    font-size: 8px; letter-spacing: 1.5px; color: var(--light-grey);
+    text-transform: uppercase; margin-top: 8px; font-weight: 500;
+  }
+  .sv2 .nav-logo .lbfooter {
+    font-size: 7.5px; letter-spacing: 1.5px; color: var(--light-grey);
+    text-transform: uppercase; margin-top: 4px; font-weight: 500;
+  }
+
+  /* SV3 - HEALTH CLUB N°5 */
+  .sv3 .nav-logo .l-row {
+    display: flex; align-items: center; gap: 8px;
+  }
+  .sv3 .nav-logo .l-text {
+    font-size: 16px; font-weight: 800; letter-spacing: 0.5px;
+    color: var(--dark); text-transform: uppercase; line-height: 1;
+  }
+  .sv3 .nav-logo .l-no {
+    font-size: 18px; font-weight: 800; color: var(--orange);
+    letter-spacing: 0; line-height: 1;
+    font-family: 'Georgia', serif; font-style: italic;
+  }
+  .sv3 .nav-logo .l3 {
+    font-size: 8px; letter-spacing: 1.5px; color: var(--light-grey);
+    text-transform: uppercase; margin-top: 4px; font-weight: 500;
+  }
+  .sv3 .companion .logo-block .lb-row {
+    display: flex; align-items: center; justify-content: center; gap: 12px;
+  }
+  .sv3 .companion .logo-block .lb-text {
+    font-size: 20px; font-weight: 800; letter-spacing: 0.5px;
+    color: var(--dark); text-transform: uppercase; line-height: 1;
+  }
+  .sv3 .companion .logo-block .lb-no {
+    font-size: 24px; font-weight: 800; color: var(--orange);
+    line-height: 1; font-family: 'Georgia', serif; font-style: italic;
+  }
+  .sv3 .companion .logo-block .lbfooter {
+    font-size: 8px; letter-spacing: 1.5px; color: var(--light-grey);
+    text-transform: uppercase; margin-top: 8px; font-weight: 500;
+  }
+
+  /* ---------- Decision strip ---------- */
+  .decide {
+    background: var(--dark);
+    color: white;
+    padding: 48px 40px;
+    margin-top: 80px;
+    text-align: center;
+  }
+  .decide h3 {
+    font-size: 24px;
+    margin-bottom: 12px;
+    font-weight: 700;
+  }
+  .decide p {
+    color: rgba(255,255,255,0.7);
+    max-width: 640px;
+    margin: 0 auto;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  .decide .options {
+    display: inline-flex;
+    gap: 12px;
+    margin-top: 24px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .decide .options span {
+    background: rgba(255,255,255,0.08);
+    color: white;
+    padding: 10px 16px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 600;
+    border: 1px solid rgba(255,255,255,0.15);
+  }
+  .decide .options span.rec {
+    background: var(--orange);
+    border-color: var(--orange);
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <h1>Weg X · Drei Sub-Varianten</h1>
+  <p>„Health Club" und „Nutrition" als Kern-Begriffe bleiben — jetzt geht es darum, sie so zu setzen, dass sie wie eigene Marken wirken und sich von Gattungsbegriffen abgrenzen. Drei Optionen mit unterschiedlichem Marken-Charakter.</p>
+  <div class="nav-pills">
+    <a href="#sv1">SV1 · THE</a>
+    <a href="#sv2">SV2 · MÜNSTER</a>
+    <a href="#sv3">SV3 · N°5</a>
+  </div>
+</div>
+
+<!-- ===========================================
+     SUB-VARIANTE 1 — THE HEALTH CLUB / THE NUTRITION
+     =========================================== -->
+<div id="sv1" class="section-label">
+  <span class="tag">Sub-Variante 1</span>
+  <h2>THE HEALTH CLUB · THE NUTRITION</h2>
+  <p class="lead">Der definierende Artikel macht aus dem Gattungsbegriff einen Markennamen. Premium-Boutique-Anmutung wie „The Standard", „The Well", „The Conran Shop". Wirkt erwachsen, ein bisschen New York.</p>
+</div>
+
+<div class="pair sv1">
+  <div class="mockup-frame">
+    <div class="mockup-browser-bar">
+      <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+      <div class="url">thehealthclub.de</div>
+    </div>
+    <div class="mock-nav">
+      <div class="nav-logo">
+        <div class="l1">THE</div>
+        <div class="l2">HEALTH CLUB</div>
+        <div class="l3">by REHAB FIVE</div>
+      </div>
+      <div class="nav-links">
+        <span>Membership</span><span>Personal Training</span><span>Diagnostik</span><span>Team</span>
+      </div>
+      <div class="nav-cta">Probetraining buchen</div>
+    </div>
+    <div class="mock-hero">
+      <div class="mock-hero-text">
+        <div class="eyebrow">Membership · Training · Diagnostik</div>
+        <h1>Gesundheit ist die beste Form.</h1>
+        <p class="sub">Münsters Adresse für Premium-Gesundheit. Personal Training, Athletik und Leistungsdiagnostik — nicht für die nächste Trophäe, sondern für ein gutes Leben.</p>
+        <div class="ctas">
+          <span class="primary">Mitglied werden</span>
+          <span class="secondary">Probetraining buchen</span>
+        </div>
+        <div class="trust"><span class="stars">★★★★★</span> Eine Marke der REHAB FIVE Gruppe — Münster</div>
+      </div>
+      <div class="mock-hero-img"><span>Foto-Bereich</span></div>
+    </div>
+  </div>
+  <div class="companion">
+    <div class="label">Schwesternmarke (Ernährung)</div>
+    <div class="logo-block">
+      <div class="lb1">THE</div>
+      <div class="lb2">NUTRITION</div>
+      <div class="lb3">by REHAB FIVE</div>
+    </div>
+    <p><strong>Hero-Headline:</strong> „Iss bewusst. Lebe bewusst."<br>
+    <strong>Tonalität:</strong> Premium, erwachsen, ein Hauch Lifestyle-Magazin.</p>
+    <div>
+      <div class="label" style="margin-bottom:6px">Domains</div>
+      <div class="domain">thehealthclub.de</div>
+      <div class="domain" style="margin-top:4px">thenutrition.de</div>
+    </div>
+  </div>
+</div>
+
+<div class="notes">
+  <div class="note pro">
+    <h4>Pro</h4>
+    <ul>
+      <li>Sofort erwachsen und premium-konnotiert</li>
+      <li>Internationale Marken-Tradition (The Well, The Standard …)</li>
+      <li>Bleibt nah am Bauchgefühl „Health Club"</li>
+      <li>Klare Schwesternmarken-Logik (THE + Substantiv)</li>
+    </ul>
+  </div>
+  <div class="note con">
+    <h4>Contra</h4>
+    <ul>
+      <li>„The" gibt es im deutschen Raum 100×, kein klarer Wiedererkennungs-Trigger</li>
+      <li>Schutzrecht: „THE HEALTH CLUB" als reiner Wortlaut schwer schützbar — braucht starkes Logo-Design</li>
+      <li>Klingt für ältere Münsteraner Zielgruppe vielleicht zu „weltläufig"</li>
+      <li>Domain-Verfügbarkeit unsicher (vor Kauf prüfen)</li>
+    </ul>
+  </div>
+  <div class="note fact">
+    <h4>Markencharakter</h4>
+    <ul>
+      <li>Zielgruppe: 30–55, urban, international</li>
+      <li>Vibe: Premium-Boutique, Lifestyle</li>
+      <li>Differenziert: stark vom „five home" weg</li>
+      <li>Aufwand: mittel (Logo + Domain-Check)</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ===========================================
+     SUB-VARIANTE 2 — HEALTH CLUB MÜNSTER / NUTRITION MÜNSTER
+     =========================================== -->
+<div id="sv2" class="section-label">
+  <span class="tag">Sub-Variante 2</span>
+  <h2>HEALTH CLUB MÜNSTER · NUTRITION MÜNSTER</h2>
+  <p class="lead">Lokaler Anker macht den Gattungsbegriff zur eigenständigen Marke. Wie „Münster Marketing", „Karstadt Münster" — sehr stark im lokalen Suchverhalten und im Markenschutz besser positioniert als reine Gattungsbegriffe.</p>
+</div>
+
+<div class="pair sv2">
+  <div class="mockup-frame">
+    <div class="mockup-browser-bar">
+      <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+      <div class="url">healthclub-muenster.de</div>
+    </div>
+    <div class="mock-nav">
+      <div class="nav-logo">
+        <div class="l2">HEALTH CLUB</div>
+        <div class="l3">MÜNSTER</div>
+        <div class="lbfooter">by REHAB FIVE</div>
+      </div>
+      <div class="nav-links">
+        <span>Membership</span><span>Personal Training</span><span>Diagnostik</span><span>Team</span>
+      </div>
+      <div class="nav-cta">Probetraining buchen</div>
+    </div>
+    <div class="mock-hero">
+      <div class="mock-hero-text">
+        <div class="eyebrow">Membership · Training · Diagnostik</div>
+        <h1>Münsters Adresse für Premium-Gesundheit.</h1>
+        <p class="sub">Personal Training, Athletik und Leistungsdiagnostik — auf höchstem Niveau, mit dem Rückhalt der REHAB FIVE Praxis. In Münster verankert, für Menschen, die hier leben.</p>
+        <div class="ctas">
+          <span class="primary">Mitglied werden</span>
+          <span class="secondary">Probetraining buchen</span>
+        </div>
+        <div class="trust"><span class="stars">★★★★★</span> Eine Marke der REHAB FIVE Gruppe</div>
+      </div>
+      <div class="mock-hero-img"><span>Foto-Bereich</span></div>
+    </div>
+  </div>
+  <div class="companion">
+    <div class="label">Schwesternmarke (Ernährung)</div>
+    <div class="logo-block">
+      <div class="lb2">NUTRITION</div>
+      <div class="lb3">MÜNSTER</div>
+      <div class="lbfooter">by REHAB FIVE</div>
+    </div>
+    <p><strong>Hero-Headline:</strong> „Ernährung, die zu deinem Münster passt."<br>
+    <strong>Tonalität:</strong> Lokal verankert, vertrauenswürdig, alltagsnah.</p>
+    <div>
+      <div class="label" style="margin-bottom:6px">Domains</div>
+      <div class="domain">healthclub-muenster.de</div>
+      <div class="domain" style="margin-top:4px">nutrition-muenster.de</div>
+    </div>
+  </div>
+</div>
+
+<div class="notes">
+  <div class="note pro">
+    <h4>Pro</h4>
+    <ul>
+      <li>Beste lokale SEO-Power („Health Club Münster" als Suchbegriff)</li>
+      <li>Stärkster Markenschutz (geografische + Gattungs-Kombi gut schützbar)</li>
+      <li>Klare lokale Verankerung — schwer kopierbar von anderen Münsteranern</li>
+      <li>Domains wahrscheinlich verfügbar</li>
+    </ul>
+  </div>
+  <div class="note con">
+    <h4>Contra</h4>
+    <ul>
+      <li>Klingt etwas funktional, weniger Lifestyle-cool</li>
+      <li>Schwer skalierbar — wenn du je eine 2. Location außerhalb Münsters willst, ist der Name ein Bremsklotz</li>
+      <li>Wirkt für Touristen oder Zuzügler weniger Premium</li>
+      <li>Längere Domain</li>
+    </ul>
+  </div>
+  <div class="note fact">
+    <h4>Markencharakter</h4>
+    <ul>
+      <li>Zielgruppe: alle Münsteraner, 25–65</li>
+      <li>Vibe: lokal seriös, ehrlich, premium ohne abgehoben</li>
+      <li>SEO: stärkster Lokal-Effekt</li>
+      <li>Aufwand: niedrig (Logo + Domain unkompliziert)</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ===========================================
+     SUB-VARIANTE 3 — HEALTH CLUB N°5 / NUTRITION N°5
+     =========================================== -->
+<div id="sv3" class="section-label">
+  <span class="tag">Sub-Variante 3</span>
+  <h2>HEALTH CLUB N°5 · NUTRITION N°5</h2>
+  <p class="lead">Die „N°5" knüpft elegant an die Familie (REHAB FIVE) und an das 5-Säulen-Modell an — ohne dass „FIVE" oder „REHAB" im Hauptnamen stehen muss. Wie „Chanel N°5", „N°5 by Tom Ford". Stärkster Premium-Anker und beste Markenschutz-Lage.</p>
+</div>
+
+<div class="pair sv3">
+  <div class="mockup-frame">
+    <div class="mockup-browser-bar">
+      <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+      <div class="url">healthclub5.de</div>
+    </div>
+    <div class="mock-nav">
+      <div class="nav-logo">
+        <div class="l-row">
+          <div class="l-text">HEALTH CLUB</div>
+          <div class="l-no">N°5</div>
+        </div>
+        <div class="l3">by REHAB FIVE</div>
+      </div>
+      <div class="nav-links">
+        <span>Membership</span><span>Personal Training</span><span>Diagnostik</span><span>Team</span>
+      </div>
+      <div class="nav-cta">Probetraining buchen</div>
+    </div>
+    <div class="mock-hero">
+      <div class="mock-hero-text">
+        <div class="eyebrow">Membership · Training · Diagnostik</div>
+        <h1>Gesundheit, in fünf Säulen gedacht.</h1>
+        <p class="sub">Trainieren. Regenerieren. Messen. Beraten. Begleiten. Der Premium-Bereich der REHAB FIVE Gruppe — auf Basis der Fünf Säulen, die unsere Praxis zur ersten Adresse in Münster gemacht haben.</p>
+        <div class="ctas">
+          <span class="primary">Mitglied werden</span>
+          <span class="secondary">Probetraining buchen</span>
+        </div>
+        <div class="trust"><span class="stars">★★★★★</span> Eine Marke der REHAB FIVE Gruppe — Münster</div>
+      </div>
+      <div class="mock-hero-img"><span>Foto-Bereich</span></div>
+    </div>
+  </div>
+  <div class="companion">
+    <div class="label">Schwesternmarke (Ernährung)</div>
+    <div class="logo-block">
+      <div class="lb-row">
+        <div class="lb-text">NUTRITION</div>
+        <div class="lb-no">N°5</div>
+      </div>
+      <div class="lbfooter">by REHAB FIVE</div>
+    </div>
+    <p><strong>Hero-Headline:</strong> „Fünf Prinzipien. Eine Ernährung."<br>
+    <strong>Tonalität:</strong> Premium, methodisch, mit Konzept-Anker.</p>
+    <div>
+      <div class="label" style="margin-bottom:6px">Domains</div>
+      <div class="domain">healthclub5.de</div>
+      <div class="domain" style="margin-top:4px">nutrition5.de</div>
+    </div>
+  </div>
+</div>
+
+<div class="notes">
+  <div class="note pro">
+    <h4>Pro</h4>
+    <ul>
+      <li>Stärkster Markenschutz (Wort + Zeichen-Kombination eindeutig)</li>
+      <li>Eleganteste Familienverbindung — „N°5" knüpft an 5-Säulen-Modell und „FIVE"</li>
+      <li>Klar premium (Chanel/Tom Ford-Analogie)</li>
+      <li>Kurze Domain (healthclub5.de) — einfach zu tippen</li>
+      <li>Differenziert eindeutig von „five home" / „five physio"</li>
+    </ul>
+  </div>
+  <div class="note con">
+    <h4>Contra</h4>
+    <ul>
+      <li>„N°5" muss man visuell erklären (Logo-Design wichtiger als bei SV1/SV2)</li>
+      <li>Manche Kund*innen werden „N°5" sprechen als „Nummer fünf" — okay, aber zu klären</li>
+      <li>Die Verbindung zum 5-Säulen-Modell muss intern weiter gelebt werden, sonst wird das „N°5" leer</li>
+      <li>Eventuell anfangs erklärungsbedürftig</li>
+    </ul>
+  </div>
+  <div class="note fact">
+    <h4>Markencharakter</h4>
+    <ul>
+      <li>Zielgruppe: 30–55, premium-bewusst, Mode/Lifestyle-affin</li>
+      <li>Vibe: Couture-Anker, methodische Tiefe</li>
+      <li>SEO: solide (kurze einprägsame Domain)</li>
+      <li>Aufwand: mittel (Logo-Design wichtiger)</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ===========================================
+     DECISION
+     =========================================== -->
+<div class="decide">
+  <h3>Welche Sub-Variante trifft dich?</h3>
+  <p>Alle drei behalten „Health Club" und „Nutrition" als Kern. Die Frage ist nur, womit du sie zu einer eigenständigen Marke machst.</p>
+  <div class="options">
+    <span>SV1 · THE HEALTH CLUB</span>
+    <span>SV2 · HEALTH CLUB MÜNSTER</span>
+    <span class="rec">SV3 · HEALTH CLUB N°5</span>
+  </div>
+  <p style="margin-top:20px;font-size:12.5px;opacity:0.6;">SV3 ist mein Favorit — beste Markenschutz-Lage, elegantester Familienbezug, knüpft an dein 5-Säulen-Konzept an.</p>
+</div>
+
+</body>
+</html>
