@@ -401,6 +401,30 @@
     /* Hero-Card der ersten Säule auf Mobile auch kompakt */
     section#methode article.card-glass.acc-mob.lg\:col-span-5 { min-height: 0 !important; }
 
+    /* Comeback-Cards (Section #comebacks): Mobile-Akkordeon */
+    section#comebacks article.card-glass.acc-mob {
+      padding: 14px 56px 14px 20px !important;
+      position: relative; cursor: pointer; min-height: 0 !important;
+    }
+    section#comebacks article.card-glass.acc-mob::after {
+      content: "+"; position: absolute; top: 18px; right: 22px;
+      color: #D99129; font-size: 28px; font-weight: 800; line-height: 1;
+    }
+    section#comebacks article.card-glass.acc-mob.expanded::after { content: "−"; }
+    section#comebacks article.card-glass.acc-mob .num-sculpture {
+      font-size: 28px !important; line-height: 1 !important; display: inline-block;
+    }
+    section#comebacks article.card-glass.acc-mob h3 {
+      display: inline-block; margin-left: 10px; font-size: 16px; vertical-align: baseline;
+    }
+    section#comebacks article.card-glass.acc-mob .micro,
+    section#comebacks article.card-glass.acc-mob > .flex,
+    section#comebacks article.card-glass.acc-mob p { display: none; }
+    section#comebacks article.card-glass.acc-mob.expanded .micro,
+    section#comebacks article.card-glass.acc-mob.expanded > .flex,
+    section#comebacks article.card-glass.acc-mob.expanded p { display: block; margin-top: 8px; }
+    section#comebacks article.card-glass.acc-mob.expanded > .flex { display: flex !important; }
+
     /* Beschwerden-Karten: Mobile-Akkordeon */
     section#beschwerden a.card-glass.acc-mob {
       padding: 0 !important;
@@ -425,6 +449,147 @@
       line-height: 1;
     }
     section#beschwerden a.card-glass.acc-mob.expanded::after { content: "−"; }
+
+    /* === MOBILE-SCHLANK: Section-Padding & Headline-Sizes === */
+    section[id], main > section { padding-top: 56px !important; padding-bottom: 56px !important; }
+    section .display { font-size: clamp(32px, 9vw, 44px) !important; line-height: 0.96 !important; }
+    section h2.display { font-size: clamp(34px, 10vw, 48px) !important; }
+    section .max-w-\[1480px\] { padding-left: 18px !important; padding-right: 18px !important; }
+    section .max-w-\[1280px\] { padding-left: 18px !important; padding-right: 18px !important; }
+
+    /* Hide rein dekorative Sektionen mobile */
+    .mob-hide { display: none !important; }
+
+    /* Generic Mobile-Only Accordion (using native <details>) */
+    details.m-acc { display: block; margin-top: 10px; }
+    details.m-acc > summary {
+      cursor: pointer; list-style: none;
+      display: flex; justify-content: space-between; align-items: center; gap: 12px;
+      padding: 16px 20px;
+      background: rgba(251,241,224,0.04);
+      border: 1px solid rgba(251,241,224,0.12);
+      border-radius: 2px;
+      color: #FBF1E0; font-weight: 700; font-size: 16px;
+      text-transform: uppercase; letter-spacing: 0.01em;
+    }
+    details.m-acc > summary::-webkit-details-marker { display: none; }
+    details.m-acc > summary::after {
+      content: "+"; color: #D99129; font-size: 26px; font-weight: 800; line-height: 1;
+      flex-shrink: 0;
+    }
+    details.m-acc[open] > summary::after { content: "−"; }
+    details.m-acc[open] > summary { border-color: rgba(217,145,41,0.45); }
+    details.m-acc > :not(summary) { padding-top: 14px; }
+
+    /* Comeback-Wall, Pricing, Stimmen: kompaktere Cards */
+    section#preise .card-glass { padding: 18px !important; }
+    section#stimmen .card-glass { padding: 20px !important; }
+    section#prozess .card-glass { padding: 18px !important; }
+
+    /* Founder + Diagnostik Spacing */
+    section#founder, section#diagnostik { padding-top: 64px !important; padding-bottom: 64px !important; }
+
+    /* Maps mobile höchstens 220px Höhe */
+    section#standorte iframe { aspect-ratio: 16/10 !important; max-height: 220px !important; }
+    section#standorte .card-glass { padding-bottom: 16px !important; }
+    section#standorte .p-8 { padding: 22px !important; }
+    /* Hero-Bilder der Standorte-Cards: Mobile kompakter */
+    section#standorte .aspect-\[16\/10\] { aspect-ratio: 16/7 !important; }
+    section#standorte img.aspect-\[16\/10\] { aspect-ratio: 16/7 !important; }
+
+    /* Stimmen mobile kompakter (Quote 1 ist riesig) */
+    section#stimmen blockquote.card-glass { padding: 22px !important; }
+    section#stimmen blockquote.card-glass .display {
+      font-size: 18px !important; line-height: 1.45 !important;
+    }
+    section#stimmen blockquote.card-glass .ital.text-6xl,
+    section#stimmen blockquote.card-glass .ital.text-4xl {
+      font-size: 28px !important; margin-bottom: 8px !important;
+    }
+    section#stimmen blockquote.card-glass footer {
+      margin-top: 18px !important; padding-top: 14px !important;
+    }
+
+    /* Hero etwas kürzer */
+    section.relative.min-h-\[calc\(100vh-68px\)\] { min-height: 76vh !important; }
+
+    /* Lead-Magnet, Founder, Diagnostik etwas kompakter */
+    section#selbsttest .p-10, section#selbsttest .sm\:p-14 { padding: 24px !important; }
+    section#founder .p-10, section#founder .sm\:p-14 { padding: 22px !important; }
+    section#founder img.aspect-\[3\/4\] { aspect-ratio: 4/3 !important; }
+
+    /* Footer kompakter */
+    footer { padding-top: 48px !important; padding-bottom: 32px !important; }
+    footer .grid { gap: 24px !important; }
+    footer .pb-16 { padding-bottom: 32px !important; }
+    footer .mb-16 { margin-bottom: 24px !important; }
+
+    /* Familie: Descriptions verstecken mobile, Cards kompakt */
+    section#familie .familie-grid > a { padding: 18px !important; }
+    section#familie .fam-desc { display: none; }
+    section#familie h2.display { font-size: clamp(30px, 8vw, 40px) !important; line-height: 1 !important; }
+
+    /* Team-Section: Padding cleaner */
+    section#team { padding-top: 56px !important; padding-bottom: 56px !important; }
+
+    /* Quiz kompakter */
+    section#quiz .quiz-step { padding: 24px !important; }
+    section#quiz .display { font-size: clamp(26px, 7vw, 36px) !important; }
+
+    /* Comeback Wall + Stimmen: Headline-Section kompakter */
+    section#comebacks .mb-20, section#stimmen .mb-20, section#team .mb-20,
+    section#preise .mb-20, section#preise .mb-16, section#beschwerden .mb-20,
+    section#triage .mb-16, section#standorte .mb-20, section#familie .mb-20,
+    section#prozess .mb-20, section#wissen .mb-20, section#methode .mb-20,
+    section#faq .mb-20, section#diagnostik .mb-20, section#karriere .mb-20 {
+      margin-bottom: 24px !important;
+    }
+    section .grid.lg\:grid-cols-12 { gap: 16px !important; }
+
+    /* Mobile-Margin-Reset für alle Sections — kürzere mt-Spacings */
+    section .mt-20 { margin-top: 32px !important; }
+    section .mt-16 { margin-top: 28px !important; }
+    section .mt-14 { margin-top: 24px !important; }
+    section .mt-12 { margin-top: 22px !important; }
+    section .mt-10 { margin-top: 18px !important; }
+    section .mt-8  { margin-top: 16px !important; }
+
+    /* Founder: Foto kompakter mobile */
+    section#founder img[alt*="Brämswig"] { aspect-ratio: 1/1 !important; }
+
+    /* Manifest: Pull-Quote kompakter */
+    section#manifest blockquote .display { font-size: 22px !important; line-height: 1.2 !important; }
+    section#manifest blockquote .ital.text-7xl { font-size: 32px !important; }
+    section#manifest .max-w-3xl { margin-top: 22px !important; }
+    section#manifest .grid.md\:grid-cols-3 { gap: 14px !important; margin-top: 22px !important; }
+    section#manifest .grid.md\:grid-cols-3 > div { padding-top: 12px !important; }
+
+    /* Comebacks Counter-Bar Display kompakter */
+    section#comebacks .pt-8 .display { font-size: 28px !important; line-height: 1.05 !important; }
+    section#comebacks .pt-8 { padding-top: 18px !important; }
+
+    /* Diagnostik content */
+    section#diagnostik .reveal.grid { gap: 12px !important; }
+    section#diagnostik .card-glass { padding: 22px !important; }
+
+    /* 5-Säulen Section: Hero-Card der 1. Säule (acc-mob.lg:col-span-5) kompakter */
+    section#methode article.card-glass.acc-mob.lg\:col-span-5 {
+      min-height: 0 !important; padding: 18px 56px 18px 22px !important;
+    }
+    section#methode article.card-glass.acc-mob.lg\:col-span-5 img,
+    section#methode article.card-glass.acc-mob.lg\:col-span-5 > div:not(.relative) { display: none; }
+    section#methode article.card-glass.acc-mob.lg\:col-span-5.expanded img,
+    section#methode article.card-glass.acc-mob.lg\:col-span-5.expanded > div { display: block; }
+
+    /* Side-Nav (Desktop only) — sicher ausblenden mobile */
+    .side-nav { display: none !important; }
+  }
+
+  /* Desktop: hide summary, force body visible regardless of [open] */
+  @media (min-width: 641px) {
+    details.m-acc { display: contents; }
+    details.m-acc > summary { display: none !important; }
+    details.m-acc > :not(summary) { display: revert !important; padding-top: 0 !important; }
   }
 </style>
 </head>
@@ -814,8 +979,8 @@
   </div>
 </section>
 
-<!-- ============= BEHIND THE SCENES — Magazin-Spread-Galerie ============= -->
-<section class="relative py-[clamp(96px,14vw,180px)]">
+<!-- ============= BEHIND THE SCENES — Magazin-Spread-Galerie (Desktop only) ============= -->
+<section class="relative py-[clamp(96px,14vw,180px)] mob-hide">
   <div class="max-w-[1480px] mx-auto px-6 lg:px-10">
 
     <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 mb-16">
@@ -1169,14 +1334,17 @@
             <p class="display-up text-base text-[#FBF1E0] mt-1">Das ist unser Spielfeld.</p>
           </div>
         </div>
-        <ul class="space-y-4 text-[15px] text-[#FBF1E0]/85">
-          <li class="flex items-start gap-3 pb-4 border-b border-[#FBF1E0]/10"><span class="ital text-[#D99129] mt-[-2px]">·</span> Du hast länger als 4 Wochen Beschwerden, die nicht besser werden</li>
-          <li class="flex items-start gap-3 pb-4 border-b border-[#FBF1E0]/10"><span class="ital text-[#D99129] mt-[-2px]">·</span> Du bist nach OP (Knie, Hüfte, Schulter, Wirbelsäule) und brauchst strukturierte Reha</li>
-          <li class="flex items-start gap-3 pb-4 border-b border-[#FBF1E0]/10"><span class="ital text-[#D99129] mt-[-2px]">·</span> Du hast eine Sportverletzung und willst zurück in deinen Sport</li>
-          <li class="flex items-start gap-3 pb-4 border-b border-[#FBF1E0]/10"><span class="ital text-[#D99129] mt-[-2px]">·</span> Du hast ein MRT, das „alles okay" sagt — aber dir tut trotzdem etwas weh</li>
-          <li class="flex items-start gap-3 pb-4 border-b border-[#FBF1E0]/10"><span class="ital text-[#D99129] mt-[-2px]">·</span> Du willst wissen, wo dein Körper aktuell wirklich steht (Diagnostik)</li>
-          <li class="flex items-start gap-3"><span class="ital text-[#D99129] mt-[-2px]">·</span> Du hast die Standard-Rezept-Tour hinter dir und willst etwas anderes</li>
-        </ul>
+        <details class="m-acc">
+          <summary>Sechs Beispiele anzeigen</summary>
+          <ul class="space-y-4 text-[15px] text-[#FBF1E0]/85">
+            <li class="flex items-start gap-3 pb-4 border-b border-[#FBF1E0]/10"><span class="ital text-[#D99129] mt-[-2px]">·</span> Du hast länger als 4 Wochen Beschwerden, die nicht besser werden</li>
+            <li class="flex items-start gap-3 pb-4 border-b border-[#FBF1E0]/10"><span class="ital text-[#D99129] mt-[-2px]">·</span> Du bist nach OP (Knie, Hüfte, Schulter, Wirbelsäule) und brauchst strukturierte Reha</li>
+            <li class="flex items-start gap-3 pb-4 border-b border-[#FBF1E0]/10"><span class="ital text-[#D99129] mt-[-2px]">·</span> Du hast eine Sportverletzung und willst zurück in deinen Sport</li>
+            <li class="flex items-start gap-3 pb-4 border-b border-[#FBF1E0]/10"><span class="ital text-[#D99129] mt-[-2px]">·</span> Du hast ein MRT, das „alles okay" sagt — aber dir tut trotzdem etwas weh</li>
+            <li class="flex items-start gap-3 pb-4 border-b border-[#FBF1E0]/10"><span class="ital text-[#D99129] mt-[-2px]">·</span> Du willst wissen, wo dein Körper aktuell wirklich steht (Diagnostik)</li>
+            <li class="flex items-start gap-3"><span class="ital text-[#D99129] mt-[-2px]">·</span> Du hast die Standard-Rezept-Tour hinter dir und willst etwas anderes</li>
+          </ul>
+        </details>
         <a href="#termin" class="ulink mt-8 inline-flex text-sm font-bold text-[#D99129]">Termin bei uns vereinbaren →</a>
       </div>
 
@@ -1189,14 +1357,17 @@
             <p class="display-up text-base text-[#FBF1E0] mt-1">Das ist nicht unser Spielfeld.</p>
           </div>
         </div>
-        <ul class="space-y-4 text-[15px] text-[#FBF1E0]/85">
-          <li class="flex items-start gap-3 pb-4 border-b border-[#FBF1E0]/10"><span class="text-[#FBF1E0]/40 mt-[-2px]">·</span> <strong class="text-[#FBF1E0]">Akute Notfälle</strong> — plötzlicher Brustschmerz, Lähmungen, Sturz mit Kopf → <span class="text-[#FBF1E0]/60">Notaufnahme</span></li>
-          <li class="flex items-start gap-3 pb-4 border-b border-[#FBF1E0]/10"><span class="text-[#FBF1E0]/40 mt-[-2px]">·</span> <strong class="text-[#FBF1E0]">Verdacht auf Schlaganfall</strong> (FAST-Test positiv) → <span class="text-[#FBF1E0]/60">112 anrufen</span></li>
-          <li class="flex items-start gap-3 pb-4 border-b border-[#FBF1E0]/10"><span class="text-[#FBF1E0]/40 mt-[-2px]">·</span> <strong class="text-[#FBF1E0]">Frische Frakturen / Verdacht</strong> (Sturz, Verformung sichtbar) → <span class="text-[#FBF1E0]/60">Notaufnahme/Orthopäde</span></li>
-          <li class="flex items-start gap-3 pb-4 border-b border-[#FBF1E0]/10"><span class="text-[#FBF1E0]/40 mt-[-2px]">·</span> <strong class="text-[#FBF1E0]">Du suchst Massage zur Entspannung</strong> — wir sind keine Wellness-Praxis</li>
-          <li class="flex items-start gap-3 pb-4 border-b border-[#FBF1E0]/10"><span class="text-[#FBF1E0]/40 mt-[-2px]">·</span> <strong class="text-[#FBF1E0]">Du willst Outcome-Garantien</strong> — die gibt es seriös nicht, weder bei uns noch sonstwo</li>
-          <li class="flex items-start gap-3"><span class="text-[#FBF1E0]/40 mt-[-2px]">·</span> <strong class="text-[#FBF1E0]">Du willst „sechs Sitzungen und fertig"</strong> — dann sind wir der falsche Ort</li>
-        </ul>
+        <details class="m-acc">
+          <summary>Sechs Beispiele anzeigen</summary>
+          <ul class="space-y-4 text-[15px] text-[#FBF1E0]/85">
+            <li class="flex items-start gap-3 pb-4 border-b border-[#FBF1E0]/10"><span class="text-[#FBF1E0]/40 mt-[-2px]">·</span> <strong class="text-[#FBF1E0]">Akute Notfälle</strong> — plötzlicher Brustschmerz, Lähmungen, Sturz mit Kopf → <span class="text-[#FBF1E0]/60">Notaufnahme</span></li>
+            <li class="flex items-start gap-3 pb-4 border-b border-[#FBF1E0]/10"><span class="text-[#FBF1E0]/40 mt-[-2px]">·</span> <strong class="text-[#FBF1E0]">Verdacht auf Schlaganfall</strong> (FAST-Test positiv) → <span class="text-[#FBF1E0]/60">112 anrufen</span></li>
+            <li class="flex items-start gap-3 pb-4 border-b border-[#FBF1E0]/10"><span class="text-[#FBF1E0]/40 mt-[-2px]">·</span> <strong class="text-[#FBF1E0]">Frische Frakturen / Verdacht</strong> (Sturz, Verformung sichtbar) → <span class="text-[#FBF1E0]/60">Notaufnahme/Orthopäde</span></li>
+            <li class="flex items-start gap-3 pb-4 border-b border-[#FBF1E0]/10"><span class="text-[#FBF1E0]/40 mt-[-2px]">·</span> <strong class="text-[#FBF1E0]">Du suchst Massage zur Entspannung</strong> — wir sind keine Wellness-Praxis</li>
+            <li class="flex items-start gap-3 pb-4 border-b border-[#FBF1E0]/10"><span class="text-[#FBF1E0]/40 mt-[-2px]">·</span> <strong class="text-[#FBF1E0]">Du willst Outcome-Garantien</strong> — die gibt es seriös nicht, weder bei uns noch sonstwo</li>
+            <li class="flex items-start gap-3"><span class="text-[#FBF1E0]/40 mt-[-2px]">·</span> <strong class="text-[#FBF1E0]">Du willst „sechs Sitzungen und fertig"</strong> — dann sind wir der falsche Ort</li>
+          </ul>
+        </details>
         <p class="mt-8 text-[12px] text-[#FBF1E0]/45 leading-[1.55]">Wir nennen lieber im Voraus, wo wir nicht helfen, als jemanden zu behandeln, der woanders besser aufgehoben ist.</p>
       </div>
     </div>
@@ -1233,24 +1404,27 @@
         <h3 class="display-up text-xl text-[#FBF1E0] mt-3">Mit Rezept · GKV</h3>
         <p class="mt-3 text-[14px] text-[#FBF1E0]/65 leading-[1.55] mb-6">Du bringst ein Rezept mit, wir rechnen direkt mit deiner Kasse ab. Du zahlst nur den gesetzlichen Eigenanteil.</p>
 
-        <ul class="space-y-3 text-[15px]">
-          <li class="flex justify-between items-baseline py-3 border-b border-[#FBF1E0]/10">
-            <span class="text-[#FBF1E0]/85">Eigenanteil pro Sitzung</span>
-            <span class="ital text-[#D99129] text-xl">5–10 €</span>
-          </li>
-          <li class="flex justify-between items-baseline py-3 border-b border-[#FBF1E0]/10">
-            <span class="text-[#FBF1E0]/85">Pro Rezept (6× Sitzung)</span>
-            <span class="ital text-[#D99129] text-xl">~30–60 €</span>
-          </li>
-          <li class="flex justify-between items-baseline py-3 border-b border-[#FBF1E0]/10">
-            <span class="text-[#FBF1E0]/85">Verordnungsgebühr (einmalig)</span>
-            <span class="ital text-[#D99129] text-xl">10 €</span>
-          </li>
-          <li class="flex justify-between items-baseline py-3">
-            <span class="text-[#FBF1E0]/85">Blankoverordnung möglich</span>
-            <span class="ital text-[#D99129] text-base">✓ ja</span>
-          </li>
-        </ul>
+        <details class="m-acc">
+          <summary>Preise anzeigen</summary>
+          <ul class="space-y-3 text-[15px]">
+            <li class="flex justify-between items-baseline py-3 border-b border-[#FBF1E0]/10">
+              <span class="text-[#FBF1E0]/85">Eigenanteil pro Sitzung</span>
+              <span class="ital text-[#D99129] text-xl">5–10 €</span>
+            </li>
+            <li class="flex justify-between items-baseline py-3 border-b border-[#FBF1E0]/10">
+              <span class="text-[#FBF1E0]/85">Pro Rezept (6× Sitzung)</span>
+              <span class="ital text-[#D99129] text-xl">~30–60 €</span>
+            </li>
+            <li class="flex justify-between items-baseline py-3 border-b border-[#FBF1E0]/10">
+              <span class="text-[#FBF1E0]/85">Verordnungsgebühr (einmalig)</span>
+              <span class="ital text-[#D99129] text-xl">10 €</span>
+            </li>
+            <li class="flex justify-between items-baseline py-3">
+              <span class="text-[#FBF1E0]/85">Blankoverordnung möglich</span>
+              <span class="ital text-[#D99129] text-base">✓ ja</span>
+            </li>
+          </ul>
+        </details>
         <p class="mt-6 text-[12px] text-[#FBF1E0]/45 leading-[1.55]">Bei Befreiung von Zuzahlung (z.B. chronisch krank): kein Eigenanteil.</p>
       </div>
 
@@ -1260,28 +1434,31 @@
         <h3 class="display-up text-xl text-[#FBF1E0] mt-3">Ohne Rezept &amp; Premium-Leistungen</h3>
         <p class="mt-3 text-[14px] text-[#FBF1E0]/65 leading-[1.55] mb-6">Ohne Umweg über Hausarzt — direkt zu uns. Privatversicherte bekommen Rechnung zur Erstattung.</p>
 
-        <ul class="space-y-3 text-[15px]">
-          <li class="flex justify-between items-baseline py-3 border-b border-[#FBF1E0]/10">
-            <span class="text-[#FBF1E0]/85">Krankengymnastik (30 Min)</span>
-            <span class="ital text-[#D99129] text-xl">60–80 €</span>
-          </li>
-          <li class="flex justify-between items-baseline py-3 border-b border-[#FBF1E0]/10">
-            <span class="text-[#FBF1E0]/85">Manuelle Therapie (30 Min)</span>
-            <span class="ital text-[#D99129] text-xl">70–95 €</span>
-          </li>
-          <li class="flex justify-between items-baseline py-3 border-b border-[#FBF1E0]/10">
-            <span class="text-[#FBF1E0]/85">Manuelle Lymphdrainage (45–60 Min)</span>
-            <span class="ital text-[#D99129] text-xl">65–95 €</span>
-          </li>
-          <li class="flex justify-between items-baseline py-3 border-b border-[#FBF1E0]/10">
-            <span class="text-[#FBF1E0]/85"><strong class="text-[#FBF1E0]">Bewegungsdiagnostik (60 Min)</strong></span>
-            <span class="ital text-[#D99129] text-xl">149 €</span>
-          </li>
-          <li class="flex justify-between items-baseline py-3">
-            <span class="text-[#FBF1E0]/85">Erstgespräch / Befund</span>
-            <span class="ital text-[#D99129] text-base">enthalten</span>
-          </li>
-        </ul>
+        <details class="m-acc">
+          <summary>Preise anzeigen</summary>
+          <ul class="space-y-3 text-[15px]">
+            <li class="flex justify-between items-baseline py-3 border-b border-[#FBF1E0]/10">
+              <span class="text-[#FBF1E0]/85">Krankengymnastik (30 Min)</span>
+              <span class="ital text-[#D99129] text-xl">60–80 €</span>
+            </li>
+            <li class="flex justify-between items-baseline py-3 border-b border-[#FBF1E0]/10">
+              <span class="text-[#FBF1E0]/85">Manuelle Therapie (30 Min)</span>
+              <span class="ital text-[#D99129] text-xl">70–95 €</span>
+            </li>
+            <li class="flex justify-between items-baseline py-3 border-b border-[#FBF1E0]/10">
+              <span class="text-[#FBF1E0]/85">Manuelle Lymphdrainage (45–60 Min)</span>
+              <span class="ital text-[#D99129] text-xl">65–95 €</span>
+            </li>
+            <li class="flex justify-between items-baseline py-3 border-b border-[#FBF1E0]/10">
+              <span class="text-[#FBF1E0]/85"><strong class="text-[#FBF1E0]">Bewegungsdiagnostik (60 Min)</strong></span>
+              <span class="ital text-[#D99129] text-xl">149 €</span>
+            </li>
+            <li class="flex justify-between items-baseline py-3">
+              <span class="text-[#FBF1E0]/85">Erstgespräch / Befund</span>
+              <span class="ital text-[#D99129] text-base">enthalten</span>
+            </li>
+          </ul>
+        </details>
         <a href="#termin" class="ulink mt-6 inline-flex text-sm font-bold text-[#D99129]">Selbstzahler-Termin buchen →</a>
       </div>
     </div>
@@ -1568,8 +1745,8 @@
         </footer>
       </blockquote>
 
-      <!-- Quote 3 — bottom right -->
-      <blockquote class="reveal card-glass rounded-sm p-7 lg:col-span-5 flex flex-col">
+      <!-- Quote 3 — bottom right (Desktop only — mobile zeigt nur 2 Quotes) -->
+      <blockquote class="reveal card-glass rounded-sm p-7 lg:col-span-5 flex flex-col mob-hide">
         <div class="ital text-[#D99129] text-4xl leading-[0.5] mb-3">"</div>
         <p class="text-[18px] text-[#FBF1E0] leading-[1.4]">
           Die behandeln einen nicht wie eine Fall-Nummer. Mein Therapeut wusste nach dem Erstgespräch mehr über meinen Körper als mein Hausarzt nach <span class="ital text-[#D99129]">acht Jahren</span>.
@@ -1698,7 +1875,7 @@
           <p class="mt-1 text-[13px] text-[#FBF1E0]/65">Friedrich-Ebert-Str.</p>
         </div>
       </a>
-      <a href="team/stephan-otte.html" class="reveal group block">
+      <a href="team/stephan-otte.html" class="reveal group block mob-hide">
         <div class="aspect-[3/4] overflow-hidden rounded-sm bg-[#FBF1E0]/5 border border-[#FBF1E0]/10">
           <img loading="lazy" src="img/team/stephan-otte.jpg" alt="Stephan Otte" class="w-full h-full object-cover group-hover:scale-[1.03] transition duration-500"/>
         </div>
@@ -1708,7 +1885,7 @@
           <p class="mt-1 text-[13px] text-[#FBF1E0]/65">Scharnhorststraße</p>
         </div>
       </a>
-      <a href="team/fiete-tewinkel.html" class="reveal group block">
+      <a href="team/fiete-tewinkel.html" class="reveal group block mob-hide">
         <div class="aspect-[3/4] overflow-hidden rounded-sm bg-[#FBF1E0]/5 border border-[#FBF1E0]/10">
           <img loading="lazy" src="img/team/fiete-tewinkel.jpg" alt="Fiete Tewinkel" class="w-full h-full object-cover group-hover:scale-[1.03] transition duration-500"/>
         </div>
@@ -1718,7 +1895,7 @@
           <p class="mt-1 text-[13px] text-[#FBF1E0]/65">Friedrich-Ebert-Str.</p>
         </div>
       </a>
-      <a href="team/simon-brueggemann.html" class="reveal group block">
+      <a href="team/simon-brueggemann.html" class="reveal group block mob-hide">
         <div class="aspect-[3/4] overflow-hidden rounded-sm bg-[#FBF1E0]/5 border border-[#FBF1E0]/10">
           <img loading="lazy" src="img/team/simon-brueggemann.jpg" alt="Simon Brüggemann" class="w-full h-full object-cover group-hover:scale-[1.03] transition duration-500"/>
         </div>
@@ -1779,13 +1956,13 @@
         <p class="mt-3 text-[13px] text-[#FBF1E0]/65 leading-[1.55]">Wann konservativ, wann OP — und was nach der ersten Diagnose wirklich passiert.</p>
         <span class="ulink mt-5 inline-flex text-[13px] font-bold text-[#D99129]">Artikel lesen →</span>
       </a>
-      <a href="blog/morbus-bechterew.html" class="reveal card-glass rounded-sm p-7 flex flex-col group">
+      <a href="blog/morbus-bechterew.html" class="reveal card-glass rounded-sm p-7 flex flex-col group mob-hide">
         <div class="micro text-[#D99129]">Wirbelsäule</div>
         <h3 class="display-up text-base text-[#FBF1E0] mt-4 leading-snug flex-1">Morbus Bechterew — Physiotherapie bei Wirbelsäulenrheuma</h3>
         <p class="mt-3 text-[13px] text-[#FBF1E0]/65 leading-[1.55]">Wie aktive Therapie und gezieltes Training die Beweglichkeit erhalten.</p>
         <span class="ulink mt-5 inline-flex text-[13px] font-bold text-[#D99129]">Artikel lesen →</span>
       </a>
-      <a href="blog/achillessehnenruptur.html" class="reveal card-glass rounded-sm p-7 flex flex-col group">
+      <a href="blog/achillessehnenruptur.html" class="reveal card-glass rounded-sm p-7 flex flex-col group mob-hide">
         <div class="micro text-[#D99129]">Achillessehne · Reha</div>
         <h3 class="display-up text-base text-[#FBF1E0] mt-4 leading-snug flex-1">Achillessehnenruptur — Reha nach Sehnenriss</h3>
         <p class="mt-3 text-[13px] text-[#FBF1E0]/65 leading-[1.55]">Der Weg über alle fünf Säulen: Therapie → Training → Athletik → Comeback.</p>
@@ -1912,10 +2089,13 @@
             </div>
           </div>
 
-          <!-- Google Maps Embed -->
-          <div class="mt-5 aspect-[16/9] rounded-sm overflow-hidden border border-[#FBF1E0]/15">
-            <iframe src="https://www.google.com/maps?q=Friedrich-Ebert-Stra%C3%9Fe+127,+48153+M%C3%BCnster&output=embed" class="w-full h-full" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Google Maps — Friedrich-Ebert-Straße 127"></iframe>
-          </div>
+          <!-- Google Maps Embed (mobile collapsed) -->
+          <details class="m-acc mt-5">
+            <summary>Karte anzeigen</summary>
+            <div class="aspect-[16/9] rounded-sm overflow-hidden border border-[#FBF1E0]/15">
+              <iframe src="https://www.google.com/maps?q=Friedrich-Ebert-Stra%C3%9Fe+127,+48153+M%C3%BCnster&output=embed" class="w-full h-full" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Google Maps — Friedrich-Ebert-Straße 127"></iframe>
+            </div>
+          </details>
 
           <span class="mt-6 pt-5 border-t border-[#FBF1E0]/12 ulink inline-flex text-sm font-bold text-[#D99129]">Mehr zum Standort →</span>
         </div>
@@ -1943,10 +2123,13 @@
             </div>
           </div>
 
-          <!-- Google Maps Embed -->
-          <div class="mt-5 aspect-[16/9] rounded-sm overflow-hidden border border-[#FBF1E0]/15">
-            <iframe src="https://www.google.com/maps?q=Scharnhorststra%C3%9Fe+40,+48151+M%C3%BCnster&output=embed" class="w-full h-full" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Google Maps — Scharnhorststraße 40"></iframe>
-          </div>
+          <!-- Google Maps Embed (mobile collapsed) -->
+          <details class="m-acc mt-5">
+            <summary>Karte anzeigen</summary>
+            <div class="aspect-[16/9] rounded-sm overflow-hidden border border-[#FBF1E0]/15">
+              <iframe src="https://www.google.com/maps?q=Scharnhorststra%C3%9Fe+40,+48151+M%C3%BCnster&output=embed" class="w-full h-full" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Google Maps — Scharnhorststraße 40"></iframe>
+            </div>
+          </details>
 
           <span class="mt-6 pt-5 border-t border-[#FBF1E0]/12 ulink inline-flex text-sm font-bold text-[#D99129]">Mehr zum Standort →</span>
         </div>
@@ -1960,14 +2143,17 @@
           <div class="micro text-[#D99129]">Vor dem ersten Termin</div>
           <h3 class="display text-3xl text-[#FBF1E0] mt-3 leading-[1.05]">Was du <span class="ital text-[#D99129]">mitbringst.</span></h3>
         </div>
-        <div class="lg:col-span-8 grid sm:grid-cols-2 gap-x-8 gap-y-5">
-          <div class="flex items-start gap-3"><span class="ital text-[#D99129]">01</span><div><strong class="text-[#FBF1E0] block">Rezept</strong><span class="text-[13px] text-[#FBF1E0]/65">Falls vorhanden. Wenn nicht: kein Problem, wir klären's bei der Blankoverordnung.</span></div></div>
-          <div class="flex items-start gap-3"><span class="ital text-[#D99129]">02</span><div><strong class="text-[#FBF1E0] block">Versichertenkarte</strong><span class="text-[13px] text-[#FBF1E0]/65">Gesetzliche Versicherung — wir scannen am Empfang.</span></div></div>
-          <div class="flex items-start gap-3"><span class="ital text-[#D99129]">03</span><div><strong class="text-[#FBF1E0] block">Bequeme Kleidung</strong><span class="text-[13px] text-[#FBF1E0]/65">Lockere Hose, T-Shirt. Wir haben Umkleiden vor Ort.</span></div></div>
-          <div class="flex items-start gap-3"><span class="ital text-[#D99129]">04</span><div><strong class="text-[#FBF1E0] block">Befunde / MRT-Bilder</strong><span class="text-[13px] text-[#FBF1E0]/65">Falls vorhanden — gerne mitbringen, hilft uns beim Befund.</span></div></div>
-          <div class="flex items-start gap-3"><span class="ital text-[#D99129]">05</span><div><strong class="text-[#FBF1E0] block">10 Minuten Puffer</strong><span class="text-[13px] text-[#FBF1E0]/65">Damit du nicht gestresst ankommst — der Behandlungserfolg fängt vorher an.</span></div></div>
-          <div class="flex items-start gap-3"><span class="ital text-[#D99129]">06</span><div><strong class="text-[#FBF1E0] block">Deine echte Geschichte</strong><span class="text-[13px] text-[#FBF1E0]/65">Wir interessieren uns für Kontext — nicht nur für deinen Befund.</span></div></div>
-        </div>
+        <details class="m-acc lg:col-span-8">
+          <summary>Was du mitbringst (6 Punkte)</summary>
+          <div class="grid sm:grid-cols-2 gap-x-8 gap-y-5">
+            <div class="flex items-start gap-3"><span class="ital text-[#D99129]">01</span><div><strong class="text-[#FBF1E0] block">Rezept</strong><span class="text-[13px] text-[#FBF1E0]/65">Falls vorhanden. Wenn nicht: kein Problem, wir klären's bei der Blankoverordnung.</span></div></div>
+            <div class="flex items-start gap-3"><span class="ital text-[#D99129]">02</span><div><strong class="text-[#FBF1E0] block">Versichertenkarte</strong><span class="text-[13px] text-[#FBF1E0]/65">Gesetzliche Versicherung — wir scannen am Empfang.</span></div></div>
+            <div class="flex items-start gap-3"><span class="ital text-[#D99129]">03</span><div><strong class="text-[#FBF1E0] block">Bequeme Kleidung</strong><span class="text-[13px] text-[#FBF1E0]/65">Lockere Hose, T-Shirt. Wir haben Umkleiden vor Ort.</span></div></div>
+            <div class="flex items-start gap-3"><span class="ital text-[#D99129]">04</span><div><strong class="text-[#FBF1E0] block">Befunde / MRT-Bilder</strong><span class="text-[13px] text-[#FBF1E0]/65">Falls vorhanden — gerne mitbringen, hilft uns beim Befund.</span></div></div>
+            <div class="flex items-start gap-3"><span class="ital text-[#D99129]">05</span><div><strong class="text-[#FBF1E0] block">10 Minuten Puffer</strong><span class="text-[13px] text-[#FBF1E0]/65">Damit du nicht gestresst ankommst — der Behandlungserfolg fängt vorher an.</span></div></div>
+            <div class="flex items-start gap-3"><span class="ital text-[#D99129]">06</span><div><strong class="text-[#FBF1E0] block">Deine echte Geschichte</strong><span class="text-[13px] text-[#FBF1E0]/65">Wir interessieren uns für Kontext — nicht nur für deinen Befund.</span></div></div>
+          </div>
+        </details>
       </div>
     </div>
   </div>
@@ -2004,14 +2190,17 @@
           Wenn du genug von Sechs-Sitzungen-und-Schluss hast, wenn dich Manuelle Therapie, Sport-Reha oder Bewegungsdiagnostik wirklich interessiert — sprich mit uns. Wir wachsen, und wir geben Therapeut*innen Zeit, Verantwortung und Spezialisierungs-Räume.
         </p>
 
-        <ul class="reveal mt-8 grid sm:grid-cols-2 gap-x-8 gap-y-3 text-[14.5px] text-[#FBF1E0]/85">
-          <li class="flex items-start gap-2"><span class="ital text-[#D99129]">·</span> Faire Bezahlung über Branchen-Schnitt</li>
-          <li class="flex items-start gap-2"><span class="ital text-[#D99129]">·</span> Fortbildungs-Budget pro Person</li>
-          <li class="flex items-start gap-2"><span class="ital text-[#D99129]">·</span> 30-Min-Termine statt 20-Min-Akkord</li>
-          <li class="flex items-start gap-2"><span class="ital text-[#D99129]">·</span> Eigene Schwerpunkt-Sprechstunden</li>
-          <li class="flex items-start gap-2"><span class="ital text-[#D99129]">·</span> Übergabe zwischen den Säulen — kein Einzelkampf</li>
-          <li class="flex items-start gap-2"><span class="ital text-[#D99129]">·</span> Zwei Standorte zur Auswahl</li>
-        </ul>
+        <details class="m-acc reveal mt-8">
+          <summary>Was wir bieten</summary>
+          <ul class="grid sm:grid-cols-2 gap-x-8 gap-y-3 text-[14.5px] text-[#FBF1E0]/85">
+            <li class="flex items-start gap-2"><span class="ital text-[#D99129]">·</span> Faire Bezahlung über Branchen-Schnitt</li>
+            <li class="flex items-start gap-2"><span class="ital text-[#D99129]">·</span> Fortbildungs-Budget pro Person</li>
+            <li class="flex items-start gap-2"><span class="ital text-[#D99129]">·</span> 30-Min-Termine statt 20-Min-Akkord</li>
+            <li class="flex items-start gap-2"><span class="ital text-[#D99129]">·</span> Eigene Schwerpunkt-Sprechstunden</li>
+            <li class="flex items-start gap-2"><span class="ital text-[#D99129]">·</span> Übergabe zwischen den Säulen — kein Einzelkampf</li>
+            <li class="flex items-start gap-2"><span class="ital text-[#D99129]">·</span> Zwei Standorte zur Auswahl</li>
+          </ul>
+        </details>
 
         <div class="reveal mt-10 flex flex-wrap gap-3">
           <a href="https://www.rehab-five.com/karriere" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-[#D99129] hover:bg-[#C57F1F] transition px-6 py-3.5 rounded-full text-[#1F342D] font-bold text-sm">
@@ -2104,23 +2293,23 @@
       </div>
     </div>
 
-    <div class="grid md:grid-cols-3 gap-4">
+    <div class="grid md:grid-cols-3 gap-4 familie-grid">
       <a href="#" class="reveal card-glass rounded-sm p-8 group flex flex-col">
         <div class="micro text-[#D99129]">Premium · Selbstzahler</div>
         <h3 class="display-up text-xl text-[#FBF1E0] mt-4">REHAB FIVE HEALTH CLUB</h3>
-        <p class="mt-4 text-[14px] text-[#FBF1E0]/65 leading-[1.55] flex-1">Membership, Personal Training, Athletik, Diagnostik. Säulen 02–05 als eigenständiger Premium-Bereich.</p>
+        <p class="mt-4 text-[14px] text-[#FBF1E0]/65 leading-[1.55] flex-1 fam-desc">Membership, Personal Training, Athletik, Diagnostik. Säulen 02–05 als eigenständiger Premium-Bereich.</p>
         <span class="ulink mt-6 inline-flex text-sm font-bold text-[#D99129]">Zum Health Club →</span>
       </a>
       <a href="#" class="reveal card-glass rounded-sm p-8 group flex flex-col">
         <div class="micro text-[#D99129]">by REHAB FIVE</div>
         <h3 class="display-up text-xl text-[#FBF1E0] mt-4">NUTRITION MÜNSTER</h3>
-        <p class="mt-4 text-[14px] text-[#FBF1E0]/65 leading-[1.55] flex-1">Ernährungs-Coaching und 1:1-Programme — eigenständige Schwesternmarke der Gruppe.</p>
+        <p class="mt-4 text-[14px] text-[#FBF1E0]/65 leading-[1.55] flex-1 fam-desc">Ernährungs-Coaching und 1:1-Programme — eigenständige Schwesternmarke der Gruppe.</p>
         <span class="ulink mt-6 inline-flex text-sm font-bold text-[#D99129]">Zur Nutrition →</span>
       </a>
       <a href="rehab-five-business.html" class="reveal card-glass rounded-sm p-8 group flex flex-col">
         <div class="micro text-[#D99129]">B2B · Firmen &amp; Vereine</div>
         <h3 class="display-up text-xl text-[#FBF1E0] mt-4">REHAB FIVE BUSINESS</h3>
-        <p class="mt-4 text-[14px] text-[#FBF1E0]/65 leading-[1.55] flex-1">BGM, Workshops, Gesundheitstage, Mannschaftstherapie. Fünf Säulen für ganze Belegschaften.</p>
+        <p class="mt-4 text-[14px] text-[#FBF1E0]/65 leading-[1.55] flex-1 fam-desc">BGM, Workshops, Gesundheitstage, Mannschaftstherapie. Fünf Säulen für ganze Belegschaften.</p>
         <span class="ulink mt-6 inline-flex text-sm font-bold text-[#D99129]">Zum Business-Bereich →</span>
       </a>
     </div>
