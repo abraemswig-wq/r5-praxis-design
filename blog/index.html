@@ -4,13 +4,13 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Wissen · Blog · REHAB FIVE Physiotherapie Münster</title>
-<meta name="description" content="Fundierte Artikel aus der Praxis: Schmerzforschung, Achilles-Tendinopathie, Rotatorenmanschette, Morbus Bechterew, Achillessehnenruptur."/>
+<meta name="description" content="Fundierte Artikel aus der Praxis mit Studienverweisen — Schmerzforschung, Achilles-Tendinopathie, Rotatorenmanschette, Morbus Bechterew, Achillessehnenruptur."/>
 <meta name="theme-color" content="#1F342D"/>
 <meta name="robots" content="index, follow, max-image-preview:large"/>
 <link rel="canonical" href="https://rehab-five.com/blog/"/>
 <meta property="og:type" content="website"/>
 <meta property="og:title" content="Wissen · Blog · REHAB FIVE Physiotherapie Münster"/>
-<meta property="og:description" content="Fundierte Artikel aus der Praxis: Schmerzforschung, Achilles-Tendinopathie, Rotatorenmanschette, Morbus Bechterew, Achillessehnenruptur."/>
+<meta property="og:description" content="Fundierte Artikel aus der Praxis mit Studienverweisen — Schmerzforschung, Achilles-Tendinopathie, Rotatorenmanschette, Morbus Bechterew, Achillessehnenruptur."/>
 <meta property="og:image" content="../og.jpg"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
@@ -36,6 +36,7 @@
   .micro      { font-size: 13px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; }
   h1, h2, h3 { font-family: 'Barlow', sans-serif; font-weight: 800; text-transform: uppercase; letter-spacing: -0.01em; }
   .card-glass { background: rgba(251,241,224,0.04); border:1px solid rgba(251,241,224,0.12); }
+  .card-glass:hover { background: rgba(251,241,224,0.07); border-color: rgba(217,145,41,0.4); }
   a.btn-primary { background:#D99129; color:#1F342D; padding:14px 24px; border-radius:9999px; font-weight:700; display:inline-flex; gap:8px; align-items:center; transition: background 0.2s; }
   a.btn-primary:hover { background:#C57F1F; }
   a.btn-outline { border:1px solid rgba(251,241,224,0.3); color:#FBF1E0; padding:14px 24px; border-radius:9999px; font-weight:600; display:inline-flex; gap:8px; align-items:center; transition: background 0.2s; }
@@ -43,14 +44,27 @@
   .ulink { position: relative; padding-bottom: 4px; }
   .ulink::after { content:""; position: absolute; left:0; bottom:0; width:100%; height:1px; background: currentColor; transform: scaleX(.35); transform-origin: left; transition: transform .35s; }
   .ulink:hover::after { transform: scaleX(1); }
-  .num { color:#D99129; font-weight:900; line-height:0.85; letter-spacing:-0.04em; }
   a:focus-visible, button:focus-visible { outline:2px solid #D99129; outline-offset:3px; }
+  .prose-rf p { margin-top: 1.25em; color: rgba(251,241,224,0.8); line-height: 1.7; font-size: 18px; }
+  .prose-rf h2 { margin-top: 2.5em; font-size: clamp(24px, 3vw, 36px); color: #FBF1E0; }
+  .prose-rf h3 { margin-top: 2em; font-size: clamp(20px, 2.5vw, 28px); color: #FBF1E0; }
+  .prose-rf ul { margin-top: 1em; padding-left: 1.5em; }
+  .prose-rf ul li { margin-top: 0.5em; color: rgba(251,241,224,0.8); list-style: none; position: relative; padding-left: 1.5em; }
+  .prose-rf ul li::before { content: "·"; color: #D99129; font-weight: 900; position: absolute; left: 0; font-size: 24px; line-height: 1; }
+  .prose-rf strong { color: #FBF1E0; font-weight: 700; }
+  .prose-rf .pull { border-left: 3px solid #D99129; padding: 16px 0 16px 24px; margin: 2em 0; font-style: italic; color: #FBF1E0; }
+  .prose-rf .sources { margin-top: 3em; padding-top: 2em; border-top: 1px solid rgba(251,241,224,0.15); }
+  .prose-rf .sources li { font-size: 15px; color: rgba(251,241,224,0.65); }
+
+  /* Mobile */
+  @media (max-width: 640px) {
+    .site-header span.micro { display: none !important; }
+  }
 </style>
 </head>
 <body class="bg-forest-700 text-white">
 
-<!-- HEADER -->
-<header class="sticky top-0 z-50 bg-[#1F342D]/85 backdrop-blur border-b border-[#FBF1E0]/10">
+<header class="site-header sticky top-0 z-50 bg-[#1F342D]/85 backdrop-blur border-b border-[#FBF1E0]/10">
   <div class="max-w-[1280px] mx-auto px-6 lg:px-10 h-[68px] flex items-center justify-between">
     <a href="../index.html" class="flex items-center gap-4">
       <img src="../img/logo-white.png" alt="REHAB FIVE" class="h-7 w-auto"/>
@@ -80,44 +94,64 @@
       Lies dich <span class="text-[#D99129]">tiefer ein.</span>
     </h1>
     <p class="mt-8 text-xl text-[#FBF1E0]/70 leading-[1.55]">
-      Fundierte Artikel aus der Praxis — über Schmerzforschung, häufige Diagnosen und was die aktuelle Sportwissenschaft für deine Therapie bedeutet. Geschrieben von Therapeut*innen, nicht von SEO-Agenturen.
+      Fundierte Artikel aus der Praxis — über Schmerzforschung, häufige Diagnosen und was die aktuelle Sportwissenschaft für deine Therapie bedeutet. Mit Studienverweisen. Geschrieben von Therapeut*innen, nicht von SEO-Agenturen.
     </p>
   </div>
 
-  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
+  <div class="grid md:grid-cols-2 gap-3">
 
-      <a href="schmerzen-verstehen.html" class="card-glass rounded-sm p-7 flex flex-col hover:border-[#D99129] transition group">
-        <div class="micro text-[#D99129]">Schmerzforschung</div>
-        <h2 class="display text-2xl text-[#FBF1E0] mt-4 leading-snug flex-1">Schmerzen verstehen — Physiotherapie und moderne Schmerzforschung</h2>
-        <p class="mt-3 text-[#FBF1E0]/65 text-base leading-[1.55]">Warum dein Schmerz nicht immer das Problem ist und was die Neurowissenschaft heute weiß.</p>
+      <a href="schmerzen-verstehen.html" class="card-glass rounded-sm p-7 flex flex-col group transition">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="micro text-[#D99129]">Schmerzforschung</div>
+          <span class="text-[#FBF1E0]/30">·</span>
+          <div class="micro text-[#FBF1E0]/45">13.05.2026</div>
+        </div>
+        <h2 class="text-2xl text-[#FBF1E0] leading-snug flex-1">Schmerzen verstehen — Physiotherapie & moderne Schmerzforschung</h2>
+        <p class="mt-3 text-[#FBF1E0]/65 text-base leading-[1.55]">Ist Schmerz immer ein Zeichen von Gewebeschäden? Schmerz ist ein Schutzsignal des Gehirns — wir zeigen, wie wir bei REHAB FIVE helfen, wieder aktiv zu werden.</p>
         <span class="ulink mt-5 inline-flex text-sm font-bold text-[#D99129]">Artikel lesen →</span>
       </a>
 
-      <a href="achilles-tendinopathie.html" class="card-glass rounded-sm p-7 flex flex-col hover:border-[#D99129] transition group">
-        <div class="micro text-[#D99129]">Achillessehne</div>
-        <h2 class="display text-2xl text-[#FBF1E0] mt-4 leading-snug flex-1">Achilles-Tendinopathie — Effektive Hilfe bei Achillessehnenschmerzen</h2>
-        <p class="mt-3 text-[#FBF1E0]/65 text-base leading-[1.55]">Eccentric Training, Belastungssteuerung und warum Ruhe meistens die falsche Antwort ist.</p>
+      <a href="achilles-tendinopathie.html" class="card-glass rounded-sm p-7 flex flex-col group transition">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="micro text-[#D99129]">Achillessehne</div>
+          <span class="text-[#FBF1E0]/30">·</span>
+          <div class="micro text-[#FBF1E0]/45">06.05.2026</div>
+        </div>
+        <h2 class="text-2xl text-[#FBF1E0] leading-snug flex-1">Achilles-Tendinopathie — Effektive Hilfe bei Achillessehnenschmerzen</h2>
+        <p class="mt-3 text-[#FBF1E0]/65 text-base leading-[1.55]">Für aktive Menschen in Münster ist eine belastbare Achillessehne essentiell. Wenn sie morgens steif ist, beim Anlaufen schmerzt oder nach dem Sport empfindlich bleibt, steckt oft eine Tendinopathie dahinter.</p>
         <span class="ulink mt-5 inline-flex text-sm font-bold text-[#D99129]">Artikel lesen →</span>
       </a>
 
-      <a href="rotatorenmanschettenruptur.html" class="card-glass rounded-sm p-7 flex flex-col hover:border-[#D99129] transition group">
-        <div class="micro text-[#D99129]">Schulter</div>
-        <h2 class="display text-2xl text-[#FBF1E0] mt-4 leading-snug flex-1">Rotatorenmanschettenruptur — Hilfe bei Sehnenriss & Schulterschmerz</h2>
-        <p class="mt-3 text-[#FBF1E0]/65 text-base leading-[1.55]">Wann konservativ, wann OP — und was nach der ersten Diagnose wirklich passiert.</p>
+      <a href="rotatorenmanschettenruptur.html" class="card-glass rounded-sm p-7 flex flex-col group transition">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="micro text-[#D99129]">Schulter</div>
+          <span class="text-[#FBF1E0]/30">·</span>
+          <div class="micro text-[#FBF1E0]/45">29.04.2026</div>
+        </div>
+        <h2 class="text-2xl text-[#FBF1E0] leading-snug flex-1">Rotatorenmanschettenruptur — Hilfe bei Sehnenriss & Schulterschmerz</h2>
+        <p class="mt-3 text-[#FBF1E0]/65 text-base leading-[1.55]">Wer beim Anziehen, beim kraftvollen Treten oder beim Greifen ins obere Regal plötzlich stechende Schulterschmerzen spürt, vermutet oft eine Überlastung. Doch wenn Kraft nachlässt und Schmerz bleibt, kann eine Rotatorenmanschettenruptur dahinterstecken.</p>
         <span class="ulink mt-5 inline-flex text-sm font-bold text-[#D99129]">Artikel lesen →</span>
       </a>
 
-      <a href="morbus-bechterew.html" class="card-glass rounded-sm p-7 flex flex-col hover:border-[#D99129] transition group">
-        <div class="micro text-[#D99129]">Wirbelsäule</div>
-        <h2 class="display text-2xl text-[#FBF1E0] mt-4 leading-snug flex-1">Morbus Bechterew — Physiotherapie bei Wirbelsäulenrheuma</h2>
-        <p class="mt-3 text-[#FBF1E0]/65 text-base leading-[1.55]">Wie aktive Therapie und gezieltes Training die Beweglichkeit erhalten.</p>
+      <a href="morbus-bechterew.html" class="card-glass rounded-sm p-7 flex flex-col group transition">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="micro text-[#D99129]">Wirbelsäule</div>
+          <span class="text-[#FBF1E0]/30">·</span>
+          <div class="micro text-[#FBF1E0]/45">22.04.2026</div>
+        </div>
+        <h2 class="text-2xl text-[#FBF1E0] leading-snug flex-1">Morbus Bechterew — Physiotherapie bei Wirbelsäulenrheuma</h2>
+        <p class="mt-3 text-[#FBF1E0]/65 text-base leading-[1.55]">Wer morgens mit steifer Wirbelsäule aufwacht, nachts durch tiefsitzende Schmerzen gestört wird oder feststellt, dass Bewegung die Beschwerden lindert, sollte aufmerksam werden. Dahinter kann Morbus Bechterew stehen.</p>
         <span class="ulink mt-5 inline-flex text-sm font-bold text-[#D99129]">Artikel lesen →</span>
       </a>
 
-      <a href="achillessehnenruptur.html" class="card-glass rounded-sm p-7 flex flex-col hover:border-[#D99129] transition group">
-        <div class="micro text-[#D99129]">Achillessehne · Reha</div>
-        <h2 class="display text-2xl text-[#FBF1E0] mt-4 leading-snug flex-1">Achillessehnenruptur — Reha nach Sehnenriss</h2>
-        <p class="mt-3 text-[#FBF1E0]/65 text-base leading-[1.55]">Der Weg über alle fünf Säulen: Therapie → Training → Athletik → Comeback.</p>
+      <a href="achillessehnenruptur.html" class="card-glass rounded-sm p-7 flex flex-col group transition">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="micro text-[#D99129]">Achillessehne · Reha</div>
+          <span class="text-[#FBF1E0]/30">·</span>
+          <div class="micro text-[#FBF1E0]/45">15.04.2026</div>
+        </div>
+        <h2 class="text-2xl text-[#FBF1E0] leading-snug flex-1">Achillessehnenruptur — Reha nach Sehnenriss</h2>
+        <p class="mt-3 text-[#FBF1E0]/65 text-base leading-[1.55]">Die Achillessehne ist die kräftigste Sehne des Körpers — ein „biologischer Turbolader“ bei sportlichen Aktivitäten. Ein Riss ist einschneidend, aber strukturierte Physiotherapie ermöglicht eine schrittweise Rückkehr zu Stabilität und Schnellkraft.</p>
         <span class="ulink mt-5 inline-flex text-sm font-bold text-[#D99129]">Artikel lesen →</span>
       </a>
 
@@ -125,7 +159,6 @@
 
 </main>
 
-<!-- FOOTER -->
 <footer class="bg-black border-t border-[#FBF1E0]/10 py-12 mt-16">
   <div class="max-w-[1280px] mx-auto px-6 lg:px-10 flex flex-wrap items-center justify-between gap-6">
     <a href="../index.html" class="flex items-center gap-4">
