@@ -24,7 +24,7 @@ HEAD_TPL = """<!doctype html>
 <meta property="og:type" content="{og_type}"/>
 <meta property="og:title" content="{title}"/>
 <meta property="og:description" content="{description}"/>
-<meta property="og:image" content="../og.jpg"/>
+<meta property="og:image" content="{og_image}"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
@@ -331,11 +331,13 @@ def render_team_person(p):
   </div>
 """
 
+    og_img = f"https://rehab-five.com/img/team/{p['photo']}" if p.get("photo") else "https://rehab-five.com/og.jpg"
     return HEAD_TPL.format(
         title=f"{p['name']} · {p['role']} · REHAB FIVE",
         description=f"{p['name']} — {p['role']} bei REHAB FIVE Physiotherapie Münster. {p.get('subtitle','')}".strip(),
         canonical=f"https://rehab-five.com/team/{p['slug']}",
         og_type="profile",
+        og_image=og_img,
         schema=schema,
         content=content
     )
@@ -406,6 +408,7 @@ def render_team_index():
         description=f"Das gesamte Team von REHAB FIVE Physiotherapie Münster — {len(TEAM)} Mitarbeiter*innen mit Spezialisierungen in Manueller Therapie, Sport-Reha, Diagnostik und Athletik.",
         canonical="https://rehab-five.com/team/",
         og_type="website",
+        og_image="https://rehab-five.com/og.jpg",
         schema="",
         content=content
     )
@@ -466,7 +469,16 @@ BLOG_ARTICLES = [
             "Butler, D. S., Moseley, G. L., & Moog, M. E. (2005). <em>Schmerzen verstehen.</em>"
         ],
         "author": "Aric Brämswig · B.Sc. Physiotherapie",
-        "related": ["achilles-tendinopathie", "rotatorenmanschettenruptur"]
+        "related": ["achilles-tendinopathie", "rotatorenmanschettenruptur"],
+        "hero_image": "img/scenes/community.jpg",
+        "image_alt": "Bewegung als Therapie — REHAB FIVE Praxis Münster",
+        "faq": [
+            {"q": "Mein MRT zeigt keinen Befund — warum habe ich trotzdem Schmerzen?", "a": "Schmerz entsteht nicht in der Struktur, sondern im Nervensystem. Selbst bei unauffälligem MRT kann eine zentrale Sensibilisierung dafür sorgen, dass dein System Reize stärker bewertet als nötig. Das macht den Schmerz nicht eingebildet — es heißt nur, dass die Behandlung am Bewegungsverhalten und an der Belastbarkeit ansetzt, nicht an einer „kaputten\" Stelle."},
+            {"q": "Hilft Schonung bei chronischem Schmerz?", "a": "Selten. Längere Schonung macht Strukturen weniger belastbar und das Nervensystem empfindlicher. Wer in den ersten Wochen schont, kann das verstehen — wer es über Monate macht, verstärkt das Problem meist. Gezielte, dosierte Bewegung ist in der Schmerzforschung der besser belegte Weg."},
+            {"q": "Wie lange dauert es, bis aktive Therapie greift?", "a": "Erste Veränderungen merken viele Patient*innen nach 2–4 Wochen, deutliche Veränderungen oft nach 8–12 Wochen. Chronische Bilder können 3–6 Monate brauchen. Wichtig ist, dass es eine Tendenz nach oben gibt, nicht dass jede Sitzung „besser\" sein muss."},
+            {"q": "Wann muss ich zum Arzt statt zur Physiotherapie?", "a": "Bei plötzlichem, sehr starkem Schmerz mit Unfall, bei Taubheit oder Lähmung, bei Fieber/Nachtschweiß, bei ungeklärtem Gewichtsverlust oder bei Brustschmerzen. Für solche Bilder sind Hausarzt und Notaufnahme die richtige Anlaufstelle — wir übernehmen danach."},
+            {"q": "Was passiert in der ersten Sitzung bei REHAB FIVE?", "a": "Wir hören dir 20–30 Minuten zu, machen einen funktionellen Befund (was geht, was nicht, mit welcher Intensität) und besprechen einen realistischen Plan. Du verlässt die Praxis mit einer Einschätzung — nicht mit „mal sechs Sitzungen schauen\"."},
+        ]
     },
     {
         "slug": "achilles-tendinopathie",
@@ -507,7 +519,16 @@ BLOG_ARTICLES = [
             "Silbernagel, K. G., et al. (2011). The majority of patients with painful eccentric Achilles tendinopathy recover fully when treated with exercise alone. <em>American Journal of Sports Medicine (AJSM)</em>."
         ],
         "author": "Aric Brämswig",
-        "related": ["achillessehnenruptur", "schmerzen-verstehen"]
+        "related": ["achillessehnenruptur", "schmerzen-verstehen"],
+        "hero_image": "img/beschwerden/sport.jpg",
+        "image_alt": "Laufen nach Achilles-Tendinopathie — Reha bei REHAB FIVE",
+        "faq": [
+            {"q": "Wie unterscheide ich eine Tendinopathie von einem Achillessehnenriss?", "a": "Bei einer Tendinopathie tut die Sehne weh, du kannst aber laufen, dich auf die Zehen stellen und abdrücken — es schmerzt nur. Bei einem Riss spürst du einen knallartigen Schmerz, kannst dich nicht mehr auf die Zehen stellen und tastest oft eine Lücke in der Sehne. Letzteres ist ein Notfall."},
+            {"q": "Soll ich bei Achillessehnenschmerzen mit dem Laufen aufhören?", "a": "Nicht zwingend. In den meisten Fällen darf weiter belastet werden, solange der Schmerz unter etwa 3/10 bleibt und sich am nächsten Morgen nicht verschlechtert. Komplette Schonung verlängert das Problem in der Regel — die Sehne braucht Reize, um sich neu zu organisieren."},
+            {"q": "Welche Übungen helfen wirklich gegen Tendinopathie?", "a": "Wissenschaftlich am besten belegt sind langsame, schwere Wadenheber (Heavy Slow Resistance) und exzentrische Wadenbeugen. Wir bauen die Belastung so auf, dass du nach 8–12 Wochen 80–100 % deiner Funktion zurückhast — gemessen, nicht geschätzt."},
+            {"q": "Wie lange dauert die Heilung einer Achilles-Tendinopathie?", "a": "Realistisch 8–24 Wochen — abhängig davon, wie lange das Problem schon besteht, wie konsequent du das Programm umsetzt und wie viel du parallel belastest. Frische Bilder gehen schneller, chronische Sehnen brauchen Geduld."},
+            {"q": "Kann eine Tendinopathie chronisch werden?", "a": "Ja, wenn sie ignoriert wird oder nur mit Schmerzmitteln „weggedrückt\" wird. Mit strukturiertem Kraftaufbau ist die Prognose dagegen sehr gut — eine 5-Jahres-Studie zeigt rund 80 % vollständige Genesung bei konsequentem Training."},
+        ]
     },
     {
         "slug": "rotatorenmanschettenruptur",
@@ -554,7 +575,16 @@ BLOG_ARTICLES = [
             "Garcia, M. J., et al. (2024). Disparities in Rotator Cuff Tear Progression Definitions. <em>JBJS Open Access</em>."
         ],
         "author": "Aric Brämswig",
-        "related": ["schmerzen-verstehen", "achillessehnenruptur"]
+        "related": ["schmerzen-verstehen", "achillessehnenruptur"],
+        "hero_image": "img/beschwerden/schulter.jpg",
+        "image_alt": "Schulter nach Rotatorenmanschettenruptur — REHAB FIVE Münster",
+        "faq": [
+            {"q": "Muss eine Rotatorenmanschettenruptur immer operiert werden?", "a": "Nein. Bei degenerativen, kleinen oder Teilrupturen ist konservative Therapie oft die erste Wahl und führt bei vielen Patient*innen zu sehr guten Ergebnissen. Operiert wird bei frischem, traumatischem Riss, massivem Kraftverlust oder wenn drei bis sechs Monate Therapie nicht greifen."},
+            {"q": "Wie schnell soll ich nach einem Riss zur Physiotherapie?", "a": "So früh wie möglich. Die ersten 2 Wochen geht es um Schmerz- und Schwellungsmanagement, danach starten wir mit kontrollierter Bewegung — schon bevor entschieden ist, ob operiert wird. Frühes Therapiestarten verbessert den Verlauf nachweislich."},
+            {"q": "Welche Symptome sind typisch?", "a": "Kraftverlust beim seitlichen Armheben, Nachtschmerz beim Liegen auf der betroffenen Seite, Ausstrahlung in den Oberarm und Probleme beim Haarekämmen oder Anziehen. Wenn mehrere davon zusammenkommen, lohnt sich ein klinischer Befund."},
+            {"q": "Was ist der Unterschied zwischen Teilriss und kompletter Ruptur?", "a": "Ein Teilriss betrifft nur einen Teil der Sehnendicke — die Sehne hält noch, aber überlastet schneller. Eine komplette Ruptur ist ein Riss durch die ganze Sehne. Beide können konservativ behandelt werden, die OP-Indikation hängt von Alter, Aktivitätsniveau und Kraftverlust ab — nicht nur vom MRT-Bild."},
+            {"q": "Kann ich nach einem Riss wieder zum Sport zurück?", "a": "In den meisten Fällen ja, auch ohne OP. Wir steuern die Rückkehr über funktionelle Tests (Kraft, Symmetrie, sportartspezifische Bewegungen). Bei konservativer Behandlung 4–6 Monate, nach OP 6–9 Monate bis Vollbelastung."},
+        ]
     },
     {
         "slug": "morbus-bechterew",
@@ -588,7 +618,16 @@ BLOG_ARTICLES = [
             "Gravaldi, L. P., et al. (2022). Effectiveness of Physiotherapy in Patients with Ankylosing Spondylitis. <em>Healthcare (Basel)</em>."
         ],
         "author": "Aric Brämswig",
-        "related": ["schmerzen-verstehen", "rotatorenmanschettenruptur"]
+        "related": ["schmerzen-verstehen", "rotatorenmanschettenruptur"],
+        "hero_image": "img/beschwerden/ruecken.jpg",
+        "image_alt": "Wirbelsäulen-Mobilisation bei Morbus Bechterew — REHAB FIVE",
+        "faq": [
+            {"q": "Wie äußert sich Morbus Bechterew zu Beginn?", "a": "Typisch sind nächtlicher und morgendlicher Rückenschmerz, mehr als 30 Minuten Morgensteifigkeit und Besserung durch Bewegung. Wer aufsteht und sich erstmal „warmlaufen\" muss, sollte das ernst nehmen — gerade bei jungen Erwachsenen."},
+            {"q": "Kann Physiotherapie den Krankheitsverlauf bremsen?", "a": "Ja. Aktuelle Metaanalysen zeigen, dass strukturierte Bewegungstherapie Krankheitsaktivität, Wirbelsäulenfunktion und Lebensqualität messbar verbessert. Wer früh aktiv bleibt, behält langfristig deutlich mehr Beweglichkeit."},
+            {"q": "Welche Bewegungsarten sind besonders hilfreich?", "a": "Mobilisation der Brust- und Lendenwirbelsäule, Atemgymnastik zur Brustkorbweite, Kräftigung der Rumpf- und Hüftmuskulatur. Schwimmen und gezielte Yoga-Varianten sind oft günstig — Kontaktsportarten mit Stoßbelastung weniger."},
+            {"q": "Wie unterscheidet sich Bechterew-Schmerz von einem Bandscheibenproblem?", "a": "Bandscheibenprobleme verstärken sich meist durch Belastung und bessern sich durch Schonung. Beim Bechterew ist es umgekehrt: Ruhe verschlechtert, Bewegung verbessert. Wer morgens schlechter ist als abends, sollte auf eine entzündliche Ursache hin abklären lassen."},
+            {"q": "Wie oft sollte ich Physiotherapie machen?", "a": "In aktiver Krankheitsphase 1–2 Mal pro Woche begleitet, dazu tägliche kurze Heimprogramme (15–20 Minuten). In stabilen Phasen reichen oft betreute Einheiten alle 2–4 Wochen plus eigene Routine."},
+        ]
     },
     {
         "slug": "achillessehnenruptur",
@@ -631,7 +670,16 @@ BLOG_ARTICLES = [
         ],
         "sources": [],
         "author": "Aric Brämswig · Sportphysiotherapie & Rehabilitationsmanagement",
-        "related": ["achilles-tendinopathie", "schmerzen-verstehen"]
+        "related": ["achilles-tendinopathie", "schmerzen-verstehen"],
+        "hero_image": "img/beschwerden/reha.jpg",
+        "image_alt": "Reha nach Achillessehnenruptur — REHAB FIVE Münster",
+        "faq": [
+            {"q": "Operation oder konservative Behandlung — was ist besser?", "a": "Beide Wege führen heute zu vergleichbaren Endergebnissen, wenn die Reha strukturiert läuft. Konservativ wird häufiger bei älteren oder weniger aktiven Patient*innen gewählt, die OP eher bei jungen, sportlich ambitionierten Menschen mit klar diastasiertem Riss. Entscheidend ist nicht die Methode, sondern die Reha danach."},
+            {"q": "Wann darf ich nach der OP wieder belasten?", "a": "Frühfunktionelle Reha ist heute Standard: oft schon nach wenigen Tagen Teilbelastung im Spezialstiefel (Vacoped), zunehmend frei in den ersten 6–8 Wochen. Konkrete Freigaben besprechen wir kriteriumsbasiert — du musst sie nicht aus dem Kalender ablesen."},
+            {"q": "Wie lange muss ich den Spezialstiefel tragen?", "a": "In der Regel 6–8 Wochen, mit schrittweiser Reduktion der Fersenkeil-Höhe. Danach Übergang in normales Schuhwerk mit Ferseneinlage. Das ist nicht in Stein gemeißelt — wir entscheiden anhand der Heilung, nicht nach starrem Plan."},
+            {"q": "Wann darf ich wieder Sport machen?", "a": "Joggen oft nach 4–6 Monaten, kontaktarme Sportarten nach 6 Monaten, Sprung- und Kontaktsport nach 6–9 Monaten. Voraussetzung: 90 %+ Symmetrie in Wadenkraft, Sprungtests und neuromuskulärer Kontrolle — sonst ist das Risiko einer Re-Ruptur deutlich erhöht."},
+            {"q": "Wie hoch ist das Risiko für eine zweite Ruptur?", "a": "Bei strukturierter Reha mit Krafttests vor Sportfreigabe liegt es bei 2–5 %. Ohne Tests, also „nach Gefühl\" zurück, deutlich höher. Deshalb messen wir, bevor wir freigeben — auch wenn sich das nach Übervorsicht anfühlt."},
+        ]
     },
 ]
 
@@ -668,6 +716,9 @@ def render_blog_article(a):
       </div>
 """
 
+    # Hero image absolute URL for schema
+    hero_url = f"https://rehab-five.com/{a.get('hero_image','og.jpg')}"
+
     article_schema = (
         '<script type="application/ld+json">{"@context":"https://schema.org",'
         '"@type":"Article","headline":"' + a['title'].replace('"', '\\"') + '",'
@@ -675,9 +726,63 @@ def render_blog_article(a):
         '"author":{"@type":"Person","name":"' + a['author'] + '"},'
         '"publisher":{"@type":"Organization","name":"REHAB FIVE",'
         '"logo":{"@type":"ImageObject","url":"https://rehab-five.com/img/logo-white.png"}},'
-        '"datePublished":"2026-04-22","image":"https://rehab-five.com/og.jpg"}'
+        '"datePublished":"2026-04-22","image":"' + hero_url + '"}'
         '</script>'
     )
+
+    # Hero-Image Block
+    hero_html = ""
+    if a.get("hero_image"):
+        alt = a.get("image_alt", a['title'])
+        hero_html = (
+            '\n    <figure class="mt-10 -mx-6 sm:mx-0">\n'
+            '      <div class="relative aspect-[16/9] overflow-hidden rounded-sm bg-[#FBF1E0]/5 border border-[#FBF1E0]/10">\n'
+            f'        <img src="../{a["hero_image"]}" alt="{alt}" class="w-full h-full object-cover" loading="eager"/>\n'
+            '        <div class="absolute inset-0" style="background: linear-gradient(180deg, transparent 60%, rgba(31,52,45,0.45) 100%);"></div>\n'
+            '      </div>\n'
+            f'      <figcaption class="mt-3 text-[12px] text-[#FBF1E0]/45 px-6 sm:px-0">{alt}</figcaption>\n'
+            '    </figure>'
+        )
+
+    # FAQ-Block + FAQPage-Schema
+    faq_html = ""
+    faq_schema = ""
+    if a.get("faq"):
+        items = []
+        for qa in a["faq"]:
+            q = qa["q"].replace('<','&lt;').replace('>','&gt;')
+            ans = qa["a"]
+            items.append(
+                f'      <details class="card-glass rounded-sm p-5 sm:p-6 group">\n'
+                f'        <summary class="flex justify-between items-start gap-4 cursor-pointer list-none">\n'
+                f'          <h3 class="text-[#FBF1E0] text-[17px] sm:text-[19px] leading-snug font-bold normal-case tracking-normal flex-1">{q}</h3>\n'
+                f'          <span class="text-[#D99129] text-2xl font-bold leading-none mt-1 group-open:rotate-45 transition-transform">+</span>\n'
+                f'        </summary>\n'
+                f'        <p class="mt-4 text-[#FBF1E0]/75 text-[15px] leading-[1.65]">{ans}</p>\n'
+                f'      </details>'
+            )
+        faq_html = (
+            '\n    <section class="mt-16 pt-10 border-t border-[#FBF1E0]/15" aria-labelledby="faq-h">\n'
+            '      <div class="micro text-[#D99129] mb-4">Häufige Fragen</div>\n'
+            '      <h2 id="faq-h" class="display text-[clamp(28px,4.5vw,52px)] text-[#FBF1E0] leading-[1] mb-8">\n'
+            '        Was Patient*innen <span class="text-[#D99129]">am häufigsten</span> fragen.\n'
+            '      </h2>\n'
+            '      <div class="space-y-3">\n'
+            + '\n'.join(items)
+            + '\n      </div>\n'
+            '    </section>'
+        )
+
+        # FAQPage-Schema for AI/SEO
+        faq_items_json = ",".join(
+            '{"@type":"Question","name":"' + qa["q"].replace('"','\\"') + '",'
+            '"acceptedAnswer":{"@type":"Answer","text":"' + qa["a"].replace('"','\\"') + '"}}'
+            for qa in a["faq"]
+        )
+        faq_schema = (
+            '<script type="application/ld+json">{"@context":"https://schema.org",'
+            '"@type":"FAQPage","mainEntity":[' + faq_items_json + ']}</script>'
+        )
 
     related_html = ""
     if a.get("related"):
@@ -713,8 +818,9 @@ def render_blog_article(a):
     </div>
     <h1 class="display text-[clamp(32px,5.5vw,68px)] text-[#FBF1E0] leading-[1.0]">{a['title']}</h1>
     <p class="mt-8 text-xl text-[#FBF1E0]/75 leading-[1.6]">{a['lead']}</p>
+{hero_html}
 
-    <div class="mt-14 pt-8 border-t border-[#FBF1E0]/15 prose-rf">
+    <div class="mt-12 pt-8 border-t border-[#FBF1E0]/15 prose-rf">
     {body_html}
 {sources_html}
     </div>
@@ -722,6 +828,7 @@ def render_blog_article(a):
     <div class="mt-12 pt-8 border-t border-[#FBF1E0]/15 micro text-[#FBF1E0]/55">
       Autor: {a['author']}
     </div>
+{faq_html}
 
     <div class="mt-16 p-10 card-glass rounded-sm border-l-2 border-[#D99129]">
       <div class="micro text-[#D99129]">Therapie starten</div>
@@ -745,7 +852,8 @@ def render_blog_article(a):
         description=a["lead"],
         canonical=f"https://rehab-five.com/blog/{a['slug']}",
         og_type="article",
-        schema=article_schema,
+        og_image=hero_url,
+        schema=article_schema + faq_schema,
         content=content
     )
 
@@ -753,8 +861,17 @@ def render_blog_article(a):
 def render_blog_index():
     cards = []
     for a in BLOG_ARTICLES:
+        thumb_html = ""
+        if a.get("hero_image"):
+            alt = a.get("image_alt", a['title'])
+            thumb_html = (
+                '<div class="aspect-[16/10] overflow-hidden rounded-sm bg-[#FBF1E0]/5 border border-[#FBF1E0]/10 mb-5 -mx-2 -mt-2">'
+                f'<img src="../{a["hero_image"]}" alt="{alt}" class="w-full h-full object-cover group-hover:scale-[1.03] transition duration-500" loading="lazy"/>'
+                '</div>'
+            )
         cards.append(f"""
       <a href="{a['slug']}.html" class="card-glass rounded-sm p-7 flex flex-col group transition">
+        {thumb_html}
         <div class="flex items-center gap-3 mb-4">
           <div class="micro text-[#D99129]">{a['category']}</div>
           <span class="text-[#FBF1E0]/30">·</span>
@@ -791,6 +908,7 @@ def render_blog_index():
         description="Fundierte Artikel aus der Praxis mit Studienverweisen — Schmerzforschung, Achilles-Tendinopathie, Rotatorenmanschette, Morbus Bechterew, Achillessehnenruptur.",
         canonical="https://rehab-five.com/blog/",
         og_type="website",
+        og_image="https://rehab-five.com/og.jpg",
         schema="",
         content=content
     )
