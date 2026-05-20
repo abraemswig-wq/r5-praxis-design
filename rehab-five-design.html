@@ -2229,6 +2229,18 @@
     });
   }
 
+  // Online-Rezeption → triggert den DocMedico-Floating-Button (#dmrBtnOnlineReception)
+  document.querySelectorAll('.cta-online').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const docBtn = document.getElementById('dmrBtnOnlineReception');
+      if (docBtn) {
+        e.preventDefault();
+        docBtn.click();
+      }
+      // Falls noch nicht geladen: fallback ist der target=_blank Link in href
+    });
+  });
+
   // Side-Nav Active-Section-Highlighting
   const sideNavLinks = document.querySelectorAll('.side-nav a[data-section]');
   if (sideNavLinks.length) {
