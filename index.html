@@ -310,13 +310,18 @@
     <!-- Säulen-Grid — asymmetrische Kachel-Anordnung -->
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-3">
 
-      <!-- Säule 01 — large hero card -->
-      <article class="reveal card-glass rounded-sm p-8 lg:col-span-5 lg:row-span-2 flex flex-col justify-between min-h-[400px]">
-        <div class="num-sculpture text-[120px] md:text-[200px]">01</div>
-        <div>
+      <!-- Säule 01 — large hero card mit Foto-Background -->
+      <article class="reveal card-glass rounded-sm p-8 lg:col-span-5 lg:row-span-2 flex flex-col justify-between min-h-[400px] relative overflow-hidden">
+        <!-- Bild als atmosphärischer Hintergrund -->
+        <div class="absolute inset-0 z-0">
+          <img src="img/gallery/empfang.jpg" alt="" class="w-full h-full object-cover opacity-30"/>
+          <div class="absolute inset-0" style="background: linear-gradient(165deg, rgba(31,52,45,0.65) 0%, rgba(31,52,45,0.92) 60%, #1F342D 100%);"></div>
+        </div>
+        <div class="relative z-10 num-sculpture text-[120px] md:text-[200px]">01</div>
+        <div class="relative z-10">
           <div class="micro text-[#D99129] mb-3">Säule 01</div>
           <h3 class="display-up text-2xl text-[#FBF1E0] tracking-wide">Therapie</h3>
-          <p class="mt-3 text-[15px] text-[#FBF1E0]/65 leading-[1.55]">
+          <p class="mt-3 text-[15px] text-[#FBF1E0]/75 leading-[1.55]">
             Klassische Physio, manuelle Therapie, Lymphdrainage. Das, was bei anderen <span class="ital text-[#FBF1E0]">das Ganze</span> ist, ist bei uns der Anfang.
           </p>
         </div>
@@ -432,6 +437,85 @@
   </div>
 </section>
 
+<!-- ============= BEHIND THE SCENES — Magazin-Spread-Galerie ============= -->
+<section class="relative py-[clamp(96px,14vw,180px)]">
+  <div class="max-w-[1480px] mx-auto px-6 lg:px-10">
+
+    <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 mb-16">
+      <div class="lg:col-span-3 flex items-start gap-4">
+        <span class="ital text-[#D99129] text-6xl leading-[0.8]">▣</span>
+        <div>
+          <div class="micro text-[#D99129]">Behind the Scenes</div>
+          <div class="micro text-[#FBF1E0]/45 mt-1">Sektion 2.5</div>
+        </div>
+      </div>
+      <div class="lg:col-span-9">
+        <h2 class="reveal display text-[clamp(36px,6vw,92px)] text-[#FBF1E0] leading-[0.94]">
+          So sieht's <span class="text-[#D99129]">bei uns aus.</span>
+        </h2>
+        <p class="reveal max-w-2xl mt-6 text-[16px] leading-[1.55] text-[#FBF1E0]/65">
+          Kein Stockfoto-Wartezimmer. Echte Räume, echte Geräte, echtes Team. Zwei Standorte in Münster — gebaut so, wie wir arbeiten.
+        </p>
+      </div>
+    </div>
+
+    <!-- Asymmetrisches Mosaik-Grid -->
+    <div class="grid grid-cols-12 grid-rows-2 gap-2 sm:gap-3 h-[clamp(420px,55vw,680px)]">
+
+      <!-- Tile 1 — large left -->
+      <figure class="reveal col-span-12 sm:col-span-6 lg:col-span-5 row-span-2 relative overflow-hidden rounded-sm group">
+        <img src="img/gallery/wallballs.jpg" alt="Trainingsfläche · Wallballs" class="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.04] transition duration-700"/>
+        <div class="absolute inset-0" style="background: linear-gradient(180deg, transparent 55%, rgba(31,52,45,0.85) 100%);"></div>
+        <figcaption class="absolute bottom-5 left-5 right-5">
+          <div class="micro text-[#D99129]">Friedrich-Ebert · Kursraum</div>
+          <p class="display-up text-base text-[#FBF1E0] mt-1">Trainingsfläche.</p>
+        </figcaption>
+      </figure>
+
+      <!-- Tile 2 — top-right small -->
+      <figure class="reveal col-span-6 sm:col-span-6 lg:col-span-4 row-span-1 relative overflow-hidden rounded-sm group">
+        <img src="img/gallery/kettlebells.jpg" alt="Kettlebells" class="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.04] transition duration-700"/>
+        <div class="absolute inset-0" style="background: linear-gradient(180deg, transparent 55%, rgba(31,52,45,0.8) 100%);"></div>
+        <figcaption class="absolute bottom-4 left-5">
+          <div class="micro text-[#D99129]">Athletik</div>
+        </figcaption>
+      </figure>
+
+      <!-- Tile 3 — top-far-right -->
+      <figure class="reveal col-span-6 sm:col-span-6 lg:col-span-3 row-span-1 relative overflow-hidden rounded-sm group">
+        <img src="img/gallery/hanteln.jpg" alt="Hanteln" class="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.04] transition duration-700"/>
+        <div class="absolute inset-0" style="background: linear-gradient(180deg, transparent 55%, rgba(31,52,45,0.8) 100%);"></div>
+        <figcaption class="absolute bottom-4 left-5">
+          <div class="micro text-[#D99129]">Kraft</div>
+        </figcaption>
+      </figure>
+
+      <!-- Tile 4 — bottom-mid -->
+      <figure class="reveal col-span-6 sm:col-span-4 lg:col-span-3 row-span-1 relative overflow-hidden rounded-sm group">
+        <img src="img/gallery/squat-kurs.jpg" alt="Kursszene Squat" class="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.04] transition duration-700"/>
+        <div class="absolute inset-0" style="background: linear-gradient(180deg, transparent 55%, rgba(31,52,45,0.8) 100%);"></div>
+        <figcaption class="absolute bottom-4 left-5">
+          <div class="micro text-[#D99129]">Kurs · Squat</div>
+        </figcaption>
+      </figure>
+
+      <!-- Tile 5 — bottom-right wide -->
+      <figure class="reveal col-span-6 sm:col-span-4 lg:col-span-4 row-span-1 relative overflow-hidden rounded-sm group">
+        <img src="img/gallery/lounge.jpg" alt="Lounge Scharnhorst" class="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.04] transition duration-700"/>
+        <div class="absolute inset-0" style="background: linear-gradient(180deg, transparent 55%, rgba(31,52,45,0.85) 100%);"></div>
+        <figcaption class="absolute bottom-5 left-5">
+          <div class="micro text-[#D99129]">Scharnhorst · Lounge</div>
+          <p class="display-up text-sm text-[#FBF1E0] mt-1">Ankommen, bevor die Behandlung beginnt.</p>
+        </figcaption>
+      </figure>
+    </div>
+
+    <p class="mt-10 text-center text-[14px] text-[#FBF1E0]/55 micro tracking-widest">
+      <span class="text-[#D99129]">∗</span> Beide Standorte mit voller Ausstattung · Mehr im Bereich <a href="#standorte" class="ulink text-[#FBF1E0]/85 hover:text-[#FBF1E0]">Standorte</a>
+    </p>
+  </div>
+</section>
+
 <!-- ============= DIAGNOSTIK ============= -->
 <section id="diagnostik" class="relative py-[clamp(96px,14vw,180px)]">
   <div class="max-w-[1480px] mx-auto px-6 lg:px-10">
@@ -518,67 +602,91 @@
       </div>
     </div>
 
-    <!-- Beschwerden-Grid -->
+    <!-- Beschwerden-Grid — mit Bildleisten -->
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
 
-      <a href="#" class="reveal card-glass rounded-sm p-7 flex flex-col group">
-        <div class="flex items-start justify-between">
-          <div class="num-sculpture text-[56px]">01</div>
-          <span class="micro text-[#D99129] mt-3">Rücken</span>
+      <a href="#" class="reveal card-glass rounded-sm overflow-hidden flex flex-col group">
+        <div class="aspect-[16/10] overflow-hidden relative">
+          <img src="img/beschwerden/ruecken.jpg" alt="Rücken &amp; Bandscheibe" class="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.05] transition duration-700"/>
+          <div class="absolute inset-0" style="background: linear-gradient(180deg, transparent 40%, rgba(31,52,45,0.85) 100%);"></div>
+          <div class="absolute top-4 left-5"><span class="micro text-[#D99129] bg-[#1F342D]/60 px-2.5 py-1 rounded-full">Rücken</span></div>
+          <div class="absolute bottom-3 right-4 num-sculpture text-[44px] text-[#FBF1E0]/85">01</div>
         </div>
-        <h3 class="display-up text-lg text-[#FBF1E0] mt-5">Rücken &amp; Bandscheibe</h3>
-        <p class="mt-2 text-[14px] text-[#FBF1E0]/65 leading-[1.55] flex-1">Bandscheibenvorfall, chronischer Rücken, ISG — wir bringen Stabilität zurück und halten sie.</p>
-        <span class="ulink mt-4 inline-flex text-[13px] font-bold text-[#D99129]">Mehr erfahren →</span>
+        <div class="p-6 flex flex-col flex-1">
+          <h3 class="display-up text-lg text-[#FBF1E0]">Rücken &amp; Bandscheibe</h3>
+          <p class="mt-2 text-[14px] text-[#FBF1E0]/65 leading-[1.55] flex-1">Bandscheibenvorfall, chronischer Rücken, ISG — wir bringen Stabilität zurück und halten sie.</p>
+          <span class="ulink mt-4 inline-flex text-[13px] font-bold text-[#D99129]">Mehr erfahren →</span>
+        </div>
       </a>
 
-      <a href="#" class="reveal card-glass rounded-sm p-7 flex flex-col group">
-        <div class="flex items-start justify-between">
-          <div class="num-sculpture text-[56px]">02</div>
-          <span class="micro text-[#D99129] mt-3">Knie / Hüfte</span>
+      <a href="#" class="reveal card-glass rounded-sm overflow-hidden flex flex-col group">
+        <div class="aspect-[16/10] overflow-hidden relative">
+          <img src="img/beschwerden/knie-huefte.jpg" alt="Knie &amp; Hüfte" class="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.05] transition duration-700"/>
+          <div class="absolute inset-0" style="background: linear-gradient(180deg, transparent 40%, rgba(31,52,45,0.85) 100%);"></div>
+          <div class="absolute top-4 left-5"><span class="micro text-[#D99129] bg-[#1F342D]/60 px-2.5 py-1 rounded-full">Knie / Hüfte</span></div>
+          <div class="absolute bottom-3 right-4 num-sculpture text-[44px] text-[#FBF1E0]/85">02</div>
         </div>
-        <h3 class="display-up text-lg text-[#FBF1E0] mt-5">Knie &amp; Hüfte</h3>
-        <p class="mt-2 text-[14px] text-[#FBF1E0]/65 leading-[1.55] flex-1">Vor und nach OP, Meniskus, Kreuzband, Arthrose. Strukturierte Reha mit klarem Ziel.</p>
-        <span class="ulink mt-4 inline-flex text-[13px] font-bold text-[#D99129]">Mehr erfahren →</span>
+        <div class="p-6 flex flex-col flex-1">
+          <h3 class="display-up text-lg text-[#FBF1E0]">Knie &amp; Hüfte</h3>
+          <p class="mt-2 text-[14px] text-[#FBF1E0]/65 leading-[1.55] flex-1">Vor und nach OP, Meniskus, Kreuzband, Arthrose. Strukturierte Reha mit klarem Ziel.</p>
+          <span class="ulink mt-4 inline-flex text-[13px] font-bold text-[#D99129]">Mehr erfahren →</span>
+        </div>
       </a>
 
-      <a href="#" class="reveal card-glass rounded-sm p-7 flex flex-col group">
-        <div class="flex items-start justify-between">
-          <div class="num-sculpture text-[56px]">03</div>
-          <span class="micro text-[#D99129] mt-3">Schulter</span>
+      <a href="#" class="reveal card-glass rounded-sm overflow-hidden flex flex-col group">
+        <div class="aspect-[16/10] overflow-hidden relative">
+          <img src="img/beschwerden/schulter.jpg" alt="Schulter &amp; Nacken" class="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.05] transition duration-700"/>
+          <div class="absolute inset-0" style="background: linear-gradient(180deg, transparent 40%, rgba(31,52,45,0.85) 100%);"></div>
+          <div class="absolute top-4 left-5"><span class="micro text-[#D99129] bg-[#1F342D]/60 px-2.5 py-1 rounded-full">Schulter</span></div>
+          <div class="absolute bottom-3 right-4 num-sculpture text-[44px] text-[#FBF1E0]/85">03</div>
         </div>
-        <h3 class="display-up text-lg text-[#FBF1E0] mt-5">Schulter &amp; Nacken</h3>
-        <p class="mt-2 text-[14px] text-[#FBF1E0]/65 leading-[1.55] flex-1">Impingement, Frozen Shoulder, chronische Verspannungen. Befund, Therapie, Aufbau.</p>
-        <span class="ulink mt-4 inline-flex text-[13px] font-bold text-[#D99129]">Mehr erfahren →</span>
+        <div class="p-6 flex flex-col flex-1">
+          <h3 class="display-up text-lg text-[#FBF1E0]">Schulter &amp; Nacken</h3>
+          <p class="mt-2 text-[14px] text-[#FBF1E0]/65 leading-[1.55] flex-1">Impingement, Frozen Shoulder, chronische Verspannungen. Befund, Therapie, Aufbau.</p>
+          <span class="ulink mt-4 inline-flex text-[13px] font-bold text-[#D99129]">Mehr erfahren →</span>
+        </div>
       </a>
 
-      <a href="#" class="reveal card-glass rounded-sm p-7 flex flex-col group">
-        <div class="flex items-start justify-between">
-          <div class="num-sculpture text-[56px]">04</div>
-          <span class="micro text-[#D99129] mt-3">Sport</span>
+      <a href="#" class="reveal card-glass rounded-sm overflow-hidden flex flex-col group">
+        <div class="aspect-[16/10] overflow-hidden relative">
+          <img src="img/beschwerden/sport.jpg" alt="Sportverletzungen" class="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.05] transition duration-700"/>
+          <div class="absolute inset-0" style="background: linear-gradient(180deg, transparent 40%, rgba(31,52,45,0.85) 100%);"></div>
+          <div class="absolute top-4 left-5"><span class="micro text-[#D99129] bg-[#1F342D]/60 px-2.5 py-1 rounded-full">Sport</span></div>
+          <div class="absolute bottom-3 right-4 num-sculpture text-[44px] text-[#FBF1E0]/85">04</div>
         </div>
-        <h3 class="display-up text-lg text-[#FBF1E0] mt-5">Sportverletzungen</h3>
-        <p class="mt-2 text-[14px] text-[#FBF1E0]/65 leading-[1.55] flex-1">Bänderriss, Muskelfaserriss. Return-to-Sport — nicht „in sechs Wochen wieder", sondern wenn der Körper bereit ist.</p>
-        <span class="ulink mt-4 inline-flex text-[13px] font-bold text-[#D99129]">Mehr erfahren →</span>
+        <div class="p-6 flex flex-col flex-1">
+          <h3 class="display-up text-lg text-[#FBF1E0]">Sportverletzungen</h3>
+          <p class="mt-2 text-[14px] text-[#FBF1E0]/65 leading-[1.55] flex-1">Bänderriss, Muskelfaserriss. Return-to-Sport — nicht „in sechs Wochen wieder", sondern wenn der Körper bereit ist.</p>
+          <span class="ulink mt-4 inline-flex text-[13px] font-bold text-[#D99129]">Mehr erfahren →</span>
+        </div>
       </a>
 
-      <a href="#" class="reveal card-glass rounded-sm p-7 flex flex-col group">
-        <div class="flex items-start justify-between">
-          <div class="num-sculpture text-[56px]">05</div>
-          <span class="micro text-[#D99129] mt-3">Reha</span>
+      <a href="#" class="reveal card-glass rounded-sm overflow-hidden flex flex-col group">
+        <div class="aspect-[16/10] overflow-hidden relative">
+          <img src="img/beschwerden/reha.jpg" alt="Nach OP / Reha" class="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.05] transition duration-700"/>
+          <div class="absolute inset-0" style="background: linear-gradient(180deg, transparent 40%, rgba(31,52,45,0.85) 100%);"></div>
+          <div class="absolute top-4 left-5"><span class="micro text-[#D99129] bg-[#1F342D]/60 px-2.5 py-1 rounded-full">Reha</span></div>
+          <div class="absolute bottom-3 right-4 num-sculpture text-[44px] text-[#FBF1E0]/85">05</div>
         </div>
-        <h3 class="display-up text-lg text-[#FBF1E0] mt-5">Nach OP / Reha</h3>
-        <p class="mt-2 text-[14px] text-[#FBF1E0]/65 leading-[1.55] flex-1">Strukturierte Nachsorge, die nicht endet, wenn die Rezeptbox leer ist. Therapie → Training → Athletik.</p>
-        <span class="ulink mt-4 inline-flex text-[13px] font-bold text-[#D99129]">Mehr erfahren →</span>
+        <div class="p-6 flex flex-col flex-1">
+          <h3 class="display-up text-lg text-[#FBF1E0]">Nach OP / Reha</h3>
+          <p class="mt-2 text-[14px] text-[#FBF1E0]/65 leading-[1.55] flex-1">Strukturierte Nachsorge, die nicht endet, wenn die Rezeptbox leer ist. Therapie → Training → Athletik.</p>
+          <span class="ulink mt-4 inline-flex text-[13px] font-bold text-[#D99129]">Mehr erfahren →</span>
+        </div>
       </a>
 
-      <a href="#" class="reveal card-glass rounded-sm p-7 flex flex-col group">
-        <div class="flex items-start justify-between">
-          <div class="num-sculpture text-[56px]">06</div>
-          <span class="micro text-[#D99129] mt-3">Andere</span>
+      <a href="#" class="reveal card-glass rounded-sm overflow-hidden flex flex-col group">
+        <div class="aspect-[16/10] overflow-hidden relative">
+          <img src="img/beschwerden/andere.jpg" alt="Andere Beschwerden" class="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.05] transition duration-700"/>
+          <div class="absolute inset-0" style="background: linear-gradient(180deg, transparent 40%, rgba(31,52,45,0.85) 100%);"></div>
+          <div class="absolute top-4 left-5"><span class="micro text-[#D99129] bg-[#1F342D]/60 px-2.5 py-1 rounded-full">Andere</span></div>
+          <div class="absolute bottom-3 right-4 num-sculpture text-[44px] text-[#FBF1E0]/85">06</div>
         </div>
-        <h3 class="display-up text-lg text-[#FBF1E0] mt-5">Andere Beschwerden</h3>
-        <p class="mt-2 text-[14px] text-[#FBF1E0]/65 leading-[1.55] flex-1">Lymphdrainage, Kiefer, neurologische Therapie, Migräne. Sprich mit uns — wir sagen ehrlich, ob wir der richtige Ort sind.</p>
-        <span class="ulink mt-4 inline-flex text-[13px] font-bold text-[#D99129]">Mehr erfahren →</span>
+        <div class="p-6 flex flex-col flex-1">
+          <h3 class="display-up text-lg text-[#FBF1E0]">Andere Beschwerden</h3>
+          <p class="mt-2 text-[14px] text-[#FBF1E0]/65 leading-[1.55] flex-1">Lymphdrainage, Kiefer, neurologische Therapie, Migräne. Sprich mit uns — wir sagen ehrlich, ob wir der richtige Ort sind.</p>
+          <span class="ulink mt-4 inline-flex text-[13px] font-bold text-[#D99129]">Mehr erfahren →</span>
+        </div>
       </a>
     </div>
   </div>
