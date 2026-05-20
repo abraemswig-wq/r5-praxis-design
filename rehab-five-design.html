@@ -363,26 +363,68 @@
     /* Display-Headlines tighter */
     .display { letter-spacing: -0.025em; }
 
-    /* Mobile-Akkordeon-Helper für lange Sektionen */
-    details.mob-acc > summary {
-      list-style: none; cursor: pointer;
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 18px 0;
-      border-bottom: 1px solid rgba(251,241,224,0.15);
-      font-family: 'Barlow', sans-serif;
+    /* === MOBILE-AKKORDEONS für lange Card-Sektionen === */
+
+    /* 5-Säulen-Karten: Mobile-Akkordeon */
+    section#methode article.card-glass.acc-mob {
+      cursor: pointer;
+      position: relative;
+      padding: 18px 56px 18px 22px !important;
+      min-height: 0 !important;
+    }
+    section#methode article.card-glass.acc-mob::after {
+      content: "+";
+      position: absolute;
+      top: 20px; right: 22px;
+      color: #D99129;
+      font-size: 32px;
       font-weight: 800;
-      font-size: 22px;
-      text-transform: uppercase;
-      color: #FBF1E0;
-      letter-spacing: -0.01em;
+      line-height: 1;
     }
-    details.mob-acc > summary::-webkit-details-marker { display: none; }
-    details.mob-acc > summary::after {
-      content: "+"; color: #D99129; font-size: 28px; font-weight: 700;
-      transition: transform 0.2s;
+    section#methode article.card-glass.acc-mob.expanded::after { content: "−"; }
+    section#methode article.card-glass.acc-mob .num-sculpture {
+      font-size: 36px !important;
+      line-height: 1 !important;
+      margin-bottom: 0 !important;
+      display: inline-block;
     }
-    details.mob-acc[open] > summary::after { content: "−"; }
-    details.mob-acc > .mob-acc-content { padding: 12px 0 18px; }
+    section#methode article.card-glass.acc-mob h3 {
+      display: inline-block;
+      margin-left: 14px;
+      vertical-align: baseline;
+      font-size: 18px;
+    }
+    section#methode article.card-glass.acc-mob .micro,
+    section#methode article.card-glass.acc-mob p { display: none; }
+    section#methode article.card-glass.acc-mob.expanded .micro,
+    section#methode article.card-glass.acc-mob.expanded p { display: block; margin-top: 12px; }
+    /* Hero-Card der ersten Säule auf Mobile auch kompakt */
+    section#methode article.card-glass.acc-mob.lg\:col-span-5 { min-height: 0 !important; }
+
+    /* Beschwerden-Karten: Mobile-Akkordeon */
+    section#beschwerden a.card-glass.acc-mob {
+      padding: 0 !important;
+      position: relative;
+      cursor: pointer;
+    }
+    section#beschwerden a.card-glass.acc-mob .aspect-\[16\/10\] { display: none; }
+    section#beschwerden a.card-glass.acc-mob > .p-6 {
+      padding: 18px 56px 18px 22px !important;
+    }
+    section#beschwerden a.card-glass.acc-mob p { display: none; }
+    section#beschwerden a.card-glass.acc-mob.expanded p { display: block; margin-top: 12px; }
+    section#beschwerden a.card-glass.acc-mob .link { display: none; }
+    section#beschwerden a.card-glass.acc-mob.expanded .link { display: inline-flex; margin-top: 14px; }
+    section#beschwerden a.card-glass.acc-mob::after {
+      content: "+";
+      position: absolute;
+      top: 18px; right: 22px;
+      color: #D99129;
+      font-size: 32px;
+      font-weight: 800;
+      line-height: 1;
+    }
+    section#beschwerden a.card-glass.acc-mob.expanded::after { content: "−"; }
   }
 </style>
 </head>
@@ -592,7 +634,7 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-3">
 
       <!-- Säule 01 — large hero card mit Foto-Background -->
-      <article class="reveal card-glass rounded-sm p-8 lg:col-span-5 lg:row-span-2 flex flex-col justify-between min-h-[400px] relative overflow-hidden">
+      <article class="reveal card-glass acc-mob rounded-sm p-8 lg:col-span-5 lg:row-span-2 flex flex-col justify-between min-h-[400px] relative overflow-hidden">
         <!-- Bild als atmosphärischer Hintergrund -->
         <div class="absolute inset-0 z-0">
           <img loading="lazy" src="img/gallery/empfang.jpg" alt="" class="w-full h-full object-cover opacity-30"/>
@@ -609,7 +651,7 @@
       </article>
 
       <!-- Säule 02 -->
-      <article class="reveal card-glass rounded-sm p-7 lg:col-span-4">
+      <article class="reveal card-glass acc-mob rounded-sm p-7 lg:col-span-4">
         <div class="flex items-start justify-between">
           <div class="num-sculpture text-[80px]">02</div>
           <span class="micro text-[#FBF1E0]/45 mt-3">→ aus 01</span>
@@ -619,7 +661,7 @@
       </article>
 
       <!-- Säule 03 -->
-      <article class="reveal card-glass rounded-sm p-7 lg:col-span-3">
+      <article class="reveal card-glass acc-mob rounded-sm p-7 lg:col-span-3">
         <div class="flex items-start justify-between">
           <div class="num-sculpture text-[80px]">03</div>
           <span class="micro text-[#FBF1E0]/45 mt-3">↑</span>
@@ -629,7 +671,7 @@
       </article>
 
       <!-- Säule 04 -->
-      <article class="reveal card-glass rounded-sm p-7 lg:col-span-3">
+      <article class="reveal card-glass acc-mob rounded-sm p-7 lg:col-span-3">
         <div class="flex items-start justify-between">
           <div class="num-sculpture text-[80px]">04</div>
           <span class="micro text-[#FBF1E0]/45 mt-3">∞</span>
@@ -1275,7 +1317,7 @@
     <!-- Beschwerden-Grid — mit Bildleisten -->
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
 
-      <a href="#" class="reveal card-glass rounded-sm overflow-hidden flex flex-col group">
+      <a href="#" class="reveal card-glass acc-mob rounded-sm overflow-hidden flex flex-col group">
         <div class="aspect-[16/10] overflow-hidden relative">
           <img loading="lazy" src="img/beschwerden/ruecken.jpg" alt="Rücken &amp; Bandscheibe" class="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.05] transition duration-700"/>
           <div class="absolute inset-0" style="background: linear-gradient(180deg, transparent 40%, rgba(31,52,45,0.85) 100%);"></div>
@@ -1289,7 +1331,7 @@
         </div>
       </a>
 
-      <a href="#" class="reveal card-glass rounded-sm overflow-hidden flex flex-col group">
+      <a href="#" class="reveal card-glass acc-mob rounded-sm overflow-hidden flex flex-col group">
         <div class="aspect-[16/10] overflow-hidden relative">
           <img loading="lazy" src="img/beschwerden/knie-huefte.jpg" alt="Knie &amp; Hüfte" class="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.05] transition duration-700"/>
           <div class="absolute inset-0" style="background: linear-gradient(180deg, transparent 40%, rgba(31,52,45,0.85) 100%);"></div>
@@ -1303,7 +1345,7 @@
         </div>
       </a>
 
-      <a href="#" class="reveal card-glass rounded-sm overflow-hidden flex flex-col group">
+      <a href="#" class="reveal card-glass acc-mob rounded-sm overflow-hidden flex flex-col group">
         <div class="aspect-[16/10] overflow-hidden relative">
           <img loading="lazy" src="img/beschwerden/schulter.jpg" alt="Schulter &amp; Nacken" class="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.05] transition duration-700"/>
           <div class="absolute inset-0" style="background: linear-gradient(180deg, transparent 40%, rgba(31,52,45,0.85) 100%);"></div>
@@ -1317,7 +1359,7 @@
         </div>
       </a>
 
-      <a href="#" class="reveal card-glass rounded-sm overflow-hidden flex flex-col group">
+      <a href="#" class="reveal card-glass acc-mob rounded-sm overflow-hidden flex flex-col group">
         <div class="aspect-[16/10] overflow-hidden relative">
           <img loading="lazy" src="img/beschwerden/sport.jpg" alt="Sportverletzungen" class="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.05] transition duration-700"/>
           <div class="absolute inset-0" style="background: linear-gradient(180deg, transparent 40%, rgba(31,52,45,0.85) 100%);"></div>
@@ -1331,7 +1373,7 @@
         </div>
       </a>
 
-      <a href="#" class="reveal card-glass rounded-sm overflow-hidden flex flex-col group">
+      <a href="#" class="reveal card-glass acc-mob rounded-sm overflow-hidden flex flex-col group">
         <div class="aspect-[16/10] overflow-hidden relative">
           <img loading="lazy" src="img/beschwerden/reha.jpg" alt="Nach OP / Reha" class="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.05] transition duration-700"/>
           <div class="absolute inset-0" style="background: linear-gradient(180deg, transparent 40%, rgba(31,52,45,0.85) 100%);"></div>
@@ -1345,7 +1387,7 @@
         </div>
       </a>
 
-      <a href="#" class="reveal card-glass rounded-sm overflow-hidden flex flex-col group">
+      <a href="#" class="reveal card-glass acc-mob rounded-sm overflow-hidden flex flex-col group">
         <div class="aspect-[16/10] overflow-hidden relative">
           <img loading="lazy" src="img/beschwerden/andere.jpg" alt="Andere Beschwerden" class="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.05] transition duration-700"/>
           <div class="absolute inset-0" style="background: linear-gradient(180deg, transparent 40%, rgba(31,52,45,0.85) 100%);"></div>
@@ -1406,7 +1448,7 @@
       </article>
 
       <!-- Card 311 -->
-      <article class="reveal card-glass rounded-sm p-7 lg:col-span-4">
+      <article class="reveal card-glass acc-mob rounded-sm p-7 lg:col-span-4">
         <div class="flex items-start justify-between">
           <div class="num-sculpture text-[72px]">№ 311</div>
           <span class="micro text-[#FBF1E0]/45 mt-3">Mai 26</span>
@@ -1417,7 +1459,7 @@
       </article>
 
       <!-- Card 308 -->
-      <article class="reveal card-glass rounded-sm p-7 lg:col-span-3">
+      <article class="reveal card-glass acc-mob rounded-sm p-7 lg:col-span-3">
         <div class="flex items-start justify-between">
           <div class="num-sculpture text-[72px]">№ 308</div>
           <span class="micro text-[#FBF1E0]/45 mt-3">Apr 26</span>
@@ -1428,7 +1470,7 @@
       </article>
 
       <!-- Card 305 -->
-      <article class="reveal card-glass rounded-sm p-7 lg:col-span-4">
+      <article class="reveal card-glass acc-mob rounded-sm p-7 lg:col-span-4">
         <div class="flex items-start justify-between">
           <div class="num-sculpture text-[72px]">№ 305</div>
           <span class="micro text-[#FBF1E0]/45 mt-3">Apr 26</span>
@@ -1439,7 +1481,7 @@
       </article>
 
       <!-- Card 302 -->
-      <article class="reveal card-glass rounded-sm p-7 lg:col-span-3">
+      <article class="reveal card-glass acc-mob rounded-sm p-7 lg:col-span-3">
         <div class="flex items-start justify-between">
           <div class="num-sculpture text-[72px]">№ 302</div>
           <span class="micro text-[#FBF1E0]/45 mt-3">Mär 26</span>
@@ -2289,6 +2331,26 @@
       }
       // Falls noch nicht geladen: fallback ist der target=_blank Link in href
     });
+  });
+
+  // Mobile-Akkordeon — Klick auf Säulen-/Beschwerden-Karte togglet expanded
+  function setupMobileAcc() {
+    document.querySelectorAll('.acc-mob').forEach(card => {
+      if (card.dataset.accBound) return;
+      card.dataset.accBound = '1';
+      card.addEventListener('click', (e) => {
+        if (window.innerWidth >= 640) return;
+        // Bei Link-Karten auf Mobile nur toggeln, nicht navigieren
+        if (card.tagName === 'A') e.preventDefault();
+        card.classList.toggle('expanded');
+      });
+    });
+  }
+  setupMobileAcc();
+  window.addEventListener('resize', () => {
+    if (window.innerWidth >= 640) {
+      document.querySelectorAll('.acc-mob.expanded').forEach(c => c.classList.remove('expanded'));
+    }
   });
 
   // Side-Nav Active-Section-Highlighting
