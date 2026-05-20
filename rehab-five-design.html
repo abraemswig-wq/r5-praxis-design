@@ -120,11 +120,28 @@
   }
   main, header, footer { position: relative; z-index: 2; }
 
-  /* Display Typography */
-  .display { font-family: 'Fraunces', Georgia, serif; font-style: italic; font-weight: 800; letter-spacing: -0.04em; line-height: 0.92; }
-  .display-up { font-family: 'Barlow', sans-serif; font-weight: 900; letter-spacing: 0.005em; text-transform: uppercase; }
-  .micro { font-family: 'Barlow', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.28em; text-transform: uppercase; }
-  .ital  { font-family: 'Fraunces', Georgia, serif; font-style: italic; font-weight: 800; }
+  /* Globale Mindest-Lesbarkeit — Body min. 18px */
+  body { font-size: 18px; line-height: 1.55; }
+
+  /* Display Typography — Barlow Bold Uppercase wie auf rehab-five.com */
+  .display    { font-family: 'Barlow', sans-serif; font-weight: 800; letter-spacing: -0.01em; line-height: 0.95; text-transform: uppercase; }
+  .display-up { font-family: 'Barlow', sans-serif; font-weight: 800; letter-spacing: 0.005em; text-transform: uppercase; }
+  .micro      { font-family: 'Barlow', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; }
+  /* Akzent-Klassen behalten Orange als Farb-Highlight, Schrift jetzt Barlow Bold */
+  .serif-em { color: #D99129; font-weight: 800; font-style: normal; }
+  .ital     { color: #D99129; font-weight: 800; font-style: normal; }
+
+  /* H1-H3 generell Uppercase + Barlow Bold */
+  h1, h2, h3 { font-family: 'Barlow', sans-serif; font-weight: 800; text-transform: uppercase; letter-spacing: -0.01em; }
+
+  /* Footer-Lesbarkeits-Polish — min. 16px (von 13–14px hoch) */
+  footer ul li { font-size: 16px !important; line-height: 1.65 !important; }
+  footer h5 { font-size: 13px !important; }
+  footer .footer-bottom span { font-size: 14px !important; }
+
+  /* Card-Body & Sektions-Texte — min. 17–18px */
+  .card-glass p, section p:not(.micro):not(.eyebrow) { font-size: 17px; line-height: 1.6; }
+  .card-glass h3, .card-glass h4 { font-size: 22px !important; }
 
   /* Reveal-Animationen — staggered fade + rise */
   @keyframes rise { from { transform: translateY(24px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
@@ -215,16 +232,85 @@
 
   /* Mark-Index Side — "01 · 02 · 03" Numerik-Akzent */
   .mark-index { writing-mode: vertical-rl; transform: rotate(180deg); font-feature-settings: "tnum"; }
+
+  /* Skip-Link — Accessibility */
+  .skip-link {
+    position: absolute; top: -100px; left: 8px;
+    background: #D99129; color: #1F342D;
+    padding: 12px 20px; border-radius: 4px;
+    font-weight: 700; z-index: 100;
+    transition: top 0.2s;
+  }
+  .skip-link:focus { top: 8px; outline: 2px solid #FBF1E0; outline-offset: 2px; }
+
+  /* Sichtbare Focus-States für Keyboard-Navigation */
+  a:focus-visible, button:focus-visible, input:focus-visible, summary:focus-visible {
+    outline: 2px solid #D99129;
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  /* Reduce Motion */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+    .reveal { opacity: 1; transform: none; }
+  }
+
+  /* Sticky Side-Nav — Editorial-Look */
+  .side-nav {
+    position: fixed; left: 24px; top: 50%; transform: translateY(-50%);
+    z-index: 40; display: none;
+  }
+  @media (min-width: 1280px) { .side-nav { display: block; } }
+  .side-nav ul { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+  .side-nav a {
+    display: flex; align-items: center; gap: 10px;
+    font-size: 11px; font-weight: 600; letter-spacing: 0.15em;
+    text-transform: uppercase; color: rgba(251,241,224,0.35);
+    transition: color 0.2s;
+  }
+  .side-nav a::before {
+    content: ""; display: block;
+    width: 18px; height: 1px; background: rgba(251,241,224,0.25);
+    transition: width 0.2s, background 0.2s;
+  }
+  .side-nav a:hover, .side-nav a.active { color: #D99129; }
+  .side-nav a:hover::before, .side-nav a.active::before { width: 32px; background: #D99129; }
 </style>
 </head>
 
 <body>
 
+<!-- Skip-Link für Screen-Reader & Keyboard-Navigation -->
+<a href="#main" class="skip-link">Zum Hauptinhalt springen</a>
+
+<!-- Sticky Side-Nav (nur Desktop ≥1280px) — Editorial-Magazin-Inhaltsverzeichnis -->
+<nav class="side-nav" aria-label="Inhaltsverzeichnis">
+  <ul>
+    <li><a href="#methode" data-section="methode">Methode</a></li>
+    <li><a href="#manifest" data-section="manifest">Manifest</a></li>
+    <li><a href="#founder" data-section="founder">Founder</a></li>
+    <li><a href="#diagnostik" data-section="diagnostik">Diagnostik</a></li>
+    <li><a href="#triage" data-section="triage">Triage</a></li>
+    <li><a href="#preise" data-section="preise">Preise</a></li>
+    <li><a href="#beschwerden" data-section="beschwerden">Beschwerden</a></li>
+    <li><a href="#stimmen" data-section="stimmen">Stimmen</a></li>
+    <li><a href="#team" data-section="team">Team</a></li>
+    <li><a href="#wissen" data-section="wissen">Wissen</a></li>
+    <li><a href="#standorte" data-section="standorte">Standorte</a></li>
+  </ul>
+</nav>
+
 <!-- ============= HEADER ============= -->
 <header class="sticky top-0 z-50 backdrop-blur bg-[#1F342D]/85 border-b border-[#FBF1E0]/10">
   <div class="max-w-[1480px] mx-auto px-6 lg:px-10 h-[68px] flex items-center justify-between">
     <a href="/" class="flex items-center gap-4">
-      <img src="img/logo-white.png" alt="REHAB FIVE" class="h-7 w-auto"/>
+      <img loading="lazy" src="img/logo-white.png" alt="REHAB FIVE" class="h-7 w-auto"/>
       <span class="hidden md:inline-block micro text-[#FBF1E0]/55 border-l border-[#FBF1E0]/20 pl-4">Physiotherapie · Münster</span>
     </a>
     <nav class="hidden lg:flex items-center gap-8 text-sm">
@@ -275,7 +361,7 @@
   </div>
 </header>
 
-<main>
+<main id="main" tabindex="-1">
 
 <!-- ============= HERO — Full-Bleed-Bild als Hintergrund ============= -->
 <section class="relative min-h-[calc(100vh-68px)] overflow-hidden">
@@ -410,7 +496,7 @@
       <article class="reveal card-glass rounded-sm p-8 lg:col-span-5 lg:row-span-2 flex flex-col justify-between min-h-[400px] relative overflow-hidden">
         <!-- Bild als atmosphärischer Hintergrund -->
         <div class="absolute inset-0 z-0">
-          <img src="img/gallery/empfang.jpg" alt="" class="w-full h-full object-cover opacity-30"/>
+          <img loading="lazy" src="img/gallery/empfang.jpg" alt="" class="w-full h-full object-cover opacity-30"/>
           <div class="absolute inset-0" style="background: linear-gradient(165deg, rgba(31,52,45,0.65) 0%, rgba(31,52,45,0.92) 60%, #1F342D 100%);"></div>
         </div>
         <div class="relative z-10 num-sculpture text-[120px] md:text-[200px]">01</div>
@@ -560,7 +646,7 @@
           <div class="absolute -top-3 -left-3 right-12 h-[2px] bg-[#D99129]"></div>
           <div class="absolute -top-3 -left-3 w-[2px] h-32 bg-[#D99129]"></div>
           <div class="img-vignette rounded-sm overflow-hidden">
-            <img src="img/team/aric-bramswig.jpg" alt="Aric Brämswig — Gründer REHAB FIVE" class="w-full aspect-[4/5] object-cover"/>
+            <img loading="lazy" src="img/team/aric-bramswig.jpg" alt="Aric Brämswig — Gründer REHAB FIVE" class="w-full aspect-[4/5] object-cover"/>
           </div>
           <div class="absolute bottom-5 left-5 right-5">
             <div class="micro text-[#D99129]">Gründer · CEO</div>
@@ -633,7 +719,7 @@
 
       <!-- Tile 1 — large left -->
       <figure class="reveal col-span-12 sm:col-span-6 lg:col-span-5 row-span-2 relative overflow-hidden rounded-sm group">
-        <img src="img/gallery/wallballs.jpg" alt="Trainingsfläche · Wallballs" class="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.04] transition duration-700"/>
+        <img loading="lazy" src="img/gallery/wallballs.jpg" alt="Trainingsfläche · Wallballs" class="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.04] transition duration-700"/>
         <div class="absolute inset-0" style="background: linear-gradient(180deg, transparent 55%, rgba(31,52,45,0.85) 100%);"></div>
         <figcaption class="absolute bottom-5 left-5 right-5">
           <div class="micro text-[#D99129]">Friedrich-Ebert · Kursraum</div>
@@ -643,7 +729,7 @@
 
       <!-- Tile 2 — top-right small -->
       <figure class="reveal col-span-6 sm:col-span-6 lg:col-span-4 row-span-1 relative overflow-hidden rounded-sm group">
-        <img src="img/gallery/kettlebells.jpg" alt="Kettlebells" class="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.04] transition duration-700"/>
+        <img loading="lazy" src="img/gallery/kettlebells.jpg" alt="Kettlebells" class="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.04] transition duration-700"/>
         <div class="absolute inset-0" style="background: linear-gradient(180deg, transparent 55%, rgba(31,52,45,0.8) 100%);"></div>
         <figcaption class="absolute bottom-4 left-5">
           <div class="micro text-[#D99129]">Athletik</div>
@@ -652,7 +738,7 @@
 
       <!-- Tile 3 — top-far-right -->
       <figure class="reveal col-span-6 sm:col-span-6 lg:col-span-3 row-span-1 relative overflow-hidden rounded-sm group">
-        <img src="img/gallery/hanteln.jpg" alt="Hanteln" class="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.04] transition duration-700"/>
+        <img loading="lazy" src="img/gallery/hanteln.jpg" alt="Hanteln" class="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.04] transition duration-700"/>
         <div class="absolute inset-0" style="background: linear-gradient(180deg, transparent 55%, rgba(31,52,45,0.8) 100%);"></div>
         <figcaption class="absolute bottom-4 left-5">
           <div class="micro text-[#D99129]">Kraft</div>
@@ -661,7 +747,7 @@
 
       <!-- Tile 4 — bottom-mid -->
       <figure class="reveal col-span-6 sm:col-span-4 lg:col-span-3 row-span-1 relative overflow-hidden rounded-sm group">
-        <img src="img/gallery/squat-kurs.jpg" alt="Kursszene Squat" class="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.04] transition duration-700"/>
+        <img loading="lazy" src="img/gallery/squat-kurs.jpg" alt="Kursszene Squat" class="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.04] transition duration-700"/>
         <div class="absolute inset-0" style="background: linear-gradient(180deg, transparent 55%, rgba(31,52,45,0.8) 100%);"></div>
         <figcaption class="absolute bottom-4 left-5">
           <div class="micro text-[#D99129]">Kurs · Squat</div>
@@ -670,7 +756,7 @@
 
       <!-- Tile 5 — bottom-right wide -->
       <figure class="reveal col-span-6 sm:col-span-4 lg:col-span-4 row-span-1 relative overflow-hidden rounded-sm group">
-        <img src="img/gallery/lounge.jpg" alt="Lounge Scharnhorst" class="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.04] transition duration-700"/>
+        <img loading="lazy" src="img/gallery/lounge.jpg" alt="Lounge Scharnhorst" class="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.04] transition duration-700"/>
         <div class="absolute inset-0" style="background: linear-gradient(180deg, transparent 55%, rgba(31,52,45,0.85) 100%);"></div>
         <figcaption class="absolute bottom-5 left-5">
           <div class="micro text-[#D99129]">Scharnhorst · Lounge</div>
@@ -681,6 +767,35 @@
 
     <p class="mt-10 text-center text-[14px] text-[#FBF1E0]/55 micro tracking-widest">
       <span class="text-[#D99129]">∗</span> Beide Standorte mit voller Ausstattung · Mehr im Bereich <a href="#standorte" class="ulink text-[#FBF1E0]/85 hover:text-[#FBF1E0]">Standorte</a>
+    </p>
+  </div>
+</section>
+
+<!-- ============= KASSEN- & VERBÄNDE-STRIP — Authority ============= -->
+<section class="relative py-16 border-y border-[#FBF1E0]/10">
+  <div class="max-w-[1480px] mx-auto px-6 lg:px-10">
+    <p class="text-center micro text-[#FBF1E0]/55 mb-10">Wir rechnen ab mit · Mitglied bei</p>
+
+    <div class="flex flex-wrap items-center justify-center gap-x-12 gap-y-6 opacity-80">
+      <!-- Kassen -->
+      <span class="display-up text-base text-[#FBF1E0]/75 tracking-wider">AOK</span>
+      <span class="display-up text-base text-[#FBF1E0]/75 tracking-wider">TK</span>
+      <span class="display-up text-base text-[#FBF1E0]/75 tracking-wider">Barmer</span>
+      <span class="display-up text-base text-[#FBF1E0]/75 tracking-wider">DAK</span>
+      <span class="display-up text-base text-[#FBF1E0]/75 tracking-wider">IKK</span>
+      <span class="display-up text-base text-[#FBF1E0]/75 tracking-wider">Knappschaft</span>
+      <span class="display-up text-base text-[#FBF1E0]/75 tracking-wider">+ alle weiteren GKV</span>
+      <span class="text-[#FBF1E0]/30 text-2xl">·</span>
+      <span class="display-up text-base text-[#FBF1E0]/75 tracking-wider">PKV</span>
+      <span class="display-up text-base text-[#FBF1E0]/75 tracking-wider">Beihilfe</span>
+      <span class="text-[#FBF1E0]/30 text-2xl">·</span>
+      <!-- Verbände -->
+      <span class="display-up text-base text-[#D99129] tracking-wider">VPT-Mitglied</span>
+      <span class="display-up text-base text-[#D99129] tracking-wider">Physio Deutschland</span>
+    </div>
+
+    <p class="mt-8 text-center text-[13px] text-[#FBF1E0]/55 max-w-3xl mx-auto leading-[1.6]">
+      Alle gesetzlichen und privaten Krankenversicherungen · Direkte Abrechnung mit GKV · PKV erhalten Rechnung zur Erstattung · Auch <strong class="text-[#FBF1E0]">Blankoverordnung</strong> möglich (rezeptfrei).
     </p>
   </div>
 </section>
@@ -735,7 +850,7 @@
 
       <!-- Visual right — Video-Embed-Frame statt statischem Bild -->
       <div class="card-glass rounded-sm overflow-hidden lg:col-span-5 relative min-h-[420px] group cursor-pointer" id="video-trigger">
-        <img src="img/scenes/kraft.jpg" alt="Bewegungsdiagnostik in der Praxis" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-70 transition"/>
+        <img loading="lazy" src="img/scenes/kraft.jpg" alt="Bewegungsdiagnostik in der Praxis" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-70 transition"/>
         <div class="absolute inset-0" style="background: linear-gradient(190deg, rgba(31,52,45,0.3) 0%, rgba(31,52,45,0.95) 100%);"></div>
 
         <!-- Play-Button als Editorial-Element -->
@@ -900,6 +1015,161 @@
   </div>
 </section>
 
+<!-- ============= SELF-TRIAGE — Wann Physio, wann Notaufnahme ============= -->
+<section id="triage" class="relative py-[clamp(96px,14vw,180px)]">
+  <div class="max-w-[1480px] mx-auto px-6 lg:px-10">
+
+    <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 mb-16">
+      <div class="lg:col-span-3 flex items-start gap-4">
+        <span class="ital text-[#D99129] text-6xl leading-[0.8]">⚖</span>
+        <div>
+          <div class="micro text-[#D99129]">Self-Triage</div>
+          <div class="micro text-[#FBF1E0]/45 mt-1">Sektion 04.6</div>
+        </div>
+      </div>
+      <div class="lg:col-span-9">
+        <h2 class="reveal display text-[clamp(40px,6vw,92px)] text-[#FBF1E0] leading-[0.94]">
+          Wann zu uns. <span class="text-[#D99129]">Wann lieber nicht.</span>
+        </h2>
+        <p class="reveal max-w-2xl mt-8 text-[17px] leading-[1.55] text-[#FBF1E0]/70">
+          Ehrlich gesagt: wir sind nicht für jeden der richtige Ort. Hier zwei Listen, die dir vor dem Anruf Klarheit geben.
+        </p>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-3">
+      <!-- Komm zu uns -->
+      <div class="reveal card-glass rounded-sm p-8 sm:p-10 border-l-2 border-[#D99129]">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="ital text-[#D99129] text-4xl leading-[0.5]">→</span>
+          <div>
+            <div class="micro text-[#D99129]">Komm zu uns, wenn …</div>
+            <p class="display-up text-base text-[#FBF1E0] mt-1">Das ist unser Spielfeld.</p>
+          </div>
+        </div>
+        <ul class="space-y-4 text-[15px] text-[#FBF1E0]/85">
+          <li class="flex items-start gap-3 pb-4 border-b border-[#FBF1E0]/10"><span class="ital text-[#D99129] mt-[-2px]">·</span> Du hast länger als 4 Wochen Beschwerden, die nicht besser werden</li>
+          <li class="flex items-start gap-3 pb-4 border-b border-[#FBF1E0]/10"><span class="ital text-[#D99129] mt-[-2px]">·</span> Du bist nach OP (Knie, Hüfte, Schulter, Wirbelsäule) und brauchst strukturierte Reha</li>
+          <li class="flex items-start gap-3 pb-4 border-b border-[#FBF1E0]/10"><span class="ital text-[#D99129] mt-[-2px]">·</span> Du hast eine Sportverletzung und willst zurück in deinen Sport</li>
+          <li class="flex items-start gap-3 pb-4 border-b border-[#FBF1E0]/10"><span class="ital text-[#D99129] mt-[-2px]">·</span> Du hast ein MRT, das „alles okay" sagt — aber dir tut trotzdem etwas weh</li>
+          <li class="flex items-start gap-3 pb-4 border-b border-[#FBF1E0]/10"><span class="ital text-[#D99129] mt-[-2px]">·</span> Du willst wissen, wo dein Körper aktuell wirklich steht (Diagnostik)</li>
+          <li class="flex items-start gap-3"><span class="ital text-[#D99129] mt-[-2px]">·</span> Du hast die Standard-Rezept-Tour hinter dir und willst etwas anderes</li>
+        </ul>
+        <a href="#termin" class="ulink mt-8 inline-flex text-sm font-bold text-[#D99129]">Termin bei uns vereinbaren →</a>
+      </div>
+
+      <!-- Geh anderswohin -->
+      <div class="reveal card-glass rounded-sm p-8 sm:p-10 border-l-2 border-[#FBF1E0]/40">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="text-[#FBF1E0]/60 text-3xl leading-[0.5]">!</span>
+          <div>
+            <div class="micro text-[#FBF1E0]/60">Geh anderswohin, wenn …</div>
+            <p class="display-up text-base text-[#FBF1E0] mt-1">Das ist nicht unser Spielfeld.</p>
+          </div>
+        </div>
+        <ul class="space-y-4 text-[15px] text-[#FBF1E0]/85">
+          <li class="flex items-start gap-3 pb-4 border-b border-[#FBF1E0]/10"><span class="text-[#FBF1E0]/40 mt-[-2px]">·</span> <strong class="text-[#FBF1E0]">Akute Notfälle</strong> — plötzlicher Brustschmerz, Lähmungen, Sturz mit Kopf → <span class="text-[#FBF1E0]/60">Notaufnahme</span></li>
+          <li class="flex items-start gap-3 pb-4 border-b border-[#FBF1E0]/10"><span class="text-[#FBF1E0]/40 mt-[-2px]">·</span> <strong class="text-[#FBF1E0]">Verdacht auf Schlaganfall</strong> (FAST-Test positiv) → <span class="text-[#FBF1E0]/60">112 anrufen</span></li>
+          <li class="flex items-start gap-3 pb-4 border-b border-[#FBF1E0]/10"><span class="text-[#FBF1E0]/40 mt-[-2px]">·</span> <strong class="text-[#FBF1E0]">Frische Frakturen / Verdacht</strong> (Sturz, Verformung sichtbar) → <span class="text-[#FBF1E0]/60">Notaufnahme/Orthopäde</span></li>
+          <li class="flex items-start gap-3 pb-4 border-b border-[#FBF1E0]/10"><span class="text-[#FBF1E0]/40 mt-[-2px]">·</span> <strong class="text-[#FBF1E0]">Du suchst Massage zur Entspannung</strong> — wir sind keine Wellness-Praxis</li>
+          <li class="flex items-start gap-3 pb-4 border-b border-[#FBF1E0]/10"><span class="text-[#FBF1E0]/40 mt-[-2px]">·</span> <strong class="text-[#FBF1E0]">Du willst Outcome-Garantien</strong> — die gibt es seriös nicht, weder bei uns noch sonstwo</li>
+          <li class="flex items-start gap-3"><span class="text-[#FBF1E0]/40 mt-[-2px]">·</span> <strong class="text-[#FBF1E0]">Du willst „sechs Sitzungen und fertig"</strong> — dann sind wir der falsche Ort</li>
+        </ul>
+        <p class="mt-8 text-[12px] text-[#FBF1E0]/45 leading-[1.55]">Wir nennen lieber im Voraus, wo wir nicht helfen, als jemanden zu behandeln, der woanders besser aufgehoben ist.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============= PRICING-TRANSPARENZ ============= -->
+<section id="preise" class="relative py-[clamp(96px,14vw,180px)]">
+  <div class="max-w-[1480px] mx-auto px-6 lg:px-10">
+
+    <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 mb-16">
+      <div class="lg:col-span-3 flex items-start gap-4">
+        <span class="ital text-[#D99129] text-6xl leading-[0.8]">€</span>
+        <div>
+          <div class="micro text-[#D99129]">Preise</div>
+          <div class="micro text-[#FBF1E0]/45 mt-1">Sektion 04.7</div>
+        </div>
+      </div>
+      <div class="lg:col-span-9">
+        <h2 class="reveal display text-[clamp(40px,6vw,92px)] text-[#FBF1E0] leading-[0.94]">
+          Was kostet was — <span class="text-[#D99129]">ehrlich.</span>
+        </h2>
+        <p class="reveal max-w-2xl mt-8 text-[17px] leading-[1.55] text-[#FBF1E0]/70">
+          In Münster zeigt keine Physio-Praxis ihre Preise. Wir schon. Hier sind die Spannen, mit denen wir arbeiten — final besprechen wir das transparent vor der ersten Sitzung.
+        </p>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-3">
+
+      <!-- Gesetzliche Kasse -->
+      <div class="reveal card-glass rounded-sm p-8 sm:p-10">
+        <div class="micro text-[#D99129]">Gesetzlich versichert</div>
+        <h3 class="display-up text-xl text-[#FBF1E0] mt-3">Mit Rezept · GKV</h3>
+        <p class="mt-3 text-[14px] text-[#FBF1E0]/65 leading-[1.55] mb-6">Du bringst ein Rezept mit, wir rechnen direkt mit deiner Kasse ab. Du zahlst nur den gesetzlichen Eigenanteil.</p>
+
+        <ul class="space-y-3 text-[15px]">
+          <li class="flex justify-between items-baseline py-3 border-b border-[#FBF1E0]/10">
+            <span class="text-[#FBF1E0]/85">Eigenanteil pro Sitzung</span>
+            <span class="ital text-[#D99129] text-xl">5–10 €</span>
+          </li>
+          <li class="flex justify-between items-baseline py-3 border-b border-[#FBF1E0]/10">
+            <span class="text-[#FBF1E0]/85">Pro Rezept (6× Sitzung)</span>
+            <span class="ital text-[#D99129] text-xl">~30–60 €</span>
+          </li>
+          <li class="flex justify-between items-baseline py-3 border-b border-[#FBF1E0]/10">
+            <span class="text-[#FBF1E0]/85">Verordnungsgebühr (einmalig)</span>
+            <span class="ital text-[#D99129] text-xl">10 €</span>
+          </li>
+          <li class="flex justify-between items-baseline py-3">
+            <span class="text-[#FBF1E0]/85">Blankoverordnung möglich</span>
+            <span class="ital text-[#D99129] text-base">✓ ja</span>
+          </li>
+        </ul>
+        <p class="mt-6 text-[12px] text-[#FBF1E0]/45 leading-[1.55]">Bei Befreiung von Zuzahlung (z.B. chronisch krank): kein Eigenanteil.</p>
+      </div>
+
+      <!-- Selbstzahler / Privat -->
+      <div class="reveal card-glass rounded-sm p-8 sm:p-10 border-l-2 border-[#D99129]">
+        <div class="micro text-[#D99129]">Selbstzahler · Privat</div>
+        <h3 class="display-up text-xl text-[#FBF1E0] mt-3">Ohne Rezept &amp; Premium-Leistungen</h3>
+        <p class="mt-3 text-[14px] text-[#FBF1E0]/65 leading-[1.55] mb-6">Ohne Umweg über Hausarzt — direkt zu uns. Privatversicherte bekommen Rechnung zur Erstattung.</p>
+
+        <ul class="space-y-3 text-[15px]">
+          <li class="flex justify-between items-baseline py-3 border-b border-[#FBF1E0]/10">
+            <span class="text-[#FBF1E0]/85">Krankengymnastik (30 Min)</span>
+            <span class="ital text-[#D99129] text-xl">60–80 €</span>
+          </li>
+          <li class="flex justify-between items-baseline py-3 border-b border-[#FBF1E0]/10">
+            <span class="text-[#FBF1E0]/85">Manuelle Therapie (30 Min)</span>
+            <span class="ital text-[#D99129] text-xl">70–95 €</span>
+          </li>
+          <li class="flex justify-between items-baseline py-3 border-b border-[#FBF1E0]/10">
+            <span class="text-[#FBF1E0]/85">Manuelle Lymphdrainage (45–60 Min)</span>
+            <span class="ital text-[#D99129] text-xl">65–95 €</span>
+          </li>
+          <li class="flex justify-between items-baseline py-3 border-b border-[#FBF1E0]/10">
+            <span class="text-[#FBF1E0]/85"><strong class="text-[#FBF1E0]">Bewegungsdiagnostik (60 Min)</strong></span>
+            <span class="ital text-[#D99129] text-xl">149 €</span>
+          </li>
+          <li class="flex justify-between items-baseline py-3">
+            <span class="text-[#FBF1E0]/85">Erstgespräch / Befund</span>
+            <span class="ital text-[#D99129] text-base">enthalten</span>
+          </li>
+        </ul>
+        <a href="#termin" class="ulink mt-6 inline-flex text-sm font-bold text-[#D99129]">Selbstzahler-Termin buchen →</a>
+      </div>
+    </div>
+
+    <p class="reveal mt-10 text-center text-[13px] text-[#FBF1E0]/55 max-w-3xl mx-auto">
+      <span class="text-[#D99129]">∗</span> Preise sind Richtwerte. Tatsächlicher Preis hängt von Behandlungsdauer und -art ab. Im Erstgespräch besprechen wir das offen — keine versteckten Kosten, keine bösen Überraschungen.
+    </p>
+  </div>
+</section>
+
 <!-- ============= BESCHWERDEN ============= -->
 <section id="beschwerden" class="relative py-[clamp(96px,14vw,180px)]">
   <div class="max-w-[1480px] mx-auto px-6 lg:px-10">
@@ -927,7 +1197,7 @@
 
       <a href="#" class="reveal card-glass rounded-sm overflow-hidden flex flex-col group">
         <div class="aspect-[16/10] overflow-hidden relative">
-          <img src="img/beschwerden/ruecken.jpg" alt="Rücken &amp; Bandscheibe" class="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.05] transition duration-700"/>
+          <img loading="lazy" src="img/beschwerden/ruecken.jpg" alt="Rücken &amp; Bandscheibe" class="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.05] transition duration-700"/>
           <div class="absolute inset-0" style="background: linear-gradient(180deg, transparent 40%, rgba(31,52,45,0.85) 100%);"></div>
           <div class="absolute top-4 left-5"><span class="micro text-[#D99129] bg-[#1F342D]/60 px-2.5 py-1 rounded-full">Rücken</span></div>
           <div class="absolute bottom-3 right-4 num-sculpture text-[44px] text-[#FBF1E0]/85">01</div>
@@ -941,7 +1211,7 @@
 
       <a href="#" class="reveal card-glass rounded-sm overflow-hidden flex flex-col group">
         <div class="aspect-[16/10] overflow-hidden relative">
-          <img src="img/beschwerden/knie-huefte.jpg" alt="Knie &amp; Hüfte" class="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.05] transition duration-700"/>
+          <img loading="lazy" src="img/beschwerden/knie-huefte.jpg" alt="Knie &amp; Hüfte" class="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.05] transition duration-700"/>
           <div class="absolute inset-0" style="background: linear-gradient(180deg, transparent 40%, rgba(31,52,45,0.85) 100%);"></div>
           <div class="absolute top-4 left-5"><span class="micro text-[#D99129] bg-[#1F342D]/60 px-2.5 py-1 rounded-full">Knie / Hüfte</span></div>
           <div class="absolute bottom-3 right-4 num-sculpture text-[44px] text-[#FBF1E0]/85">02</div>
@@ -955,7 +1225,7 @@
 
       <a href="#" class="reveal card-glass rounded-sm overflow-hidden flex flex-col group">
         <div class="aspect-[16/10] overflow-hidden relative">
-          <img src="img/beschwerden/schulter.jpg" alt="Schulter &amp; Nacken" class="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.05] transition duration-700"/>
+          <img loading="lazy" src="img/beschwerden/schulter.jpg" alt="Schulter &amp; Nacken" class="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.05] transition duration-700"/>
           <div class="absolute inset-0" style="background: linear-gradient(180deg, transparent 40%, rgba(31,52,45,0.85) 100%);"></div>
           <div class="absolute top-4 left-5"><span class="micro text-[#D99129] bg-[#1F342D]/60 px-2.5 py-1 rounded-full">Schulter</span></div>
           <div class="absolute bottom-3 right-4 num-sculpture text-[44px] text-[#FBF1E0]/85">03</div>
@@ -969,7 +1239,7 @@
 
       <a href="#" class="reveal card-glass rounded-sm overflow-hidden flex flex-col group">
         <div class="aspect-[16/10] overflow-hidden relative">
-          <img src="img/beschwerden/sport.jpg" alt="Sportverletzungen" class="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.05] transition duration-700"/>
+          <img loading="lazy" src="img/beschwerden/sport.jpg" alt="Sportverletzungen" class="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.05] transition duration-700"/>
           <div class="absolute inset-0" style="background: linear-gradient(180deg, transparent 40%, rgba(31,52,45,0.85) 100%);"></div>
           <div class="absolute top-4 left-5"><span class="micro text-[#D99129] bg-[#1F342D]/60 px-2.5 py-1 rounded-full">Sport</span></div>
           <div class="absolute bottom-3 right-4 num-sculpture text-[44px] text-[#FBF1E0]/85">04</div>
@@ -983,7 +1253,7 @@
 
       <a href="#" class="reveal card-glass rounded-sm overflow-hidden flex flex-col group">
         <div class="aspect-[16/10] overflow-hidden relative">
-          <img src="img/beschwerden/reha.jpg" alt="Nach OP / Reha" class="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.05] transition duration-700"/>
+          <img loading="lazy" src="img/beschwerden/reha.jpg" alt="Nach OP / Reha" class="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.05] transition duration-700"/>
           <div class="absolute inset-0" style="background: linear-gradient(180deg, transparent 40%, rgba(31,52,45,0.85) 100%);"></div>
           <div class="absolute top-4 left-5"><span class="micro text-[#D99129] bg-[#1F342D]/60 px-2.5 py-1 rounded-full">Reha</span></div>
           <div class="absolute bottom-3 right-4 num-sculpture text-[44px] text-[#FBF1E0]/85">05</div>
@@ -997,7 +1267,7 @@
 
       <a href="#" class="reveal card-glass rounded-sm overflow-hidden flex flex-col group">
         <div class="aspect-[16/10] overflow-hidden relative">
-          <img src="img/beschwerden/andere.jpg" alt="Andere Beschwerden" class="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.05] transition duration-700"/>
+          <img loading="lazy" src="img/beschwerden/andere.jpg" alt="Andere Beschwerden" class="absolute inset-0 w-full h-full object-cover group-hover:scale-[1.05] transition duration-700"/>
           <div class="absolute inset-0" style="background: linear-gradient(180deg, transparent 40%, rgba(31,52,45,0.85) 100%);"></div>
           <div class="absolute top-4 left-5"><span class="micro text-[#D99129] bg-[#1F342D]/60 px-2.5 py-1 rounded-full">Andere</span></div>
           <div class="absolute bottom-3 right-4 num-sculpture text-[44px] text-[#FBF1E0]/85">06</div>
@@ -1042,7 +1312,7 @@
       <!-- Card 312 — large hero card mit Bild -->
       <article class="reveal card-glass rounded-sm overflow-hidden lg:col-span-5 lg:row-span-2 relative min-h-[420px] flex flex-col">
         <div class="absolute inset-0 z-0">
-          <img src="img/scenes/training.jpg" alt="" class="w-full h-full object-cover opacity-50"/>
+          <img loading="lazy" src="img/scenes/training.jpg" alt="" class="w-full h-full object-cover opacity-50"/>
           <div class="absolute inset-0" style="background: linear-gradient(180deg, rgba(31,52,45,0.5) 0%, rgba(31,52,45,0.9) 100%);"></div>
         </div>
         <div class="relative z-10 p-8 flex flex-col justify-between flex-1">
@@ -1151,7 +1421,7 @@
         <div>
           <div class="ital text-[#D99129] text-6xl leading-[0.5] mb-4">"</div>
           <p class="display text-[clamp(24px,2.6vw,40px)] text-[#FBF1E0] leading-[1.25]">
-            Vier Orthopäden haben mir gesagt, ich solle das Laufen aufgeben. Bei REHAB FIVE haben sie zuerst <span class="text-[#D99129]">gemessen</span>, dann erklärt, dann geplant. Sechs Monate später bin ich den Halbmarathon gelaufen — schmerzfrei.
+            Vier Orthopäden haben mir gesagt, ich solle das Laufen aufgeben. Bei REHAB FIVE haben sie zuerst <span class="text-[#D99129]">gemessen</span>, dann erklärt, dann geplant. Sechs Monate später bin ich den Halbmarathon gelaufen.
           </p>
         </div>
         <footer class="mt-8 pt-6 border-t border-[#FBF1E0]/15 flex items-center gap-4">
@@ -1268,7 +1538,7 @@
     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
       <article class="reveal group">
         <div class="aspect-[3/4] overflow-hidden rounded-sm bg-[#FBF1E0]/5 border border-[#FBF1E0]/10">
-          <img src="img/team/aric-bramswig.jpg" alt="Aric Brämswig" class="w-full h-full object-cover group-hover:scale-[1.03] transition duration-500"/>
+          <img loading="lazy" src="img/team/aric-bramswig.jpg" alt="Aric Brämswig" class="w-full h-full object-cover group-hover:scale-[1.03] transition duration-500"/>
         </div>
         <div class="mt-4">
           <div class="micro text-[#D99129]">Gründer · CEO</div>
@@ -1278,7 +1548,7 @@
       </article>
       <article class="reveal group">
         <div class="aspect-[3/4] overflow-hidden rounded-sm bg-[#FBF1E0]/5 border border-[#FBF1E0]/10">
-          <img src="img/team/hagen-heidinger.jpg" alt="Hagen Heidinger" class="w-full h-full object-cover group-hover:scale-[1.03] transition duration-500"/>
+          <img loading="lazy" src="img/team/hagen-heidinger.jpg" alt="Hagen Heidinger" class="w-full h-full object-cover group-hover:scale-[1.03] transition duration-500"/>
         </div>
         <div class="mt-4">
           <div class="micro text-[#D99129]">COO</div>
@@ -1288,7 +1558,7 @@
       </article>
       <article class="reveal group">
         <div class="aspect-[3/4] overflow-hidden rounded-sm bg-[#FBF1E0]/5 border border-[#FBF1E0]/10">
-          <img src="img/team/christian-schlueter.jpg" alt="Christian Schlüter" class="w-full h-full object-cover group-hover:scale-[1.03] transition duration-500"/>
+          <img loading="lazy" src="img/team/christian-schlueter.jpg" alt="Christian Schlüter" class="w-full h-full object-cover group-hover:scale-[1.03] transition duration-500"/>
         </div>
         <div class="mt-4">
           <div class="micro text-[#D99129]">HR · BGM-BGF</div>
@@ -1298,7 +1568,7 @@
       </article>
       <article class="reveal group">
         <div class="aspect-[3/4] overflow-hidden rounded-sm bg-[#FBF1E0]/5 border border-[#FBF1E0]/10">
-          <img src="img/team/constantin-lingenfelser.jpg" alt="Constantin Lingenfelser" class="w-full h-full object-cover group-hover:scale-[1.03] transition duration-500"/>
+          <img loading="lazy" src="img/team/constantin-lingenfelser.jpg" alt="Constantin Lingenfelser" class="w-full h-full object-cover group-hover:scale-[1.03] transition duration-500"/>
         </div>
         <div class="mt-4">
           <div class="micro text-[#D99129]">Head of Physio</div>
@@ -1308,7 +1578,7 @@
       </article>
       <article class="reveal group">
         <div class="aspect-[3/4] overflow-hidden rounded-sm bg-[#FBF1E0]/5 border border-[#FBF1E0]/10">
-          <img src="img/team/stephan-otte.jpg" alt="Stephan Otte" class="w-full h-full object-cover group-hover:scale-[1.03] transition duration-500"/>
+          <img loading="lazy" src="img/team/stephan-otte.jpg" alt="Stephan Otte" class="w-full h-full object-cover group-hover:scale-[1.03] transition duration-500"/>
         </div>
         <div class="mt-4">
           <div class="micro text-[#D99129]">2nd Head Physio</div>
@@ -1318,7 +1588,7 @@
       </article>
       <article class="reveal group">
         <div class="aspect-[3/4] overflow-hidden rounded-sm bg-[#FBF1E0]/5 border border-[#FBF1E0]/10">
-          <img src="img/team/fiete-tewinkel.jpg" alt="Fiete Tewinkel" class="w-full h-full object-cover group-hover:scale-[1.03] transition duration-500"/>
+          <img loading="lazy" src="img/team/fiete-tewinkel.jpg" alt="Fiete Tewinkel" class="w-full h-full object-cover group-hover:scale-[1.03] transition duration-500"/>
         </div>
         <div class="mt-4">
           <div class="micro text-[#D99129]">2nd Head Physio</div>
@@ -1328,7 +1598,7 @@
       </article>
       <article class="reveal group">
         <div class="aspect-[3/4] overflow-hidden rounded-sm bg-[#FBF1E0]/5 border border-[#FBF1E0]/10">
-          <img src="img/team/simon-brueggemann.jpg" alt="Simon Brüggemann" class="w-full h-full object-cover group-hover:scale-[1.03] transition duration-500"/>
+          <img loading="lazy" src="img/team/simon-brueggemann.jpg" alt="Simon Brüggemann" class="w-full h-full object-cover group-hover:scale-[1.03] transition duration-500"/>
         </div>
         <div class="mt-4">
           <div class="micro text-[#D99129]">Physio · B.A. Sportwiss.</div>
@@ -1500,7 +1770,7 @@
     <div class="grid md:grid-cols-2 gap-4">
       <a href="https://www.rehab-five.com/standorte/friedrich-ebert-strasse" target="_blank" rel="noopener" class="reveal card-glass rounded-sm overflow-hidden group flex flex-col">
         <div class="aspect-[16/10] overflow-hidden relative">
-          <img src="img/standorte/friedrich-ebert-122/hero.jpg" alt="Praxis Friedrich-Ebert-Straße" class="w-full h-full object-cover group-hover:scale-[1.04] transition duration-700"/>
+          <img src="img/standorte/friedrich-ebert-122/hero.jpg" alt="Praxis Friedrich-Ebert-Straße" class="w-full h-full object-cover group-hover:scale-[1.04] transition duration-700" loading="lazy"/>
           <div class="absolute inset-0" style="background: linear-gradient(180deg, transparent 50%, rgba(31,52,45,0.65) 100%);"></div>
           <div class="absolute top-5 left-5">
             <span class="inline-block bg-[#D99129] text-[#1F342D] micro px-3 py-1.5 rounded-full">Standort 01</span>
@@ -1519,13 +1789,19 @@
               <p>0251 / 74788-200</p>
             </div>
           </div>
+
+          <!-- Google Maps Embed -->
+          <div class="mt-5 aspect-[16/9] rounded-sm overflow-hidden border border-[#FBF1E0]/15">
+            <iframe src="https://www.google.com/maps?q=Friedrich-Ebert-Stra%C3%9Fe+122,+48153+M%C3%BCnster&output=embed" class="w-full h-full" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Google Maps — Friedrich-Ebert-Straße 122"></iframe>
+          </div>
+
           <span class="mt-6 pt-5 border-t border-[#FBF1E0]/12 ulink inline-flex text-sm font-bold text-[#D99129]">Mehr zum Standort →</span>
         </div>
       </a>
 
       <a href="https://www.rehab-five.com/standorte/scharnhorststrasse" target="_blank" rel="noopener" class="reveal card-glass rounded-sm overflow-hidden group flex flex-col">
         <div class="aspect-[16/10] overflow-hidden relative">
-          <img src="img/standorte/scharnhorst/hero.jpg" alt="Praxis Scharnhorststraße" class="w-full h-full object-cover group-hover:scale-[1.04] transition duration-700"/>
+          <img src="img/standorte/scharnhorst/hero.jpg" alt="Praxis Scharnhorststraße" class="w-full h-full object-cover group-hover:scale-[1.04] transition duration-700" loading="lazy"/>
           <div class="absolute inset-0" style="background: linear-gradient(180deg, transparent 50%, rgba(31,52,45,0.65) 100%);"></div>
           <div class="absolute top-5 left-5">
             <span class="inline-block bg-[#D99129] text-[#1F342D] micro px-3 py-1.5 rounded-full">Standort 02</span>
@@ -1544,9 +1820,87 @@
               <p>0251 / 74788-100</p>
             </div>
           </div>
+
+          <!-- Google Maps Embed -->
+          <div class="mt-5 aspect-[16/9] rounded-sm overflow-hidden border border-[#FBF1E0]/15">
+            <iframe src="https://www.google.com/maps?q=Scharnhorststra%C3%9Fe,+48149+M%C3%BCnster&output=embed" class="w-full h-full" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Google Maps — Scharnhorststraße"></iframe>
+          </div>
+
           <span class="mt-6 pt-5 border-t border-[#FBF1E0]/12 ulink inline-flex text-sm font-bold text-[#D99129]">Mehr zum Standort →</span>
         </div>
       </a>
+    </div>
+
+    <!-- Vor dem ersten Termin — Checkliste -->
+    <div class="reveal mt-12 card-glass rounded-sm p-8 sm:p-10">
+      <div class="grid lg:grid-cols-12 gap-8 items-start">
+        <div class="lg:col-span-4">
+          <div class="micro text-[#D99129]">Vor dem ersten Termin</div>
+          <h3 class="display text-3xl text-[#FBF1E0] mt-3 leading-[1.05]">Was du <span class="ital text-[#D99129]">mitbringst.</span></h3>
+        </div>
+        <div class="lg:col-span-8 grid sm:grid-cols-2 gap-x-8 gap-y-5">
+          <div class="flex items-start gap-3"><span class="ital text-[#D99129]">01</span><div><strong class="text-[#FBF1E0] block">Rezept</strong><span class="text-[13px] text-[#FBF1E0]/65">Falls vorhanden. Wenn nicht: kein Problem, wir klären's bei der Blankoverordnung.</span></div></div>
+          <div class="flex items-start gap-3"><span class="ital text-[#D99129]">02</span><div><strong class="text-[#FBF1E0] block">Versichertenkarte</strong><span class="text-[13px] text-[#FBF1E0]/65">Gesetzliche Versicherung — wir scannen am Empfang.</span></div></div>
+          <div class="flex items-start gap-3"><span class="ital text-[#D99129]">03</span><div><strong class="text-[#FBF1E0] block">Bequeme Kleidung</strong><span class="text-[13px] text-[#FBF1E0]/65">Lockere Hose, T-Shirt. Wir haben Umkleiden vor Ort.</span></div></div>
+          <div class="flex items-start gap-3"><span class="ital text-[#D99129]">04</span><div><strong class="text-[#FBF1E0] block">Befunde / MRT-Bilder</strong><span class="text-[13px] text-[#FBF1E0]/65">Falls vorhanden — gerne mitbringen, hilft uns beim Befund.</span></div></div>
+          <div class="flex items-start gap-3"><span class="ital text-[#D99129]">05</span><div><strong class="text-[#FBF1E0] block">10 Minuten Puffer</strong><span class="text-[13px] text-[#FBF1E0]/65">Damit du nicht gestresst ankommst — der Behandlungserfolg fängt vorher an.</span></div></div>
+          <div class="flex items-start gap-3"><span class="ital text-[#D99129]">06</span><div><strong class="text-[#FBF1E0] block">Deine echte Geschichte</strong><span class="text-[13px] text-[#FBF1E0]/65">Wir interessieren uns für Kontext — nicht nur für deinen Befund.</span></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============= KARRIERE — Recruiting-Funnel ============= -->
+<section id="karriere" class="relative py-[clamp(96px,14vw,180px)]">
+  <div class="max-w-[1480px] mx-auto px-6 lg:px-10">
+
+    <div class="card-glass rounded-sm overflow-hidden grid lg:grid-cols-12">
+
+      <!-- Linke Seite: Bild + Quote -->
+      <div class="lg:col-span-5 relative min-h-[420px] overflow-hidden">
+        <img src="img/scenes/community.jpg" alt="" class="absolute inset-0 w-full h-full object-cover opacity-50" loading="lazy"/>
+        <div class="absolute inset-0" style="background: linear-gradient(135deg, rgba(31,52,45,0.65) 0%, rgba(31,52,45,0.95) 100%);"></div>
+        <div class="relative z-10 p-10 sm:p-12 h-full flex flex-col justify-between">
+          <div class="micro text-[#D99129]">Karriere</div>
+          <div>
+            <p class="display text-[clamp(28px,3.8vw,52px)] text-[#FBF1E0] leading-[1.05]">
+              „Ich war Therapeut in einer klassischen Praxis. <span class="ital text-[#D99129]">Bei REHAB FIVE</span> entlasse ich keinen Patienten mehr nach sechs Sitzungen."
+            </p>
+            <p class="mt-6 micro text-[#FBF1E0]/55">— Therapeut*innen-Stimme aus unserem Team</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Rechte Seite: Pitch + CTAs -->
+      <div class="lg:col-span-7 p-8 sm:p-12 lg:p-14 flex flex-col justify-center">
+        <div class="micro text-[#D99129]">Du gehörst zu uns?</div>
+        <h2 class="reveal display text-[clamp(32px,5vw,76px)] text-[#FBF1E0] mt-4 leading-[0.95]">
+          Wir suchen <span class="text-[#D99129]">Therapeut*innen,</span><br/>die in der Norm nicht wachsen wollen.
+        </h2>
+        <p class="reveal mt-6 text-[16px] text-[#FBF1E0]/75 leading-[1.6] max-w-xl">
+          Wenn du genug von Sechs-Sitzungen-und-Schluss hast, wenn dich Manuelle Therapie, Sport-Reha oder Bewegungsdiagnostik wirklich interessiert — sprich mit uns. Wir wachsen, und wir geben Therapeut*innen Zeit, Verantwortung und Spezialisierungs-Räume.
+        </p>
+
+        <ul class="reveal mt-8 grid sm:grid-cols-2 gap-x-8 gap-y-3 text-[14.5px] text-[#FBF1E0]/85">
+          <li class="flex items-start gap-2"><span class="ital text-[#D99129]">·</span> Faire Bezahlung über Branchen-Schnitt</li>
+          <li class="flex items-start gap-2"><span class="ital text-[#D99129]">·</span> Fortbildungs-Budget pro Person</li>
+          <li class="flex items-start gap-2"><span class="ital text-[#D99129]">·</span> 30-Min-Termine statt 20-Min-Akkord</li>
+          <li class="flex items-start gap-2"><span class="ital text-[#D99129]">·</span> Eigene Schwerpunkt-Sprechstunden</li>
+          <li class="flex items-start gap-2"><span class="ital text-[#D99129]">·</span> Übergabe zwischen den Säulen — kein Einzelkampf</li>
+          <li class="flex items-start gap-2"><span class="ital text-[#D99129]">·</span> Zwei Standorte zur Auswahl</li>
+        </ul>
+
+        <div class="reveal mt-10 flex flex-wrap gap-3">
+          <a href="https://www.rehab-five.com/karriere" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-[#D99129] hover:bg-[#C57F1F] transition px-6 py-3.5 rounded-full text-[#1F342D] font-bold text-sm">
+            Offene Stellen ansehen
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+          <a href="mailto:karriere@rehab-five.com" class="inline-flex items-center gap-2 border border-[#FBF1E0]/30 hover:bg-[#FBF1E0]/10 transition px-6 py-3 rounded-full text-[#FBF1E0] font-bold text-sm">
+            Initiativ-Bewerbung
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -1558,7 +1912,7 @@
     <div class="card-glass rounded-sm overflow-hidden grid lg:grid-cols-12">
       <!-- Left: PDF-Mockup -->
       <div class="lg:col-span-5 relative min-h-[380px] overflow-hidden">
-        <img src="img/gallery/squat-kurs.jpg" alt="" class="absolute inset-0 w-full h-full object-cover opacity-50"/>
+        <img loading="lazy" src="img/gallery/squat-kurs.jpg" alt="" class="absolute inset-0 w-full h-full object-cover opacity-50"/>
         <div class="absolute inset-0" style="background: linear-gradient(135deg, rgba(31,52,45,0.7) 0%, rgba(31,52,45,0.95) 100%);"></div>
 
         <!-- PDF-Cover-Skulptur -->
@@ -1701,7 +2055,7 @@
     <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-10">
       <div class="lg:col-span-2">
         <div class="flex items-center gap-4">
-          <img src="img/logo-white.png" alt="REHAB FIVE" class="h-7 w-auto"/>
+          <img loading="lazy" src="img/logo-white.png" alt="REHAB FIVE" class="h-7 w-auto"/>
           <span class="micro text-[#FBF1E0]/45 border-l border-[#FBF1E0]/20 pl-4">Physiotherapie · Münster</span>
         </div>
         <p class="mt-5 text-sm text-[#FBF1E0]/55 max-w-xs leading-[1.6]">Die Therapie-Marke der REHAB FIVE Gruppe. Praxis in Münster seit 2018. Fünf Säulen unter einem Dach.</p>
@@ -1843,6 +2197,20 @@
     vt.addEventListener('click', () => {
       alert('Video „Was dein MRT nicht zeigt" — wird produziert. Bis dahin: ruf uns an oder buch direkt eine Diagnostik.');
     });
+  }
+
+  // Side-Nav Active-Section-Highlighting
+  const sideNavLinks = document.querySelectorAll('.side-nav a[data-section]');
+  if (sideNavLinks.length) {
+    const sections = Array.from(sideNavLinks).map(a => document.getElementById(a.dataset.section)).filter(Boolean);
+    const navObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          sideNavLinks.forEach(a => a.classList.toggle('active', a.dataset.section === e.target.id));
+        }
+      });
+    }, { threshold: 0.25, rootMargin: '-20% 0px -50% 0px' });
+    sections.forEach(s => navObs.observe(s));
   }
 </script>
 
