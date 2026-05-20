@@ -334,6 +334,56 @@
   .header-ctas .cta-online:hover {
     background: #C57F1F;
   }
+
+  /* === MOBILE-OPTIMIERUNGEN === */
+  @media (max-width: 640px) {
+    /* Header — Buttons enger, kleinere Schrift, Online-Rezeption ggf. nur "Termin" */
+    .header-ctas { gap: 6px !important; }
+    .header-ctas .cta-anruf,
+    .header-ctas .cta-online {
+      padding: 9px 12px !important;
+      font-size: 13px !important;
+    }
+    .site-header .max-w-\[1480px\] { padding-left: 12px !important; padding-right: 12px !important; }
+    .site-header img[alt="REHAB FIVE"] { height: 24px !important; }
+    .site-header span.micro { display: none !important; }
+
+    /* Hero-Headline kleiner für Mobile */
+    .hero-h1 { font-size: 40px !important; line-height: 0.95 !important; }
+    .hero-h1 .em { color: #D99129; }
+
+    /* Hero-Sub-Buttons stack */
+    section .ctas { flex-direction: column !important; align-items: stretch !important; }
+    section .ctas a { justify-content: center !important; width: 100% !important; }
+
+    /* Trust-Strip 3-Spalten → 1-Spalt */
+    section .trust-strip-grid,
+    section .trust-grid { grid-template-columns: 1fr !important; }
+
+    /* Display-Headlines tighter */
+    .display { letter-spacing: -0.025em; }
+
+    /* Mobile-Akkordeon-Helper für lange Sektionen */
+    details.mob-acc > summary {
+      list-style: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 18px 0;
+      border-bottom: 1px solid rgba(251,241,224,0.15);
+      font-family: 'Barlow', sans-serif;
+      font-weight: 800;
+      font-size: 22px;
+      text-transform: uppercase;
+      color: #FBF1E0;
+      letter-spacing: -0.01em;
+    }
+    details.mob-acc > summary::-webkit-details-marker { display: none; }
+    details.mob-acc > summary::after {
+      content: "+"; color: #D99129; font-size: 28px; font-weight: 700;
+      transition: transform 0.2s;
+    }
+    details.mob-acc[open] > summary::after { content: "−"; }
+    details.mob-acc > .mob-acc-content { padding: 12px 0 18px; }
+  }
 </style>
 </head>
 
@@ -457,12 +507,12 @@
         Wir hören nicht auf, wo andere aufhören. Eine Praxis in Münster für Menschen, die mehr wollen als ein Rezept — und mehr als sechs Sitzungen, bevor sie wieder allein gelassen werden.
       </p>
 
-      <div class="rise delay-6 mt-10 flex flex-wrap items-center gap-5">
-        <a href="#termin" class="group inline-flex items-center gap-3 bg-[#D99129] hover:bg-[#C57F1F] transition px-7 py-4 rounded-full text-[#1F342D] font-bold text-base">
+      <div class="rise delay-6 mt-10 flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-3 sm:gap-5">
+        <a href="https://termin.docmedico-rezeption.de/j9u4c9m7a" target="_blank" rel="noopener" class="group cta-online inline-flex items-center justify-center gap-3 bg-[#D99129] hover:bg-[#C57F1F] transition px-7 py-4 rounded-full text-[#1F342D] font-bold text-base">
           Termin vereinbaren
           <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
         </a>
-        <a href="#methode" class="group inline-flex items-center gap-3 text-[#FBF1E0] font-semibold text-base ulink">
+        <a href="#methode" class="group inline-flex items-center justify-center sm:justify-start gap-3 text-[#FBF1E0] font-semibold text-base ulink py-2 sm:py-0">
           <span class="ital text-[#D99129]">→</span> Die Methode lesen
         </a>
       </div>
@@ -472,7 +522,7 @@
     <div class="mt-16 grid lg:grid-cols-12 gap-10 items-end">
 
       <!-- Trust als Editorial-Footnote -->
-      <div class="rise delay-6 lg:col-span-7 pt-6 border-t border-[#FBF1E0]/20 grid grid-cols-3 gap-6 max-w-[680px]">
+      <div class="rise delay-6 lg:col-span-7 pt-6 border-t border-[#FBF1E0]/20 grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-[680px]">
         <div>
           <div class="micro text-[#D99129]">Rating</div>
           <div class="mt-2 flex items-baseline gap-1 text-[#FBF1E0]">
