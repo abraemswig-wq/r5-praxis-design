@@ -261,15 +261,15 @@
     .reveal { opacity: 1; transform: none; }
   }
 
-  /* Sticky Side-Nav — Editorial-Look */
+  /* Sticky Side-Nav — Editorial-Look, RECHTE Seite */
   .side-nav {
-    position: fixed; left: 24px; top: 50%; transform: translateY(-50%);
+    position: fixed; right: 24px; top: 50%; transform: translateY(-50%);
     z-index: 40; display: none;
   }
   @media (min-width: 1280px) { .side-nav { display: block; } }
-  .side-nav ul { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+  .side-nav ul { list-style: none; display: flex; flex-direction: column; gap: 14px; align-items: flex-end; }
   .side-nav a {
-    display: flex; align-items: center; gap: 10px;
+    display: flex; align-items: center; gap: 10px; flex-direction: row-reverse;
     font-size: 11px; font-weight: 600; letter-spacing: 0.15em;
     text-transform: uppercase; color: rgba(251,241,224,0.35);
     transition: color 0.2s;
@@ -2006,7 +2006,7 @@
 </section>
 
 <!-- ============= FOOTER ============= -->
-<footer class="relative border-t border-[#FBF1E0]/12 py-16">
+<footer class="relative bg-black border-t border-[#FBF1E0]/12 py-16">
   <div class="max-w-[1480px] mx-auto px-6 lg:px-10">
 
     <!-- Final Manifest CTA -->
