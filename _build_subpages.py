@@ -116,30 +116,55 @@ HEAD_TPL = """<!doctype html>
 
 
 # ============================================================
-# TEAM — alle 22 Personen aus rehab-five.com/ueber-uns/team
+# TEAM — alle Personen aus rehab-five.com/ueber-uns/team
+# (korrigiert gegen Live-Seite Mai 2026)
 # ============================================================
 
 TEAM = [
+    # ── Leitung ────────────────────────────────────────────
     {"slug": "aric-bramswig", "name": "Aric Brämswig", "role": "Gründer & CEO", "subtitle": "Manuelle Therapie · Athletik", "photo": "aric-bramswig.jpg", "location": "Beide Standorte", "category": "Leitung"},
     {"slug": "hagen-heidinger", "name": "Hagen Heidinger", "role": "COO", "subtitle": "Operations · Digitales", "photo": "hagen-heidinger.jpg", "location": "Beide Standorte", "category": "Leitung"},
     {"slug": "christian-schlueter", "name": "Christian Schlüter", "role": "HR · BGM & BGF", "subtitle": "B2B-Lead · Firmen & Vereine", "photo": "christian-schlueter.jpg", "location": "Beide Standorte", "category": "Leitung"},
-    {"slug": "constantin-lingenfelser", "name": "Constantin Lingenfelser", "role": "Head of Physiotherapie", "subtitle": "Standort Friedrich-Ebert", "photo": "constantin-lingenfelser.jpg", "location": "Friedrich-Ebert-Straße 127", "category": "Leitung"},
-    {"slug": "stephan-otte", "name": "Stephan Otte", "role": "2nd Head Physiotherapie", "subtitle": "Standort Scharnhorst", "photo": "stephan-otte.jpg", "location": "Scharnhorststraße 40", "category": "Leitung"},
-    {"slug": "fiete-tewinkel", "name": "Fiete Tewinkel", "role": "2nd Head Physiotherapie", "subtitle": "Standort Friedrich-Ebert", "photo": "fiete-tewinkel.jpg", "location": "Friedrich-Ebert-Straße 127", "category": "Leitung"},
-    {"slug": "simon-brueggemann", "name": "Simon Brüggemann", "role": "Physiotherapeut · B.A. Sportwiss.", "subtitle": "Diagnostik · Athletik", "photo": "simon-brueggemann.jpg", "location": "Beide Standorte", "category": "Therapie"},
-    {"slug": "alexander-ditz", "name": "Alexander Ditz", "role": "Physiotherapeut", "subtitle": "Manuelle Therapie", "photo": "alexander-ditz.jpg", "location": "Friedrich-Ebert-Straße 127", "category": "Therapie"},
+    {"slug": "rene", "name": "Rene", "role": "Head of Physiotherapie", "subtitle": "Standort Scharnhorststraße", "photo": "", "location": "Scharnhorststraße 40", "category": "Leitung"},
+    {"slug": "constantin-lingenfelser", "name": "Constantin Lingenfelser", "role": "Head of Physiotherapie", "subtitle": "Standort Friedrich-Ebert-Straße", "photo": "constantin-lingenfelser.jpg", "location": "Friedrich-Ebert-Straße 127", "category": "Leitung"},
+    {"slug": "stephan-otte", "name": "Stephan Otte", "role": "2nd Head of Physiotherapie", "subtitle": "Standort Scharnhorststraße", "photo": "stephan-otte.jpg", "location": "Scharnhorststraße 40", "category": "Leitung"},
+    {"slug": "fiete-tewinkel", "name": "Fiete Tewinkel", "role": "2nd Head of Physiotherapie", "subtitle": "Standort Friedrich-Ebert-Straße", "photo": "fiete-tewinkel.jpg", "location": "Friedrich-Ebert-Straße 127", "category": "Leitung"},
+
+    # ── Therapie ───────────────────────────────────────────
+    {"slug": "simon-brueggemann", "name": "Simon Brüggemann", "role": "Physiotherapeut · B.A. Sportwissenschaften", "subtitle": "Diagnostik · Athletik", "photo": "simon-brueggemann.jpg", "location": "Beide Standorte", "category": "Therapie"},
+    {"slug": "alexander-ditz", "name": "Alexander", "role": "Physiotherapeut", "subtitle": "", "photo": "alexander-ditz.jpg", "location": "Friedrich-Ebert-Straße 127", "category": "Therapie"},
     {"slug": "sven-nobis", "name": "Sven Nobis", "role": "Physiotherapeut", "subtitle": "", "photo": "sven-nobis.jpg", "location": "Scharnhorststraße 40", "category": "Therapie"},
-    {"slug": "tim-beckenhusen", "name": "Tim Beckenhusen", "role": "Physiotherapeut", "subtitle": "", "photo": "tim-beckenhusen.jpg", "location": "Beide Standorte", "category": "Therapie"},
     {"slug": "tim-steinhoff", "name": "Tim Steinhoff", "role": "Physiotherapeut", "subtitle": "", "photo": "tim-steinhoff.jpg", "location": "Friedrich-Ebert-Straße 127", "category": "Therapie"},
+    {"slug": "tim", "name": "Tim", "role": "Physiotherapeut", "subtitle": "", "photo": "", "location": "Beide Standorte", "category": "Therapie"},
     {"slug": "jonas-dobenecker", "name": "Jonas Dobenecker", "role": "Physiotherapeut", "subtitle": "", "photo": "jonas-dobenecker.jpg", "location": "Beide Standorte", "category": "Therapie"},
-    {"slug": "lars-gropp", "name": "Lars Gropp", "role": "Physiotherapeut", "subtitle": "", "photo": "lars-gropp.jpg", "location": "Scharnhorststraße 40", "category": "Therapie"},
-    {"slug": "leonard-buehrke", "name": "Leonard Bührke", "role": "Physiotherapeut", "subtitle": "", "photo": "leonard-buehrke.jpg", "location": "Friedrich-Ebert-Straße 127", "category": "Therapie"},
-    {"slug": "linus-janning", "name": "Linus Janning", "role": "Physiotherapeut", "subtitle": "", "photo": "linus-janning.jpg", "location": "Scharnhorststraße 40", "category": "Therapie"},
-    {"slug": "lisa-zimmermann", "name": "Lisa Zimmermann", "role": "Physiotherapeutin · Rezeption", "subtitle": "", "photo": "lisa-zimmermann.jpg", "location": "Beide Standorte", "category": "Therapie & Rezeption"},
+    {"slug": "jens", "name": "Jens", "role": "Physiotherapeut", "subtitle": "", "photo": "", "location": "Beide Standorte", "category": "Therapie"},
+    {"slug": "niklas", "name": "Niklas", "role": "Physiotherapeut", "subtitle": "Präventionskurse", "photo": "", "location": "Beide Standorte", "category": "Therapie"},
+
+    # ── Therapie & Rezeption ──────────────────────────────
+    {"slug": "lisa-zimmermann", "name": "Lisa Zimmermann", "role": "Physiotherapeutin", "subtitle": "Rezeption", "photo": "lisa-zimmermann.jpg", "location": "Beide Standorte", "category": "Therapie & Rezeption"},
+    {"slug": "freddy", "name": "Freddy", "role": "Physiotherapeutin", "subtitle": "Rezeption", "photo": "", "location": "Beide Standorte", "category": "Therapie & Rezeption"},
+    {"slug": "luana", "name": "Luana", "role": "Physiotherapeutin", "subtitle": "Rezeption", "photo": "", "location": "Beide Standorte", "category": "Therapie & Rezeption"},
+
+    # ── Ernährung ─────────────────────────────────────────
+    {"slug": "lena", "name": "Lena", "role": "Diätassistentin · Ernährungsberaterin (VDD)", "subtitle": "Ernährung · Rezeption", "photo": "", "location": "Beide Standorte", "category": "Ernährung"},
+
+    # ── Rezeption & Backoffice ────────────────────────────
     {"slug": "maya-pilgram", "name": "Maya Pilgram", "role": "B.Sc. Oecotrophologie · M.Sc. i.A. Sport, Bewegung & Ernährung", "subtitle": "Rezeption · Ernährung", "photo": "maya-pilgram.jpg", "location": "Beide Standorte", "category": "Rezeption & Backoffice"},
     {"slug": "laura-van-oosterwijck", "name": "Laura van Oosterwijck", "role": "Backoffice", "subtitle": "", "photo": "laura-van-oosterwijck.jpg", "location": "Beide Standorte", "category": "Rezeption & Backoffice"},
-    {"slug": "josephine-ackermann", "name": "Josephine Ackermann", "role": "Backoffice · Personaltraining-Empfang", "subtitle": "", "photo": "josephine-ackermann.jpg", "location": "Beide Standorte", "category": "Rezeption & Backoffice"},
+    {"slug": "josephine-ackermann", "name": "Josephine Ackermann", "role": "Backoffice", "subtitle": "", "photo": "josephine-ackermann.jpg", "location": "Beide Standorte", "category": "Rezeption & Backoffice"},
+    {"slug": "jantie", "name": "Jantie", "role": "Backoffice · Rezeption", "subtitle": "", "photo": "", "location": "Beide Standorte", "category": "Rezeption & Backoffice"},
+    {"slug": "melissa", "name": "Melissa", "role": "B.A. Sportwiss. · M.A. i.A. Prävention/Reha", "subtitle": "Backoffice", "photo": "", "location": "Beide Standorte", "category": "Rezeption & Backoffice"},
+    {"slug": "rania", "name": "Rania", "role": "B.A. Mediendesign", "subtitle": "Design & Marketing", "photo": "", "location": "Beide Standorte", "category": "Rezeption & Backoffice"},
 ]
+
+
+def initials(name):
+    parts = [p for p in name.split() if p]
+    if not parts:
+        return "?"
+    if len(parts) == 1:
+        return parts[0][:2].upper()
+    return (parts[0][0] + parts[-1][0]).upper()
 
 
 # Voll-Bios für die 7 Hauptpersonen
@@ -260,6 +285,15 @@ def render_team_person(p):
     sub = p.get("subtitle", "")
     sub_html = f'<p class="mt-3 text-xl text-[#FBF1E0]/65">{sub}</p>' if sub else ""
 
+    if p.get("photo"):
+        photo_html = f'<img src="../img/team/{p["photo"]}" alt="{p["name"]}" class="w-full h-full object-cover"/>'
+    else:
+        photo_html = (
+            f'<div class="w-full h-full flex items-center justify-center bg-[#FBF1E0]/5">'
+            f'<span class="display text-[#D99129]/70" style="font-size:clamp(80px,12vw,160px);letter-spacing:-0.02em;">{initials(p["name"])}</span>'
+            f'</div>'
+        )
+
     content = f"""
   <a href="index.html" class="ulink inline-flex items-center gap-2 text-[#FBF1E0]/70 text-sm mb-12">
     <span class="text-[#D99129]">←</span> Zurück zum Team
@@ -271,7 +305,7 @@ def render_team_person(p):
         <div class="absolute -top-3 -left-3 right-12 h-[2px] bg-[#D99129]"></div>
         <div class="absolute -top-3 -left-3 w-[2px] h-32 bg-[#D99129]"></div>
         <div class="aspect-[3/4] rounded-sm overflow-hidden bg-[#FBF1E0]/5 border border-[#FBF1E0]/10">
-          <img src="../img/team/{p['photo']}" alt="{p['name']}" class="w-full h-full object-cover"/>
+          {photo_html}
         </div>
       </div>
     </div>
@@ -312,7 +346,7 @@ def render_team_index():
     for p in TEAM:
         by_cat.setdefault(p["category"], []).append(p)
 
-    cat_order = ["Leitung", "Therapie", "Therapie & Rezeption", "Rezeption & Backoffice"]
+    cat_order = ["Leitung", "Therapie", "Therapie & Rezeption", "Ernährung", "Rezeption & Backoffice"]
     sections = []
     for cat in cat_order:
         if cat not in by_cat:
@@ -321,10 +355,18 @@ def render_team_index():
         for p in by_cat[cat]:
             sub = p.get("subtitle", "")
             sub_html = f'<p class="mt-1 text-[13px] text-[#FBF1E0]/55">{sub}</p>' if sub else ""
+            if p.get("photo"):
+                thumb = f'<img src="../img/team/{p["photo"]}" alt="{p["name"]}" class="w-full h-full object-cover group-hover:scale-[1.03] transition duration-500"/>'
+            else:
+                thumb = (
+                    f'<div class="w-full h-full flex items-center justify-center bg-[#FBF1E0]/5 group-hover:bg-[#FBF1E0]/10 transition">'
+                    f'<span class="display text-[#D99129]/70" style="font-size:clamp(36px,5vw,64px);letter-spacing:-0.02em;">{initials(p["name"])}</span>'
+                    f'</div>'
+                )
             cards.append(f"""
         <a href="{p['slug']}.html" class="card-glass rounded-sm p-5 group transition flex flex-col">
           <div class="aspect-[3/4] overflow-hidden rounded-sm bg-[#FBF1E0]/5 border border-[#FBF1E0]/10 mb-4">
-            <img src="../img/team/{p['photo']}" alt="{p['name']}" class="w-full h-full object-cover group-hover:scale-[1.03] transition duration-500"/>
+            {thumb}
           </div>
           <div class="micro text-[#D99129]">{p['role']}</div>
           <h3 class="display-up text-base text-[#FBF1E0] mt-2">{p['name']}</h3>
