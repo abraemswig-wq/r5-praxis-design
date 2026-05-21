@@ -1381,7 +1381,7 @@
 
     <div class="grid md:grid-cols-2 gap-3">
       <!-- Komm zu uns — Akkordeon -->
-      <details class="reveal triage-acc card-glass rounded-sm border-l-2 border-[#D99129] group" data-acc="triage" open>
+      <details class="reveal triage-acc card-glass rounded-sm border-l-2 border-[#D99129] group" data-acc="triage">
         <summary class="cursor-pointer list-none flex items-center justify-between gap-4 p-8 sm:p-10">
           <div class="flex items-center gap-3">
             <span class="ital text-[#D99129] text-4xl leading-[0.5]">→</span>
@@ -1406,7 +1406,7 @@
       </details>
 
       <!-- Geh anderswohin — Akkordeon -->
-      <details class="reveal triage-acc card-glass rounded-sm border-l-2 border-[#FBF1E0]/40 group" data-acc="triage" open>
+      <details class="reveal triage-acc card-glass rounded-sm border-l-2 border-[#FBF1E0]/40 group" data-acc="triage">
         <summary class="cursor-pointer list-none flex items-center justify-between gap-4 p-8 sm:p-10">
           <div class="flex items-center gap-3">
             <span class="text-[#FBF1E0]/60 text-3xl leading-[0.5]">!</span>
@@ -1431,22 +1431,6 @@
       </details>
     </div>
 
-    <!-- Auto-close auf Mobile: triage-acc startet auf <640px geschlossen -->
-    <script>
-      (function() {
-        function syncTriage() {
-          var isMobile = window.matchMedia('(max-width: 639px)').matches;
-          document.querySelectorAll('.triage-acc').forEach(function(d) {
-            if (!d.dataset.userTouched) d.open = !isMobile;
-          });
-        }
-        document.querySelectorAll('.triage-acc').forEach(function(d) {
-          d.addEventListener('toggle', function() { d.dataset.userTouched = '1'; });
-        });
-        syncTriage();
-        window.addEventListener('resize', syncTriage);
-      })();
-    </script>
   </div>
 </section>
 
