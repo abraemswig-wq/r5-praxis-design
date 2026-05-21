@@ -125,7 +125,7 @@ TEAM = [
     {"slug": "aric-bramswig", "name": "Aric Brämswig", "role": "Gründer & CEO", "subtitle": "Manuelle Therapie · Athletik", "photo": "aric-bramswig.jpg", "location": "Beide Standorte", "category": "Leitung"},
     {"slug": "hagen-heidinger", "name": "Hagen Heidinger", "role": "COO", "subtitle": "Operations · Digitales", "photo": "hagen-heidinger.jpg", "location": "Beide Standorte", "category": "Leitung"},
     {"slug": "christian-schlueter", "name": "Christian Schlüter", "role": "HR · BGM & BGF", "subtitle": "B2B-Lead · Firmen & Vereine", "photo": "christian-schlueter.jpg", "location": "Beide Standorte", "category": "Leitung"},
-    {"slug": "rene", "name": "Rene", "role": "Head of Physiotherapie", "subtitle": "Standort Scharnhorststraße", "photo": "", "location": "Scharnhorststraße 40", "category": "Leitung"},
+    {"slug": "rene", "name": "Rene Ruwe", "role": "Head of Physiotherapie", "subtitle": "Standort Scharnhorststraße", "photo": "rene.jpg", "location": "Scharnhorststraße 40", "category": "Leitung"},
     {"slug": "constantin-lingenfelser", "name": "Constantin Lingenfelser", "role": "Head of Physiotherapie", "subtitle": "Standort Friedrich-Ebert-Straße", "photo": "constantin-lingenfelser.jpg", "location": "Friedrich-Ebert-Straße 127", "category": "Leitung"},
     {"slug": "stephan-otte", "name": "Stephan Otte", "role": "2nd Head of Physiotherapie", "subtitle": "Standort Scharnhorststraße", "photo": "stephan-otte.jpg", "location": "Scharnhorststraße 40", "category": "Leitung"},
     {"slug": "fiete-tewinkel", "name": "Fiete Tewinkel", "role": "2nd Head of Physiotherapie", "subtitle": "Standort Friedrich-Ebert-Straße", "photo": "fiete-tewinkel.jpg", "location": "Friedrich-Ebert-Straße 127", "category": "Leitung"},
@@ -135,7 +135,7 @@ TEAM = [
     {"slug": "alexander-ditz", "name": "Alexander", "role": "Physiotherapeut", "subtitle": "", "photo": "alexander-ditz.jpg", "location": "Friedrich-Ebert-Straße 127", "category": "Therapie"},
     {"slug": "sven-nobis", "name": "Sven Nobis", "role": "Physiotherapeut", "subtitle": "", "photo": "sven-nobis.jpg", "location": "Scharnhorststraße 40", "category": "Therapie"},
     {"slug": "tim-steinhoff", "name": "Tim Steinhoff", "role": "Physiotherapeut", "subtitle": "", "photo": "tim-steinhoff.jpg", "location": "Friedrich-Ebert-Straße 127", "category": "Therapie"},
-    {"slug": "tim", "name": "Tim", "role": "Physiotherapeut", "subtitle": "", "photo": "", "location": "Beide Standorte", "category": "Therapie"},
+    {"slug": "tim", "name": "Tim Skambraks", "role": "Physiotherapeut", "subtitle": "", "photo": "tim.jpg", "location": "Beide Standorte", "category": "Therapie"},
     {"slug": "jonas-dobenecker", "name": "Jonas Dobenecker", "role": "Physiotherapeut", "subtitle": "", "photo": "jonas-dobenecker.jpg", "location": "Beide Standorte", "category": "Therapie"},
     {"slug": "jens", "name": "Jens", "role": "Physiotherapeut", "subtitle": "", "photo": "", "location": "Beide Standorte", "category": "Therapie"},
     {"slug": "niklas", "name": "Niklas", "role": "Physiotherapeut", "subtitle": "Präventionskurse", "photo": "", "location": "Beide Standorte", "category": "Therapie"},
@@ -143,7 +143,7 @@ TEAM = [
     # ── Therapie & Rezeption ──────────────────────────────
     {"slug": "lisa-zimmermann", "name": "Lisa Zimmermann", "role": "Physiotherapeutin", "subtitle": "Rezeption", "photo": "lisa-zimmermann.jpg", "location": "Beide Standorte", "category": "Therapie & Rezeption"},
     {"slug": "freddy", "name": "Freddy", "role": "Physiotherapeutin", "subtitle": "Rezeption", "photo": "", "location": "Beide Standorte", "category": "Therapie & Rezeption"},
-    {"slug": "luana", "name": "Luana", "role": "Physiotherapeutin", "subtitle": "Rezeption", "photo": "", "location": "Beide Standorte", "category": "Therapie & Rezeption"},
+    {"slug": "luana", "name": "Luana", "role": "Physiotherapeutin", "subtitle": "Rezeption", "photo": "luana.jpg", "location": "Beide Standorte", "category": "Therapie & Rezeption"},
 
     # ── Ernährung ─────────────────────────────────────────
     {"slug": "lena", "name": "Lena", "role": "Diätassistentin · Ernährungsberaterin (VDD)", "subtitle": "Ernährung · Rezeption", "photo": "", "location": "Beide Standorte", "category": "Ernährung"},
@@ -153,7 +153,7 @@ TEAM = [
     {"slug": "laura-van-oosterwijck", "name": "Laura van Oosterwijck", "role": "Backoffice", "subtitle": "", "photo": "laura-van-oosterwijck.jpg", "location": "Beide Standorte", "category": "Rezeption & Backoffice"},
     {"slug": "josephine-ackermann", "name": "Josephine Ackermann", "role": "Backoffice", "subtitle": "", "photo": "josephine-ackermann.jpg", "location": "Beide Standorte", "category": "Rezeption & Backoffice"},
     {"slug": "jantie", "name": "Jantie", "role": "Backoffice · Rezeption", "subtitle": "", "photo": "", "location": "Beide Standorte", "category": "Rezeption & Backoffice"},
-    {"slug": "melissa", "name": "Melissa", "role": "B.A. Sportwiss. · M.A. i.A. Prävention/Reha", "subtitle": "Backoffice", "photo": "", "location": "Beide Standorte", "category": "Rezeption & Backoffice"},
+    {"slug": "melissa", "name": "Melissa", "role": "B.A. Sportwiss. · M.A. i.A. Prävention/Reha", "subtitle": "Backoffice", "photo": "melissa.jpg", "location": "Beide Standorte", "category": "Rezeption & Backoffice"},
     {"slug": "rania", "name": "Rania", "role": "B.A. Mediendesign", "subtitle": "Design & Marketing", "photo": "", "location": "Beide Standorte", "category": "Rezeption & Backoffice"},
 ]
 
