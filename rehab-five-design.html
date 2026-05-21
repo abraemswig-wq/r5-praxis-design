@@ -270,16 +270,20 @@
   /* Akkordeon-Cards (Self-Triage + Pricing): kräftigerer Orange-Hover wie CTA-Buttons */
   details.triage-acc,
   details.price-acc {
-    transition: background .25s ease, border-color .25s ease, box-shadow .25s ease;
+    transition: background .35s ease, border-color .35s ease, box-shadow .35s ease, transform .35s ease;
   }
   details.triage-acc:hover,
-  details.price-acc:hover,
+  details.price-acc:hover {
+    border-color: #D99129 !important;
+    background: rgba(217,145,41,0.06);
+    box-shadow: 0 0 0 1px rgba(217,145,41,0.35), 0 12px 32px -8px rgba(0,0,0,0.4);
+    transform: translateY(-4px);
+  }
   details.triage-acc[open],
   details.price-acc[open] {
     border-color: #D99129 !important;
     background: rgba(217,145,41,0.06);
     box-shadow: 0 0 0 1px rgba(217,145,41,0.35);
-    transform: none;
   }
   /* Hover-Indikator beim "+"-Icon */
   details.triage-acc:hover summary span:last-child,
