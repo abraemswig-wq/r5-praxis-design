@@ -267,6 +267,26 @@
     transform: translateY(-4px);
   }
 
+  /* Akkordeon-Cards (Self-Triage + Pricing): kräftigerer Orange-Hover wie CTA-Buttons */
+  details.triage-acc,
+  details.price-acc {
+    transition: background .25s ease, border-color .25s ease, box-shadow .25s ease;
+  }
+  details.triage-acc:hover,
+  details.price-acc:hover,
+  details.triage-acc[open],
+  details.price-acc[open] {
+    border-color: #D99129 !important;
+    background: rgba(217,145,41,0.06);
+    box-shadow: 0 0 0 1px rgba(217,145,41,0.35);
+    transform: none;
+  }
+  /* Hover-Indikator beim "+"-Icon */
+  details.triage-acc:hover summary span:last-child,
+  details.price-acc:hover summary span:last-child {
+    color: #D99129 !important;
+  }
+
   /* Riesige Nummern als Sculpture — Barlow Bold (statt Fraunces-Italic) */
   .num-sculpture {
     font-family: 'Barlow', sans-serif;
