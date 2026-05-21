@@ -254,6 +254,60 @@
     background: linear-gradient(to bottom, transparent, rgba(217,145,41,0.55) 30%, rgba(217,145,41,0.55) 70%, transparent);
   }
 
+  /* === EDITORIAL DETAILS — Skill: frontend-design / atmospheric depth === */
+
+  /* Decorative section-number watermark (gigantic background-numeral) */
+  section[data-num] { position: relative; overflow: hidden; }
+  section[data-num]::before {
+    content: attr(data-num);
+    position: absolute;
+    top: 2vw; right: -2vw;
+    font-family: 'Barlow', sans-serif;
+    font-weight: 800;
+    font-size: clamp(180px, 28vw, 460px);
+    line-height: 0.85;
+    letter-spacing: -0.04em;
+    color: rgba(217,145,41,0.045);
+    pointer-events: none;
+    z-index: 0;
+    user-select: none;
+  }
+  section[data-num] > * { position: relative; z-index: 1; }
+  @media (max-width: 640px) {
+    section[data-num]::before { font-size: 140px; top: 1vw; right: -3vw; opacity: 0.7; }
+  }
+
+  /* Atmospheric radial-gradient highlights — only on signature sections */
+  section#diagnostik::after {
+    content: ""; position: absolute; inset: 0; pointer-events: none; z-index: 0;
+    background: radial-gradient(ellipse 60% 50% at 85% 25%, rgba(217,145,41,0.10), transparent 60%);
+  }
+  section#manifest::after {
+    content: ""; position: absolute; inset: 0; pointer-events: none; z-index: 0;
+    background: radial-gradient(ellipse 50% 40% at 15% 75%, rgba(0,0,0,0.35), transparent 70%);
+  }
+  section#diagnostik > *, section#manifest > * { position: relative; z-index: 1; }
+
+  /* Diagonal accent line — Hero bottom edge → Editorial transition */
+  .hero-diagonal::after {
+    content: ""; position: absolute; bottom: -1px; left: 0; right: 0; height: 60px;
+    background: linear-gradient(170deg, transparent 0%, transparent 49.5%, rgba(217,145,41,0.4) 49.5%, rgba(217,145,41,0.4) 50.5%, transparent 50.5%);
+    pointer-events: none; z-index: 5;
+  }
+
+  /* Drop-Cap for editorial closings */
+  .drop-cap::first-letter {
+    font-family: 'Barlow', sans-serif;
+    font-weight: 800;
+    font-size: clamp(56px, 8vw, 96px);
+    line-height: 0.85;
+    float: left;
+    color: #D99129;
+    margin: 4px 14px 0 0;
+    padding: 0;
+    text-transform: uppercase;
+  }
+
   /* Card translucent on green */
   .card-glass {
     background: rgba(251,241,224,0.03);
@@ -771,7 +825,7 @@
 <main id="main" tabindex="-1">
 
 <!-- ============= HERO — Full-Bleed-Bild als Hintergrund ============= -->
-<section class="relative min-h-[calc(100vh-68px)] overflow-hidden">
+<section class="hero-diagonal relative min-h-[calc(100vh-68px)] overflow-hidden">
 
   <!-- HINTERGRUND-BILD full-bleed -->
   <div class="absolute inset-0 z-0">
@@ -872,7 +926,7 @@
 </section>
 
 <!-- ============= METHODE — 5-SÄULEN ============= -->
-<section id="methode" class="relative py-[clamp(96px,14vw,180px)]">
+<section data-num="01" id="methode" class="relative py-[clamp(96px,14vw,180px)]">
 
   <div class="max-w-[1480px] mx-auto px-6 lg:px-10">
 
@@ -959,7 +1013,7 @@
 </section>
 
 <!-- ============= MANIFEST ============= -->
-<section id="manifest" class="relative py-[clamp(96px,14vw,180px)]">
+<section data-num="02" id="manifest" class="relative py-[clamp(96px,14vw,180px)]">
   <div class="max-w-[1480px] mx-auto px-6 lg:px-10">
 
     <div class="grid lg:grid-cols-12 gap-10 lg:gap-16">
@@ -1008,7 +1062,7 @@
 
         <!-- Closing -->
         <div class="reveal mt-20 max-w-2xl">
-          <p class="text-[18px] leading-[1.6] text-[#FBF1E0]/75">
+          <p class="drop-cap text-[18px] leading-[1.6] text-[#FBF1E0]/75">
             Die deutsche Physio-Norm behandelt die Abwesenheit von Symptomen als Endzustand. <span class="ital text-[#D99129]">Wir nicht.</span>
           </p>
           <p class="mt-6 text-[18px] leading-[1.6] text-[#FBF1E0]/75">
@@ -1024,7 +1078,7 @@
 </section>
 
 <!-- ============= FOUNDER · Warum es REHAB FIVE gibt ============= -->
-<section id="founder" class="relative py-[clamp(96px,14vw,180px)]">
+<section data-num="03" id="founder" class="relative py-[clamp(96px,14vw,180px)]">
   <div class="max-w-[1480px] mx-auto px-6 lg:px-10">
 
     <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
@@ -1189,7 +1243,7 @@
 </section>
 
 <!-- ============= DIAGNOSTIK ============= -->
-<section id="diagnostik" class="relative py-[clamp(96px,14vw,180px)]">
+<section data-num="05" id="diagnostik" class="relative py-[clamp(96px,14vw,180px)]">
   <div class="max-w-[1480px] mx-auto px-6 lg:px-10">
 
     <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 mb-20">
@@ -1264,7 +1318,7 @@
 </section>
 
 <!-- ============= QUIZ — „Welche Säule passt zu dir?" ============= -->
-<section id="quiz" class="relative py-[clamp(96px,14vw,180px)]">
+<section data-num="Q" id="quiz" class="relative py-[clamp(96px,14vw,180px)]">
   <div class="max-w-[1480px] mx-auto px-6 lg:px-10">
 
     <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 mb-16">
@@ -1404,7 +1458,7 @@
 </section>
 
 <!-- ============= SELF-TRIAGE — Wann Physio, wann Notaufnahme ============= -->
-<section id="triage" class="relative py-[clamp(96px,14vw,180px)]">
+<section data-num="04.6" id="triage" class="relative py-[clamp(96px,14vw,180px)]">
   <div class="max-w-[1480px] mx-auto px-6 lg:px-10">
 
     <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 mb-16">
@@ -1481,7 +1535,7 @@
 </section>
 
 <!-- ============= PRICING-TRANSPARENZ ============= -->
-<section id="preise" class="relative py-[clamp(96px,14vw,180px)]">
+<section data-num="04.7" id="preise" class="relative py-[clamp(96px,14vw,180px)]">
   <div class="max-w-[1480px] mx-auto px-6 lg:px-10">
 
     <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 mb-16">
@@ -1582,7 +1636,7 @@
 </section>
 
 <!-- ============= BESCHWERDEN ============= -->
-<section id="beschwerden" class="relative py-[clamp(96px,14vw,180px)]">
+<section data-num="04" id="beschwerden" class="relative py-[clamp(96px,14vw,180px)]">
   <div class="max-w-[1480px] mx-auto px-6 lg:px-10">
 
     <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 mb-20">
@@ -1694,7 +1748,7 @@
 </section>
 
 <!-- ============= COMEBACK WALL ============= -->
-<section id="comebacks" class="relative py-[clamp(96px,14vw,180px)]">
+<section data-num="06" id="comebacks" class="relative py-[clamp(96px,14vw,180px)]">
   <div class="max-w-[1480px] mx-auto px-6 lg:px-10">
 
     <!-- Section-Intro -->
@@ -1803,7 +1857,7 @@
 </section>
 
 <!-- ============= PATIENT*INNEN-STIMMEN — Pull-Quotes ============= -->
-<section id="stimmen" class="relative py-[clamp(96px,14vw,180px)]">
+<section data-num="07" id="stimmen" class="relative py-[clamp(96px,14vw,180px)]">
   <div class="max-w-[1480px] mx-auto px-6 lg:px-10">
 
     <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 mb-20">
@@ -1925,7 +1979,7 @@
 </section>
 
 <!-- ============= TEAM ============= -->
-<section id="team" class="relative py-[clamp(96px,14vw,180px)]">
+<section data-num="08" id="team" class="relative py-[clamp(96px,14vw,180px)]">
   <div class="max-w-[1480px] mx-auto px-6 lg:px-10">
 
     <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 mb-20">
@@ -2028,7 +2082,7 @@
 </section>
 
 <!-- ============= WISSEN / BLOG ============= -->
-<section id="wissen" class="relative py-[clamp(96px,14vw,180px)]">
+<section data-num="09" id="wissen" class="relative py-[clamp(96px,14vw,180px)]">
   <div class="max-w-[1480px] mx-auto px-6 lg:px-10">
 
     <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 mb-20">
@@ -2096,7 +2150,7 @@
 </section>
 
 <!-- ============= FAQ ============= -->
-<section id="faq" class="relative py-[clamp(96px,14vw,180px)]">
+<section data-num="10" id="faq" class="relative py-[clamp(96px,14vw,180px)]">
   <div class="max-w-[1480px] mx-auto px-6 lg:px-10">
 
     <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 mb-20">
@@ -2190,7 +2244,7 @@
 </section>
 
 <!-- ============= STANDORTE ============= -->
-<section id="standorte" class="relative py-[clamp(96px,14vw,180px)]">
+<section data-num="11" id="standorte" class="relative py-[clamp(96px,14vw,180px)]">
   <div class="max-w-[1480px] mx-auto px-6 lg:px-10">
 
     <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 mb-20">
@@ -2305,7 +2359,7 @@
 </section>
 
 <!-- ============= KARRIERE — Recruiting-Funnel ============= -->
-<section id="karriere" class="relative py-[clamp(96px,14vw,180px)]">
+<section data-num="12" id="karriere" class="relative py-[clamp(96px,14vw,180px)]">
   <div class="max-w-[1480px] mx-auto px-6 lg:px-10">
 
     <div class="card-glass rounded-sm overflow-hidden grid lg:grid-cols-12">
@@ -2413,7 +2467,7 @@
 </section>
 
 <!-- ============= FAMILIE ============= -->
-<section id="familie" class="relative py-[clamp(96px,14vw,180px)]">
+<section data-num="13" id="familie" class="relative py-[clamp(96px,14vw,180px)]">
   <div class="max-w-[1480px] mx-auto px-6 lg:px-10">
 
     <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 mb-20">
