@@ -1380,16 +1380,20 @@
     </div>
 
     <div class="grid md:grid-cols-2 gap-3">
-      <!-- Komm zu uns -->
-      <div class="reveal card-glass rounded-sm p-8 sm:p-10 border-l-2 border-[#D99129]">
-        <div class="flex items-center gap-3 mb-6">
-          <span class="ital text-[#D99129] text-4xl leading-[0.5]">→</span>
-          <div>
-            <div class="micro text-[#D99129]">Komm zu uns, wenn …</div>
-            <p class="display-up text-base text-[#FBF1E0] mt-1">Das ist unser Spielfeld.</p>
+      <!-- Komm zu uns — Akkordeon -->
+      <details class="reveal triage-acc card-glass rounded-sm border-l-2 border-[#D99129] group" data-acc="triage" open>
+        <summary class="cursor-pointer list-none flex items-center justify-between gap-4 p-8 sm:p-10">
+          <div class="flex items-center gap-3">
+            <span class="ital text-[#D99129] text-4xl leading-[0.5]">→</span>
+            <div>
+              <div class="micro text-[#D99129]">Komm zu uns, wenn …</div>
+              <p class="display-up text-base text-[#FBF1E0] mt-1">Das ist unser Spielfeld.</p>
+            </div>
           </div>
-        </div>
-                  <ul class="space-y-4 text-[15px] text-[#FBF1E0]/85">
+          <span class="text-[#D99129] text-3xl font-bold leading-none transition-transform group-open:rotate-45 shrink-0">+</span>
+        </summary>
+        <div class="px-8 sm:px-10 pb-8 sm:pb-10 -mt-2">
+          <ul class="space-y-4 text-[15px] text-[#FBF1E0]/85">
             <li class="flex items-start gap-3 pb-4 border-b border-[#FBF1E0]/10"><span class="ital text-[#D99129] mt-[-2px]">·</span> Du hast länger als 4 Wochen Beschwerden, die nicht besser werden</li>
             <li class="flex items-start gap-3 pb-4 border-b border-[#FBF1E0]/10"><span class="ital text-[#D99129] mt-[-2px]">·</span> Du bist nach OP (Knie, Hüfte, Schulter, Wirbelsäule) und brauchst strukturierte Reha</li>
             <li class="flex items-start gap-3 pb-4 border-b border-[#FBF1E0]/10"><span class="ital text-[#D99129] mt-[-2px]">·</span> Du hast eine Sportverletzung und willst zurück in deinen Sport</li>
@@ -1397,19 +1401,24 @@
             <li class="flex items-start gap-3 pb-4 border-b border-[#FBF1E0]/10"><span class="ital text-[#D99129] mt-[-2px]">·</span> Du willst wissen, wo dein Körper aktuell wirklich steht (Diagnostik)</li>
             <li class="flex items-start gap-3"><span class="ital text-[#D99129] mt-[-2px]">·</span> Du hast die Standard-Rezept-Tour hinter dir und willst etwas anderes</li>
           </ul>
-        <a href="#termin" class="ulink mt-8 inline-flex text-sm font-bold text-[#D99129]">Termin bei uns vereinbaren →</a>
-      </div>
-
-      <!-- Geh anderswohin -->
-      <div class="reveal card-glass rounded-sm p-8 sm:p-10 border-l-2 border-[#FBF1E0]/40">
-        <div class="flex items-center gap-3 mb-6">
-          <span class="text-[#FBF1E0]/60 text-3xl leading-[0.5]">!</span>
-          <div>
-            <div class="micro text-[#FBF1E0]/60">Geh anderswohin, wenn …</div>
-            <p class="display-up text-base text-[#FBF1E0] mt-1">Das ist nicht unser Spielfeld.</p>
-          </div>
+          <a href="#termin" class="ulink mt-8 inline-flex text-sm font-bold text-[#D99129]">Termin bei uns vereinbaren →</a>
         </div>
-                  <ul class="space-y-4 text-[15px] text-[#FBF1E0]/85">
+      </details>
+
+      <!-- Geh anderswohin — Akkordeon -->
+      <details class="reveal triage-acc card-glass rounded-sm border-l-2 border-[#FBF1E0]/40 group" data-acc="triage" open>
+        <summary class="cursor-pointer list-none flex items-center justify-between gap-4 p-8 sm:p-10">
+          <div class="flex items-center gap-3">
+            <span class="text-[#FBF1E0]/60 text-3xl leading-[0.5]">!</span>
+            <div>
+              <div class="micro text-[#FBF1E0]/60">Geh anderswohin, wenn …</div>
+              <p class="display-up text-base text-[#FBF1E0] mt-1">Das ist nicht unser Spielfeld.</p>
+            </div>
+          </div>
+          <span class="text-[#FBF1E0]/60 text-3xl font-bold leading-none transition-transform group-open:rotate-45 shrink-0">+</span>
+        </summary>
+        <div class="px-8 sm:px-10 pb-8 sm:pb-10 -mt-2">
+          <ul class="space-y-4 text-[15px] text-[#FBF1E0]/85">
             <li class="flex items-start gap-3 pb-4 border-b border-[#FBF1E0]/10"><span class="text-[#FBF1E0]/40 mt-[-2px]">·</span> <strong class="text-[#FBF1E0]">Akute Notfälle</strong> — plötzlicher Brustschmerz, Lähmungen, Sturz mit Kopf → <span class="text-[#FBF1E0]/60">Notaufnahme</span></li>
             <li class="flex items-start gap-3 pb-4 border-b border-[#FBF1E0]/10"><span class="text-[#FBF1E0]/40 mt-[-2px]">·</span> <strong class="text-[#FBF1E0]">Verdacht auf Schlaganfall</strong> (FAST-Test positiv) → <span class="text-[#FBF1E0]/60">112 anrufen</span></li>
             <li class="flex items-start gap-3 pb-4 border-b border-[#FBF1E0]/10"><span class="text-[#FBF1E0]/40 mt-[-2px]">·</span> <strong class="text-[#FBF1E0]">Frische Frakturen / Verdacht</strong> (Sturz, Verformung sichtbar) → <span class="text-[#FBF1E0]/60">Notaufnahme/Orthopäde</span></li>
@@ -1417,9 +1426,27 @@
             <li class="flex items-start gap-3 pb-4 border-b border-[#FBF1E0]/10"><span class="text-[#FBF1E0]/40 mt-[-2px]">·</span> <strong class="text-[#FBF1E0]">Du willst Outcome-Garantien</strong> — die gibt es seriös nicht, weder bei uns noch sonstwo</li>
             <li class="flex items-start gap-3"><span class="text-[#FBF1E0]/40 mt-[-2px]">·</span> <strong class="text-[#FBF1E0]">Du willst „sechs Sitzungen und fertig"</strong> — dann sind wir der falsche Ort</li>
           </ul>
-        <p class="mt-8 text-[12px] text-[#FBF1E0]/45 leading-[1.55]">Wir nennen lieber im Voraus, wo wir nicht helfen, als jemanden zu behandeln, der woanders besser aufgehoben ist.</p>
-      </div>
+          <p class="mt-8 text-[12px] text-[#FBF1E0]/45 leading-[1.55]">Wir nennen lieber im Voraus, wo wir nicht helfen, als jemanden zu behandeln, der woanders besser aufgehoben ist.</p>
+        </div>
+      </details>
     </div>
+
+    <!-- Auto-close auf Mobile: triage-acc startet auf <640px geschlossen -->
+    <script>
+      (function() {
+        function syncTriage() {
+          var isMobile = window.matchMedia('(max-width: 639px)').matches;
+          document.querySelectorAll('.triage-acc').forEach(function(d) {
+            if (!d.dataset.userTouched) d.open = !isMobile;
+          });
+        }
+        document.querySelectorAll('.triage-acc').forEach(function(d) {
+          d.addEventListener('toggle', function() { d.dataset.userTouched = '1'; });
+        });
+        syncTriage();
+        window.addEventListener('resize', syncTriage);
+      })();
+    </script>
   </div>
 </section>
 
