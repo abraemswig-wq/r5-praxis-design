@@ -47,36 +47,88 @@
     }
   }}}
 </script>
+<!-- MedicalClinic — Hauptorganisation mit beiden Standorten und Service-Katalog -->
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
-  "@type":"MedicalBusiness",
+  "@type":"MedicalClinic",
+  "@id":"https://rehab-five.com/#organization",
   "name":"REHAB FIVE",
-  "description":"Physiotherapie-Praxis in Münster mit 5-Säulen-Modell: Therapie, Training, Athletik, Prävention, Diagnostik.",
+  "alternateName":"REHAB FIVE Physiotherapie Münster",
+  "description":"Physiotherapie-Praxis in Münster mit 5-Säulen-Modell: Therapie, Training, Athletik, Prävention, Diagnostik. Zwei Standorte, mit oder ohne Rezept (Blankoverordnung), rezeptfreie Bewegungsdiagnostik.",
   "url":"https://rehab-five.com/",
+  "logo":"https://rehab-five.com/img/logo-white.png",
   "image":"https://rehab-five.com/og.jpg",
   "telephone":"+49-251-74788200",
+  "email":"info@rehab-five.com",
   "priceRange":"€€",
-  "address":{"@type":"PostalAddress","streetAddress":"Friedrich-Ebert-Straße 127","addressLocality":"Münster","postalCode":"48153","addressCountry":"DE"},
-  "geo":{"@type":"GeoCoordinates","latitude":"51.9607","longitude":"7.6261"},
-  "aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","reviewCount":"100"},
-  "openingHours":["Mo-Fr 07:30-20:00"],
-  "sameAs":["https://www.instagram.com/rehabfive/","https://www.facebook.com/rehabfive"]
+  "foundingDate":"2018",
+  "founder":{"@type":"Person","name":"Aric Brämswig","jobTitle":"Gründer & CEO"},
+  "areaServed":[{"@type":"City","name":"Münster"},{"@type":"AdministrativeArea","name":"Münsterland"}],
+  "medicalSpecialty":["Physiotherapy","SportsMedicine","PhysicalMedicineAndRehabilitation"],
+  "aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","reviewCount":"100","bestRating":"5"},
+  "sameAs":["https://www.instagram.com/rehabfive/","https://www.facebook.com/rehabfive"],
+  "location":[
+    {
+      "@type":"MedicalClinic",
+      "@id":"https://rehab-five.com/#standort-friedrich-ebert",
+      "name":"REHAB FIVE · Friedrich-Ebert-Straße",
+      "telephone":"+49-251-74788200",
+      "address":{"@type":"PostalAddress","streetAddress":"Friedrich-Ebert-Straße 127","addressLocality":"Münster","addressRegion":"NRW","postalCode":"48153","addressCountry":"DE"},
+      "geo":{"@type":"GeoCoordinates","latitude":"51.9607","longitude":"7.6261"},
+      "openingHoursSpecification":[
+        {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"07:30","closes":"20:00"}
+      ]
+    },
+    {
+      "@type":"MedicalClinic",
+      "@id":"https://rehab-five.com/#standort-scharnhorst",
+      "name":"REHAB FIVE · Scharnhorststraße",
+      "telephone":"+49-251-74788100",
+      "address":{"@type":"PostalAddress","streetAddress":"Scharnhorststraße 40","addressLocality":"Münster","addressRegion":"NRW","postalCode":"48151","addressCountry":"DE"},
+      "openingHoursSpecification":[
+        {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"08:00","closes":"19:00"}
+      ]
+    }
+  ],
+  "hasOfferCatalog":{
+    "@type":"OfferCatalog",
+    "name":"Behandlungen & Leistungen",
+    "itemListElement":[
+      {"@type":"Offer","name":"Krankengymnastik (30 Min)","priceCurrency":"EUR","price":"60-80","priceSpecification":{"@type":"PriceSpecification","minPrice":60,"maxPrice":80,"priceCurrency":"EUR"},"category":"Selbstzahler","itemOffered":{"@type":"MedicalProcedure","name":"Krankengymnastik","procedureType":"https://schema.org/TherapeuticProcedure"}},
+      {"@type":"Offer","name":"Manuelle Therapie (30 Min)","priceCurrency":"EUR","price":"70-95","priceSpecification":{"@type":"PriceSpecification","minPrice":70,"maxPrice":95,"priceCurrency":"EUR"},"category":"Selbstzahler","itemOffered":{"@type":"MedicalProcedure","name":"Manuelle Therapie","procedureType":"https://schema.org/TherapeuticProcedure"}},
+      {"@type":"Offer","name":"Manuelle Lymphdrainage (45–60 Min)","priceCurrency":"EUR","price":"65-95","priceSpecification":{"@type":"PriceSpecification","minPrice":65,"maxPrice":95,"priceCurrency":"EUR"},"category":"Selbstzahler","itemOffered":{"@type":"MedicalProcedure","name":"Manuelle Lymphdrainage","procedureType":"https://schema.org/TherapeuticProcedure"}},
+      {"@type":"Offer","name":"Bewegungsdiagnostik (60 Min)","priceCurrency":"EUR","price":"149","category":"Selbstzahler · rezeptfrei","description":"Rezeptfreie 60-Minuten-Bewegungsdiagnostik mit schriftlichem Befund — die fünfte Säule des REHAB-FIVE-Modells.","itemOffered":{"@type":"MedicalProcedure","name":"Bewegungsdiagnostik","procedureType":"https://schema.org/DiagnosticProcedure"}},
+      {"@type":"Offer","name":"Eigenanteil GKV pro Sitzung","priceCurrency":"EUR","price":"5-10","category":"Gesetzliche Krankenkasse","description":"Eigenanteil pro Sitzung mit Rezept. Bei Befreiung von Zuzahlung entfällt der Eigenanteil."},
+      {"@type":"Offer","name":"Verordnungsgebühr GKV","priceCurrency":"EUR","price":"10","category":"Gesetzliche Krankenkasse","description":"Einmalige Verordnungsgebühr pro Rezept."}
+    ]
+  },
+  "availableService":[
+    {"@type":"MedicalTherapy","name":"Therapie (Säule 01)","description":"Klassische Physiotherapie, Manuelle Therapie, Lymphdrainage. Bei anderen das Ganze; bei uns der Anfang."},
+    {"@type":"ExercisePlan","name":"Training (Säule 02)","description":"Strukturiertes Bewegungs- und Krafttraining im Anschluss an die Therapie. Übergabe statt Entlassung."},
+    {"@type":"ExercisePlan","name":"Athletik (Säule 03)","description":"Aufbau über das Vor-Schmerz-Niveau hinaus. Return-to-Sport für aktive Menschen."},
+    {"@type":"MedicalTherapy","name":"Prävention (Säule 04)","description":"Präventionskurse §20 SGB V und individuelle Programme, damit die Geschichte nicht von vorne beginnt."},
+    {"@type":"DiagnosticProcedure","name":"Diagnostik (Säule 05)","description":"Rezeptfreie Bewegungsdiagnostik 149 €, 60 Minuten, mit schriftlichem Befund. Datengrundlage statt Bauchgefühl."}
+  ]
 }
 </script>
 
-<!-- FAQPage Schema — für Rich Snippets + AI-Citations -->
+<!-- FAQPage Schema — für Rich Snippets + AI-Citations (10 Praxis-Fragen) -->
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
   "@type":"FAQPage",
   "mainEntity":[
-    {"@type":"Question","name":"Brauche ich ein Rezept?","acceptedAnswer":{"@type":"Answer","text":"Nein, nicht zwingend. Über die Blankoverordnung kannst du auch ohne Rezept zu uns kommen. Oder du buchst direkt eine Diagnostik-Sitzung — ohne Umweg über Hausarzt und Orthopäde."}},
-    {"@type":"Question","name":"Welche Krankenkassen?","acceptedAnswer":{"@type":"Answer","text":"Alle gesetzlichen und privaten. Privatabrechnung übernehmen wir direkt. Selbstzahler-Leistungen sind klar ausgewiesen, Preise besprechen wir offen vor der ersten Sitzung."}},
-    {"@type":"Question","name":"Was unterscheidet euch von anderen Praxen?","acceptedAnswer":{"@type":"Answer","text":"Wir haben alle fünf Säulen unter einem Dach: Therapie, Training, Athletik, Prävention, Diagnostik. Niemand sonst in Münster hat das. Wir behandeln dich nicht und entlassen dich — wir bleiben dran."}},
-    {"@type":"Question","name":"Wie schnell bekomme ich einen Termin?","acceptedAnswer":{"@type":"Answer","text":"In der Regel innerhalb von 1–2 Wochen. Diagnostik-Sitzungen oft schneller, weil sie nicht auf Rezept laufen."}},
-    {"@type":"Question","name":"Was, wenn ich auch Training will?","acceptedAnswer":{"@type":"Answer","text":"Dafür haben wir den REHAB FIVE HEALTH CLUB — die Premium-Adresse für Personal Training, Athletik und Diagnostik. Wir übergeben sauber, du läufst nicht zwischen Welten verloren."}},
-    {"@type":"Question","name":"Was ist eine Comeback Card?","acceptedAnswer":{"@type":"Answer","text":"Eine signierte, fortlaufend nummerierte Karte für jeden Patienten, der sein Return-to-X-Ziel erreicht hat. Marathon nach Knie-OP, Bühne nach Bandscheibenvorfall, Volleyball nach Schulter — Comeback ist ein Status-Moment, und wir machen ihn sichtbar."}}
+    {"@type":"Question","name":"Brauche ich ein Rezept für Physiotherapie bei REHAB FIVE?","acceptedAnswer":{"@type":"Answer","text":"Nein, nicht zwingend. Über die Blankoverordnung kannst du auch ohne Rezept zu uns kommen. Oder du buchst direkt eine Bewegungsdiagnostik-Sitzung — rezeptfrei, ohne Umweg über Hausarzt und Orthopäde."}},
+    {"@type":"Question","name":"Welche Krankenkassen werden bei REHAB FIVE akzeptiert?","acceptedAnswer":{"@type":"Answer","text":"Alle gesetzlichen und privaten Krankenkassen. Privatabrechnung übernehmen wir direkt. Selbstzahler-Leistungen sind klar ausgewiesen, Preise besprechen wir offen vor der ersten Sitzung."}},
+    {"@type":"Question","name":"Was unterscheidet REHAB FIVE von anderen Physiotherapie-Praxen in Münster?","acceptedAnswer":{"@type":"Answer","text":"REHAB FIVE arbeitet mit einem 5-Säulen-Modell: Therapie, Training, Athletik, Prävention und Bewegungsdiagnostik unter einem Dach. Niemand sonst in Münster hat diese Verbindung. Patient*innen werden nicht nach sechs Sitzungen entlassen — die Praxis begleitet bis zum Comeback-Ziel."}},
+    {"@type":"Question","name":"Wie schnell bekomme ich einen Termin bei REHAB FIVE?","acceptedAnswer":{"@type":"Answer","text":"In der Regel innerhalb von 1–2 Wochen. Bewegungsdiagnostik-Sitzungen sind oft schneller verfügbar, weil sie nicht auf Rezept laufen und keine Wartezeit für die Hausarzt-Verordnung entsteht."}},
+    {"@type":"Question","name":"Was kostet Physiotherapie ohne Rezept als Selbstzahler?","acceptedAnswer":{"@type":"Answer","text":"Krankengymnastik 60–80 € (30 Min), Manuelle Therapie 70–95 € (30 Min), Manuelle Lymphdrainage 65–95 € (45–60 Min), Bewegungsdiagnostik 149 € (60 Min, mit schriftlichem Befund). Tatsächlicher Preis hängt von Behandlungsdauer und -art ab — keine versteckten Kosten."}},
+    {"@type":"Question","name":"Was ist eine Bewegungsdiagnostik bei REHAB FIVE?","acceptedAnswer":{"@type":"Answer","text":"Eine 60-Minuten-Sitzung, in der wir mit standardisierten Tests messen, wie dein Körper aktuell tatsächlich funktioniert — Beweglichkeit, Kraft, Stabilität, Belastungsverhalten. Du bekommst einen schriftlichen Befund. Kosten: 149 €, rezeptfrei, kein Hausarzt-Umweg."}},
+    {"@type":"Question","name":"Was ist eine Comeback Card?","acceptedAnswer":{"@type":"Answer","text":"Eine signierte, fortlaufend nummerierte Karte für jede Patient*in, die ihr Return-to-X-Ziel erreicht hat: Marathon nach Knie-OP, Bühne nach Bandscheibenvorfall, Volleyball nach Schulter-OP. Seit 2018 über 300 Comeback Cards ausgegeben. Comeback ist bei uns ein Status-Moment, kein Behandlungs-Abschluss."}},
+    {"@type":"Question","name":"Wann sollte ich zur Physiotherapie statt zum Orthopäden?","acceptedAnswer":{"@type":"Answer","text":"Bei Beschwerden, die länger als 4 Wochen bestehen und nicht besser werden; nach OP für strukturierte Reha; bei Sport-Verletzungen; bei MRT-Befunden, die ‚alles okay‘ sagen, obwohl Schmerz da ist. Bei akuten Notfällen, frischen Frakturen oder Lähmungen ist Orthopäde oder Notaufnahme die richtige Anlaufstelle."}},
+    {"@type":"Question","name":"Bietet REHAB FIVE auch Personal Training oder Athletik-Programme?","acceptedAnswer":{"@type":"Answer","text":"Ja — dafür haben wir den REHAB FIVE HEALTH CLUB als Premium-Adresse für Personal Training, Athletik und Diagnostik. Wir übergeben sauber zwischen Therapie-Praxis und Health Club, sodass keine Lücke zwischen Reha-Ende und Trainings-Start entsteht."}},
+    {"@type":"Question","name":"Hat REHAB FIVE Hausbesuche im Angebot?","acceptedAnswer":{"@type":"Answer","text":"Hausbesuche bieten wir in Ausnahmefällen nach individueller Absprache an, vor allem nach größeren OPs in der frühen Reha-Phase. Standard ist die Behandlung in der Praxis, weil wir dort die volle Ausstattung für die fünf Säulen haben."}}
   ]
 }
 </script>
@@ -2044,6 +2096,34 @@
           <span class="ital text-[#D99129] text-3xl chev">+</span>
         </summary>
         <p class="mt-4 text-[15px] text-[#FBF1E0]/70 leading-[1.65]">Eine signierte, fortlaufend nummerierte Karte für jeden Patienten, der sein Return-to-X-Ziel erreicht hat. Marathon nach Knie-OP, Bühne nach Bandscheibenvorfall, Volleyball nach Schulter — Comeback ist ein Status-Moment, und wir machen ihn sichtbar.</p>
+      </details>
+      <details class="reveal card-glass rounded-sm p-6 group">
+        <summary class="cursor-pointer flex justify-between items-center font-bold text-lg text-[#FBF1E0] list-none">
+          Was kostet Physiotherapie ohne Rezept?
+          <span class="ital text-[#D99129] text-3xl chev">+</span>
+        </summary>
+        <p class="mt-4 text-[15px] text-[#FBF1E0]/70 leading-[1.65]">Krankengymnastik 60–80 € (30 Min), Manuelle Therapie 70–95 € (30 Min), Manuelle Lymphdrainage 65–95 € (45–60 Min), Bewegungsdiagnostik 149 € (60 Min, mit schriftlichem Befund). Tatsächlicher Preis hängt von Behandlungsdauer und -art ab — keine versteckten Kosten.</p>
+      </details>
+      <details class="reveal card-glass rounded-sm p-6 group">
+        <summary class="cursor-pointer flex justify-between items-center font-bold text-lg text-[#FBF1E0] list-none">
+          Was ist eine Bewegungsdiagnostik?
+          <span class="ital text-[#D99129] text-3xl chev">+</span>
+        </summary>
+        <p class="mt-4 text-[15px] text-[#FBF1E0]/70 leading-[1.65]">Eine 60-Minuten-Sitzung, in der wir mit standardisierten Tests messen, wie dein Körper aktuell wirklich funktioniert — Beweglichkeit, Kraft, Stabilität, Belastungsverhalten. Du bekommst einen schriftlichen Befund. Kosten: 149 €, rezeptfrei, kein Hausarzt-Umweg.</p>
+      </details>
+      <details class="reveal card-glass rounded-sm p-6 group">
+        <summary class="cursor-pointer flex justify-between items-center font-bold text-lg text-[#FBF1E0] list-none">
+          Wann zur Physio statt zum Orthopäden?
+          <span class="ital text-[#D99129] text-3xl chev">+</span>
+        </summary>
+        <p class="mt-4 text-[15px] text-[#FBF1E0]/70 leading-[1.65]">Bei Beschwerden über 4 Wochen ohne Besserung, nach OP für strukturierte Reha, bei Sport-Verletzungen, bei MRT-Befunden, die „alles okay" sagen, obwohl Schmerz da ist. Bei akuten Notfällen, frischen Frakturen oder Lähmungen ist Orthopäde oder Notaufnahme die richtige Anlaufstelle — wir übernehmen danach.</p>
+      </details>
+      <details class="reveal card-glass rounded-sm p-6 group">
+        <summary class="cursor-pointer flex justify-between items-center font-bold text-lg text-[#FBF1E0] list-none">
+          Macht ihr auch Hausbesuche?
+          <span class="ital text-[#D99129] text-3xl chev">+</span>
+        </summary>
+        <p class="mt-4 text-[15px] text-[#FBF1E0]/70 leading-[1.65]">Hausbesuche bieten wir in Ausnahmefällen nach individueller Absprache an, vor allem nach größeren OPs in der frühen Reha-Phase. Standard ist die Behandlung in der Praxis, weil wir dort die volle Ausstattung für die fünf Säulen haben.</p>
       </details>
     </div>
   </div>
