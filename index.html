@@ -287,6 +287,28 @@
     color: #D99129 !important;
   }
 
+  /* Sibling-Dimming: hover über eine Card → andere Card dimmt sich ab (Pricing) */
+  section#preise .grid:has(.price-acc:hover) .price-acc:not(:hover) {
+    border-color: rgba(251,241,224,0.06) !important;
+    background: rgba(251,241,224,0.015);
+    box-shadow: none !important;
+  }
+  section#preise .grid:has(.price-acc:hover) .price-acc:not(:hover) summary {
+    opacity: 0.55;
+    transition: opacity .25s ease;
+  }
+
+  /* Sibling-Dimming: Self-Triage genauso */
+  section#triage .grid:has(.triage-acc:hover) .triage-acc:not(:hover) {
+    border-color: rgba(251,241,224,0.06) !important;
+    background: rgba(251,241,224,0.015);
+    box-shadow: none !important;
+  }
+  section#triage .grid:has(.triage-acc:hover) .triage-acc:not(:hover) summary {
+    opacity: 0.55;
+    transition: opacity .25s ease;
+  }
+
   /* Riesige Nummern als Sculpture — Barlow Bold (statt Fraunces-Italic) */
   .num-sculpture {
     font-family: 'Barlow', sans-serif;
@@ -1401,7 +1423,7 @@
 
     <div class="grid md:grid-cols-2 gap-3">
       <!-- Komm zu uns — Akkordeon -->
-      <details class="reveal triage-acc card-glass rounded-sm border-l-2 border-[#D99129] group" data-acc="triage">
+      <details class="reveal triage-acc card-glass rounded-sm group" data-acc="triage">
         <summary class="cursor-pointer list-none flex items-center justify-between gap-4 p-8 sm:p-10">
           <div class="flex items-center gap-3">
             <span class="ital text-[#D99129] text-4xl leading-[0.5]">→</span>
@@ -1426,7 +1448,7 @@
       </details>
 
       <!-- Geh anderswohin — Akkordeon -->
-      <details class="reveal triage-acc card-glass rounded-sm border-l-2 border-[#FBF1E0]/40 group" data-acc="triage">
+      <details class="reveal triage-acc card-glass rounded-sm group" data-acc="triage">
         <summary class="cursor-pointer list-none flex items-center justify-between gap-4 p-8 sm:p-10">
           <div class="flex items-center gap-3">
             <span class="text-[#FBF1E0]/60 text-3xl leading-[0.5]">!</span>
@@ -1512,7 +1534,7 @@
       </details>
 
       <!-- Selbstzahler / Privat — Akkordeon -->
-      <details class="reveal price-acc card-glass rounded-sm border-l-2 border-[#D99129] group">
+      <details class="reveal price-acc card-glass rounded-sm group">
         <summary class="cursor-pointer list-none flex items-center justify-between gap-4 p-8 sm:p-10">
           <div>
             <div class="micro text-[#D99129]">Selbstzahler · Privat</div>
