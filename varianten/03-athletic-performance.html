@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Variante 03 · ATHLETIC PERFORMANCE — REHAB FIVE</title>
+<meta name="description" content="Performance-Direction in REHAB-FIVE-CI: tiefes Petrol + Orange-Akzent, Sora Black, Performance-Data-Look."/>
+<meta name="robots" content="noindex, nofollow"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  :root {
+    --bg: #0E1A16;
+    --bg-card: #152821;
+    --bg-card-2: #1B2E27;
+    --accent: #D99129;
+    --accent-soft: rgba(217,145,41,0.12);
+    --line: #2A3F37;
+    --white: #FAFAFA;
+    --gray: #9CA3AF;
+    --gray-2: #6B7280;
+  }
+  body { font-family: 'Sora', system-ui, sans-serif; background: var(--bg); color: var(--white); font-size: 16px; line-height: 1.5; -webkit-font-smoothing: antialiased; }
+  h1,h2,h3,h4 { font-family: 'Sora', sans-serif; font-weight: 700; letter-spacing: -0.025em; }
+  .display { font-weight: 800; letter-spacing: -0.04em; line-height: 0.92; text-transform: uppercase; }
+  .mono { font-family: 'JetBrains Mono', monospace; }
+  .eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); }
+
+  /* Tracking dots animation */
+  @keyframes pulse-dot {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.6; transform: scale(0.9); }
+  }
+  .live-dot { animation: pulse-dot 1.6s ease-in-out infinite; }
+
+  .btn-volt {
+    background: var(--accent); color: var(--bg); padding: 14px 24px;
+    font-weight: 700; font-size: 14px; text-transform: uppercase; letter-spacing: 0.08em;
+    display: inline-flex; align-items: center; gap: 10px;
+    border-radius: 2px;
+    transition: transform .25s, box-shadow .25s;
+  }
+  .btn-volt:hover { transform: translateY(-2px); box-shadow: 0 12px 32px -8px rgba(217,145,41,0.4); }
+  .btn-ghost {
+    border: 1px solid var(--line); color: var(--white); padding: 14px 24px;
+    font-weight: 600; font-size: 14px; text-transform: uppercase; letter-spacing: 0.08em;
+    display: inline-flex; align-items: center; gap: 10px;
+    border-radius: 2px;
+    transition: border-color .25s, background .25s;
+  }
+  .btn-ghost:hover { border-color: var(--accent); background: var(--accent-soft); }
+
+  .card {
+    background: var(--bg-card); border: 1px solid var(--line);
+    transition: border-color .25s, transform .25s, background .25s;
+  }
+  .card:hover { border-color: var(--accent); transform: translateY(-3px); background: var(--bg-card-2); }
+
+  .stat-row { display: flex; align-items: baseline; gap: 4px; font-family: 'Sora', sans-serif; }
+  .stat-row .num { font-size: clamp(38px, 5vw, 64px); font-weight: 700; letter-spacing: -0.03em; line-height: 1; }
+  .stat-row .unit { color: var(--gray); font-size: 14px; }
+
+  .grid-bg {
+    background-image:
+      linear-gradient(to right, var(--line) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--line) 1px, transparent 1px);
+    background-size: 64px 64px;
+    background-position: -1px -1px;
+  }
+
+  .variant-bar { background: rgba(0,0,0,0.92); backdrop-filter: blur(10px); border-bottom: 1px solid var(--accent-soft); }
+  .ulink-volt { position: relative; padding-bottom: 2px; }
+  .ulink-volt::after { content:""; position:absolute; left:0; bottom:0; width:100%; height:1px; background: var(--accent); transform: scaleX(.4); transform-origin: left; transition: transform .3s; }
+  .ulink-volt:hover::after { transform: scaleX(1); }
+
+  .tag-mono {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em;
+    color: var(--accent); padding: 4px 8px;
+    border: 1px solid rgba(217,145,41,0.3); border-radius: 2px;
+    background: var(--accent-soft);
+  }
+</style>
+</head>
+<body>
+
+<!-- Variant-Bar -->
+<div class="variant-bar sticky top-0 z-50">
+  <div class="max-w-[1440px] mx-auto px-6 lg:px-10 h-10 flex items-center justify-between text-xs">
+    <div class="flex items-center gap-3 text-white/85">
+      <span class="eyebrow">Variante 03</span>
+      <span class="text-white/40">/</span>
+      <span class="mono">Athletic Performance</span>
+    </div>
+    <a href="index.html" class="text-white/70 hover:text-[#D99129] transition ulink-volt">← Varianten-Übersicht</a>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="sticky top-10 z-40 bg-black/90 backdrop-blur border-b border-[#2A3F37]">
+  <div class="max-w-[1440px] mx-auto px-6 lg:px-10 h-[72px] flex items-center justify-between">
+    <a href="#" class="flex items-center gap-3">
+      <div class="flex items-center gap-2">
+        <span class="text-white font-black text-[22px] tracking-tight">REHAB<span class="text-[#D99129]">/</span>FIVE</span>
+      </div>
+    </a>
+    <nav class="hidden lg:flex items-center gap-8 text-[13px] font-medium text-white/75 uppercase tracking-wider">
+      <a href="#performance" class="hover:text-[#D99129]">Performance</a>
+      <a href="#methode" class="hover:text-[#D99129]">5 Pillars</a>
+      <a href="#diagnostik" class="hover:text-[#D99129]">Diagnostik</a>
+      <a href="#return" class="hover:text-[#D99129]">Return-to-X</a>
+    </nav>
+    <div class="flex items-center gap-3">
+      <a href="tel:+4925174788200" class="btn-ghost hidden sm:inline-flex text-xs">
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
+        0251 74788 200
+      </a>
+      <a href="https://termin.docmedico-rezeption.de/j9u4c9m7a" target="_blank" rel="noopener" class="btn-volt text-xs">Termin →</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section id="performance" class="relative py-24 lg:py-36 overflow-hidden grid-bg">
+  <div class="absolute inset-0" style="background: radial-gradient(ellipse 60% 50% at 80% 25%, rgba(217,145,41,0.12), transparent 60%);"></div>
+  <div class="absolute top-24 right-8 lg:right-16 z-10 flex items-center gap-2 text-[#D99129] text-[11px] mono">
+    <span class="live-dot w-2 h-2 bg-[#D99129] rounded-full"></span>
+    LIVE · 312 COMEBACKS · 2026
+  </div>
+
+  <div class="relative z-10 max-w-[1440px] mx-auto px-6 lg:px-10">
+    <div class="grid lg:grid-cols-12 gap-12">
+      <div class="lg:col-span-8">
+        <div class="eyebrow mb-7">// PHYSIOTHERAPY × PERFORMANCE × MÜNSTER</div>
+        <h1 class="display text-[clamp(54px,11vw,180px)] text-white">
+          Back<br/>
+          to <span class="text-[#D99129]">peak.</span><br/>
+          Not just<br/>
+          baseline.
+        </h1>
+        <p class="mt-10 text-[18px] text-white/75 leading-[1.55] max-w-xl">
+          Eine Praxis in Münster, die nicht bei „schmerzfrei" aufhört. Wir bringen Athlet*innen zurück über ihr Vor-Verletzungs-Niveau hinaus. Daten-basiert, messbar, ohne Bauchgefühl.
+        </p>
+
+        <div class="mt-12 flex flex-wrap items-center gap-4">
+          <a href="https://termin.docmedico-rezeption.de/j9u4c9m7a" target="_blank" rel="noopener" class="btn-volt">
+            Termin buchen
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#diagnostik" class="btn-ghost">Diagnostik · 149 €</a>
+        </div>
+      </div>
+
+      <!-- Performance-Stats rechts -->
+      <div class="lg:col-span-4">
+        <div class="card p-6 mb-3">
+          <div class="flex items-center justify-between mb-3">
+            <span class="eyebrow">Lauf 2026</span>
+            <span class="tag-mono">Live</span>
+          </div>
+          <div class="stat-row text-white">
+            <span class="num text-[#D99129]">+47</span>
+            <span class="unit">Comeback Cards</span>
+          </div>
+          <p class="mt-2 text-[12px] text-white/55 mono">SEIT JAHRESBEGINN</p>
+        </div>
+        <div class="grid grid-cols-2 gap-3">
+          <div class="card p-5">
+            <span class="eyebrow text-[10px]">Rating</span>
+            <div class="stat-row mt-2">
+              <span class="num text-[28px]">5,0</span>
+              <span class="unit text-xs">/ 5</span>
+            </div>
+            <p class="mt-1 text-[11px] text-white/55 mono">N=100+</p>
+          </div>
+          <div class="card p-5">
+            <span class="eyebrow text-[10px]">Since</span>
+            <div class="stat-row mt-2">
+              <span class="num text-[28px]">2018</span>
+            </div>
+            <p class="mt-1 text-[11px] text-white/55 mono">+300 CARDS</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5-PILLARS — als Performance-Stack -->
+<section id="methode" class="py-24 lg:py-36 border-t border-[#2A3F37]">
+  <div class="max-w-[1440px] mx-auto px-6 lg:px-10">
+    <div class="grid lg:grid-cols-12 gap-12 mb-16">
+      <div class="lg:col-span-5">
+        <div class="eyebrow mb-5">// 5-Pillar-Stack</div>
+        <h2 class="display text-[clamp(40px,7vw,96px)] text-white">
+          From<br/>
+          <span class="text-[#D99129]">recovery</span><br/>
+          to peak.
+        </h2>
+      </div>
+      <div class="lg:col-span-7 flex items-end">
+        <p class="text-[17px] text-white/75 leading-[1.55] max-w-xl">
+          Fünf verbundene Säulen — kein „6 Sitzungen und Schluss". Wir steigen jeden Patienten zwischen den Säulen auf, sobald die Übergabe-Kriterien erfüllt sind.
+        </p>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-5 gap-3">
+      <div class="card p-6 flex flex-col">
+        <div class="flex items-center justify-between mb-6">
+          <span class="mono text-[#D99129] text-2xl font-bold">01</span>
+          <span class="tag-mono">REZEPT · GKV</span>
+        </div>
+        <h3 class="text-[20px] font-bold uppercase tracking-tight">Therapie</h3>
+        <p class="mt-3 text-[13px] text-white/65 leading-[1.55] flex-1">Manuelle Therapie, klassische Physio, Lymphdrainage. Foundation. Bei anderen das Ganze.</p>
+        <div class="mt-5 pt-5 border-t border-[#2A3F37] text-[11px] text-white/45 mono">› ENTRY POINT</div>
+      </div>
+
+      <div class="card p-6 flex flex-col">
+        <div class="flex items-center justify-between mb-6">
+          <span class="mono text-[#D99129] text-2xl font-bold">02</span>
+          <span class="tag-mono">SELBSTZAHLER</span>
+        </div>
+        <h3 class="text-[20px] font-bold uppercase tracking-tight">Training</h3>
+        <p class="mt-3 text-[13px] text-white/65 leading-[1.55] flex-1">Strukturierter Aufbau. Plan, Tracking, Progression. Brücke zwischen Therapie und Leben.</p>
+        <div class="mt-5 pt-5 border-t border-[#2A3F37] text-[11px] text-white/45 mono">› TRANSITION</div>
+      </div>
+
+      <div class="card p-6 flex flex-col">
+        <div class="flex items-center justify-between mb-6">
+          <span class="mono text-[#D99129] text-2xl font-bold">03</span>
+          <span class="tag-mono">PERFORMANCE</span>
+        </div>
+        <h3 class="text-[20px] font-bold uppercase tracking-tight">Athletik</h3>
+        <p class="mt-3 text-[13px] text-white/65 leading-[1.55] flex-1">Über das Vor-Schmerz-Niveau. Sprung, Sprint, Plyo. Return-to-Sport mit Krafttests.</p>
+        <div class="mt-5 pt-5 border-t border-[#2A3F37] text-[11px] text-white/45 mono">› PEAK</div>
+      </div>
+
+      <div class="card p-6 flex flex-col">
+        <div class="flex items-center justify-between mb-6">
+          <span class="mono text-[#D99129] text-2xl font-bold">04</span>
+          <span class="tag-mono">§20 SGB V</span>
+        </div>
+        <h3 class="text-[20px] font-bold uppercase tracking-tight">Prävention</h3>
+        <p class="mt-3 text-[13px] text-white/65 leading-[1.55] flex-1">Erhaltungs-Programme. Damit der Comeback nicht zum Loop wird.</p>
+        <div class="mt-5 pt-5 border-t border-[#2A3F37] text-[11px] text-white/45 mono">› MAINTENANCE</div>
+      </div>
+
+      <div class="card p-6 flex flex-col" style="border-color: var(--accent); background: var(--bg-card-2);">
+        <div class="flex items-center justify-between mb-6">
+          <span class="mono text-[#D99129] text-2xl font-bold">05</span>
+          <span class="tag-mono">149 € · 60 MIN</span>
+        </div>
+        <h3 class="text-[20px] font-bold uppercase tracking-tight text-[#D99129]">Diagnostik</h3>
+        <p class="mt-3 text-[13px] text-white/75 leading-[1.55] flex-1">Standardisierte Tests. Befund schriftlich. Rezeptfrei. Datenbasis für alle Säulen.</p>
+        <div class="mt-5 pt-5 border-t border-[#2A3F37] text-[11px] text-[#D99129] mono">› DATA LAYER</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RETURN-TO-X — Performance-Story -->
+<section id="return" class="py-24 lg:py-36 bg-[#101D17] border-y border-[#2A3F37]">
+  <div class="max-w-[1440px] mx-auto px-6 lg:px-10">
+    <div class="eyebrow mb-5">// Return-to-X</div>
+    <h2 class="display text-[clamp(40px,7vw,96px)] text-white mb-16 max-w-3xl">
+      You don't just<br/>
+      <span class="text-[#D99129]">recover.</span><br/>
+      You come back.
+    </h2>
+
+    <div class="grid md:grid-cols-3 gap-3">
+      <div class="card p-6">
+        <div class="eyebrow mb-3">№ 287 / Comeback</div>
+        <div class="mono text-white/45 text-[11px]">SANDRA, 38 · KREUZBANDRISS</div>
+        <h3 class="display text-3xl text-[#D99129] mt-6">→ Halbmarathon</h3>
+        <p class="mt-4 text-[13px] text-white/65 leading-[1.55]">6 Monate strukturiert über alle Säulen. Vier Orthopäden hatten Aufhören empfohlen.</p>
+        <div class="mt-5 mono text-[10px] text-white/40">D+187 · MÜNSTER MARATHON 2026</div>
+      </div>
+      <div class="card p-6">
+        <div class="eyebrow mb-3">№ 305 / Comeback</div>
+        <div class="mono text-white/45 text-[11px]">JONAS, 58 · HÜFT-OP</div>
+        <h3 class="display text-3xl text-[#D99129] mt-6">→ 10K-Lauf</h3>
+        <p class="mt-4 text-[13px] text-white/65 leading-[1.55]">11 Monate Reha über Säulen 01–03. Bestzeit besser als drei Jahre vor der OP.</p>
+        <div class="mt-5 mono text-[10px] text-white/40">D+334 · MÜNSTER MARATHON 2026</div>
+      </div>
+      <div class="card p-6">
+        <div class="eyebrow mb-3">№ 302 / Comeback</div>
+        <div class="mono text-white/45 text-[11px]">MARKUS, 44 · ACHILLES-RUPTUR</div>
+        <h3 class="display text-3xl text-[#D99129] mt-6">→ Volleyball</h3>
+        <p class="mt-4 text-[13px] text-white/65 leading-[1.55]">11 Monate strukturierte Reha. Eccentric Loading, Plyo, neuromuskuläres Training.</p>
+        <div class="mt-5 mono text-[10px] text-white/40">D+316 · 1. LIGA AMATEUR</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA DIAGNOSTIK -->
+<section id="diagnostik" class="py-24 lg:py-32">
+  <div class="max-w-[1440px] mx-auto px-6 lg:px-10">
+    <div class="grid lg:grid-cols-12 gap-10 items-center">
+      <div class="lg:col-span-7">
+        <div class="eyebrow mb-5">// PILLAR 05 · DATA LAYER</div>
+        <h2 class="display text-[clamp(40px,6vw,84px)] text-white">
+          Measure. Then<br/>
+          <span class="text-[#D99129]">move.</span>
+        </h2>
+        <p class="mt-7 text-[17px] text-white/75 leading-[1.55] max-w-xl">60 Minuten standardisierte Bewegungsdiagnostik. Du gehst raus mit einem schriftlichen Befund — Beweglichkeit, Kraft, Stabilität, Belastung. Rezeptfrei.</p>
+      </div>
+      <div class="lg:col-span-5">
+        <div class="card p-8" style="border-color: var(--accent);">
+          <div class="flex items-baseline justify-between mb-5">
+            <span class="display text-[88px] text-[#D99129] leading-[0.85]">149€</span>
+            <span class="mono text-[11px] text-white/45">/SESSION</span>
+          </div>
+          <ul class="space-y-3 text-[13.5px] text-white/85 mb-7">
+            <li class="flex items-center gap-2"><span class="text-[#D99129]">✓</span> 60 Minuten 1:1</li>
+            <li class="flex items-center gap-2"><span class="text-[#D99129]">✓</span> Schriftlicher Befund</li>
+            <li class="flex items-center gap-2"><span class="text-[#D99129]">✓</span> Rezeptfrei buchbar</li>
+            <li class="flex items-center gap-2"><span class="text-[#D99129]">✓</span> Action-Plan inklusive</li>
+          </ul>
+          <a href="https://termin.docmedico-rezeption.de/j9u4c9m7a" target="_blank" rel="noopener" class="btn-volt w-full justify-center">
+            Diagnostik buchen
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="border-t border-[#2A3F37] py-14">
+  <div class="max-w-[1440px] mx-auto px-6 lg:px-10 grid md:grid-cols-3 gap-8 items-center">
+    <div>
+      <div class="text-white font-black text-xl tracking-tight">REHAB<span class="text-[#D99129]">/</span>FIVE</div>
+      <p class="mt-2 text-[12px] text-white/55 mono uppercase tracking-wider">Physiotherapie · Münster · Seit 2018</p>
+    </div>
+    <div class="text-center mono text-[11px] text-[#D99129] tracking-widest">
+      // BACK TO PEAK · NOT JUST BASELINE
+    </div>
+    <div class="md:text-right text-sm">
+      <a href="index.html" class="text-white/65 hover:text-[#D99129] ulink-volt">← Varianten-Übersicht</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Variante 01 · BOLD EDITORIAL — REHAB FIVE</title>
+<meta name="description" content="Magazin-Editorial Direction für die REHAB FIVE Praxis-Website. Petrol + Orange, Barlow Bold Uppercase, asymmetrische Grids."/>
+<meta name="robots" content="noindex, nofollow"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  :root { --green: #1F342D; --orange: #D99129; --cream: #FBF1E0; }
+  body { font-family: 'Barlow', system-ui, sans-serif; background: var(--green); color: var(--cream); font-size: 18px; line-height: 1.55; -webkit-font-smoothing: antialiased; }
+  body::before {
+    content:""; position: fixed; inset:0; pointer-events:none; z-index:1;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' seed='3'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.045 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+    opacity: .55; mix-blend-mode: overlay;
+  }
+  main, header { position: relative; z-index: 2; }
+  .display { font-family: 'Barlow', sans-serif; font-weight: 800; letter-spacing: -0.01em; line-height: 0.95; text-transform: uppercase; }
+  .display-up { font-weight: 800; letter-spacing: 0.005em; text-transform: uppercase; }
+  .micro { font-size: 13px; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; }
+  h1,h2,h3 { font-family: 'Barlow', sans-serif; font-weight: 800; text-transform: uppercase; letter-spacing: -0.01em; }
+  .ital { color: var(--orange); font-weight: 800; font-style: normal; }
+  .card-glass { background: rgba(251,241,224,0.03); border: 1px solid rgba(251,241,224,0.12); transition: background .35s ease, border-color .35s ease, transform .35s ease; }
+  .card-glass:hover { background: rgba(251,241,224,0.06); border-color: rgba(217,145,41,0.4); transform: translateY(-4px); }
+  .section-rule { position: relative; }
+  .section-rule::before { content:""; position: absolute; left:0; top:0; bottom:0; width:1px; background: linear-gradient(to bottom, transparent, rgba(217,145,41,0.55) 30%, rgba(217,145,41,0.55) 70%, transparent); }
+  section[data-num] { position: relative; overflow: hidden; }
+  section[data-num]::before {
+    content: attr(data-num); position: absolute; top: 2vw; right: -2vw;
+    font: 800 clamp(180px, 28vw, 460px)/0.85 'Barlow', sans-serif; letter-spacing: -0.04em;
+    color: rgba(217,145,41,0.045); pointer-events: none; z-index: 0;
+  }
+  section[data-num] > * { position: relative; z-index: 1; }
+  .ulink { position: relative; padding-bottom: 4px; }
+  .ulink::after { content:""; position:absolute; left:0; bottom:0; width:100%; height:1px; background: currentColor; transform: scaleX(.35); transform-origin: left; transition: transform .35s; }
+  .ulink:hover::after { transform: scaleX(1); }
+  .variant-bar { background: rgba(0,0,0,0.45); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(217,145,41,0.25); }
+</style>
+</head>
+<body>
+
+<!-- Variant-Bar (zeigt, dass dies eine Vorschau ist) -->
+<div class="variant-bar sticky top-0 z-50">
+  <div class="max-w-[1480px] mx-auto px-6 lg:px-10 h-10 flex items-center justify-between text-xs">
+    <div class="flex items-center gap-3 text-[#FBF1E0]/75">
+      <span class="micro text-[#D99129]">Variante 01</span>
+      <span class="text-[#FBF1E0]/40">·</span>
+      <span>Bold Editorial</span>
+    </div>
+    <a href="index.html" class="text-[#FBF1E0]/65 hover:text-[#D99129] transition ulink">← Zur Varianten-Übersicht</a>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="sticky top-10 z-40 bg-[#1F342D]/85 backdrop-blur border-b border-[#FBF1E0]/10">
+  <div class="max-w-[1480px] mx-auto px-6 lg:px-10 h-[68px] flex items-center justify-between">
+    <a href="#" class="flex items-center gap-4">
+      <img src="../img/logo-white.png" alt="REHAB FIVE" class="h-7 w-auto"/>
+      <span class="hidden md:inline micro text-[#FBF1E0]/55 border-l border-[#FBF1E0]/20 pl-4">Physiotherapie · Münster</span>
+    </a>
+    <div class="flex items-center gap-3">
+      <a href="tel:+4925174788200" class="hidden sm:inline-flex items-center gap-2 border border-[#FBF1E0]/30 hover:bg-[#FBF1E0]/10 transition px-5 py-2.5 rounded-full text-[#FBF1E0] text-sm font-semibold">Anruf</a>
+      <a href="https://termin.docmedico-rezeption.de/j9u4c9m7a" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-[#D99129] hover:bg-[#C57F1F] transition px-5 py-2.5 rounded-full text-[#1F342D] text-sm font-bold">Online-Rezeption</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="relative min-h-[80vh] overflow-hidden flex flex-col justify-end pb-[clamp(48px,8vw,96px)] pt-[clamp(96px,15vw,180px)]">
+  <div class="absolute inset-0 z-0">
+    <img src="../img/scenes/hero-praxis.jpg" alt="" class="w-full h-full object-cover"/>
+    <div class="absolute inset-0" style="background: linear-gradient(95deg, #1F342D 0%, rgba(31,52,45,0.92) 28%, rgba(31,52,45,0.55) 60%, rgba(31,52,45,0.25) 100%);"></div>
+    <div class="absolute inset-0" style="background: linear-gradient(180deg, rgba(31,52,45,0.4) 0%, transparent 30%, transparent 70%, rgba(31,52,45,0.85) 100%);"></div>
+  </div>
+  <div class="relative z-10 max-w-[1480px] mx-auto px-6 lg:px-10 w-full">
+    <div class="max-w-[920px]">
+      <div class="flex items-center gap-3 mb-7">
+        <span class="micro text-[#D99129]">Fünf Säulen · Ein Weg</span>
+        <span class="h-px w-12 bg-[#D99129]/60"></span>
+        <span class="micro text-[#FBF1E0]/55">Physiotherapie · Münster</span>
+      </div>
+      <h1 class="display text-[clamp(46px,8.5vw,128px)] text-[#FBF1E0]">
+        <span class="block">Therapie ist nur</span>
+        <span class="block"><em class="ital">eine</em> von</span>
+        <span class="block">fünf Säulen.</span>
+      </h1>
+      <p class="mt-7 max-w-xl text-[18px] leading-[1.5] text-[#FBF1E0]/85">
+        Wir hören nicht auf, wo andere aufhören. Eine Praxis in Münster für Menschen, die mehr wollen als ein Rezept.
+      </p>
+      <div class="mt-9 flex flex-wrap items-center gap-4">
+        <a href="https://termin.docmedico-rezeption.de/j9u4c9m7a" target="_blank" rel="noopener" class="inline-flex items-center gap-3 bg-[#D99129] hover:bg-[#C57F1F] transition px-7 py-4 rounded-full text-[#1F342D] font-bold">
+          Termin vereinbaren
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+        <a href="tel:+4925174788200" class="ulink text-[#FBF1E0] font-bold flex items-center gap-2">
+          <svg class="w-4 h-4 text-[#D99129]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
+          0251 74788 200
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5-SÄULEN -->
+<section data-num="01" class="relative py-[clamp(96px,12vw,160px)]">
+  <div class="max-w-[1480px] mx-auto px-6 lg:px-10">
+    <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 mb-16">
+      <div class="lg:col-span-3 flex items-start gap-4">
+        <span class="ital text-6xl leading-[0.8]">§</span>
+        <div class="section-rule pl-5">
+          <div class="micro text-[#D99129]">Methode</div>
+          <div class="micro text-[#FBF1E0]/45 mt-1">Sektion 01</div>
+        </div>
+      </div>
+      <div class="lg:col-span-9">
+        <h2 class="display text-[clamp(40px,6.5vw,100px)] text-[#FBF1E0]">Fünf Säulen.<br/><span class="text-[#D99129]">Ein Weg.</span></h2>
+        <p class="mt-8 max-w-2xl text-[17px] text-[#FBF1E0]/70 leading-[1.55]">Niemand sonst in Münster hat alle fünf Bereiche unter einem Dach. Therapie übergibt an Training, Training an Athletik — Diagnostik beobachtet den gesamten Bogen.</p>
+      </div>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-3">
+      <article class="card-glass rounded-sm p-8 lg:col-span-5 lg:row-span-2 flex flex-col justify-between min-h-[400px]">
+        <div>
+          <div class="text-[120px] font-black leading-[0.8] text-[#D99129]/80">01</div>
+          <div class="micro text-[#D99129] mt-4">Wo bei anderen alles ist</div>
+          <h3 class="display text-3xl text-[#FBF1E0] mt-3">Therapie.</h3>
+        </div>
+        <p class="text-[15px] text-[#FBF1E0]/75 leading-[1.55] max-w-sm">Klassische Physio, Manuelle Therapie, Lymphdrainage. Bei anderen das Ganze; bei uns der Anfang.</p>
+      </article>
+      <article class="card-glass rounded-sm p-7 lg:col-span-4">
+        <div class="text-6xl font-black text-[#D99129]/80 leading-none">02</div>
+        <h3 class="display-up text-xl text-[#FBF1E0] mt-4">Training.</h3>
+        <p class="mt-2 text-[14px] text-[#FBF1E0]/70 leading-[1.55]">Wo Therapie endet, beginnt Bewegung. Strukturiert, betreut, mit Plan.</p>
+      </article>
+      <article class="card-glass rounded-sm p-7 lg:col-span-3">
+        <div class="text-6xl font-black text-[#D99129]/80 leading-none">03</div>
+        <h3 class="display-up text-xl text-[#FBF1E0] mt-4">Athletik.</h3>
+        <p class="mt-2 text-[14px] text-[#FBF1E0]/70 leading-[1.55]">Über das Vor-Schmerz-Niveau hinaus.</p>
+      </article>
+      <article class="card-glass rounded-sm p-7 lg:col-span-3">
+        <div class="text-6xl font-black text-[#D99129]/80 leading-none">04</div>
+        <h3 class="display-up text-xl text-[#FBF1E0] mt-4">Prävention.</h3>
+        <p class="mt-2 text-[14px] text-[#FBF1E0]/70 leading-[1.55]">Damit die Geschichte nicht von vorne beginnt.</p>
+      </article>
+      <article class="card-glass rounded-sm p-7 lg:col-span-4 border-l-2 border-[#D99129]">
+        <div class="text-6xl font-black text-[#D99129] leading-none">05</div>
+        <div class="micro text-[#D99129] mt-4">149 €</div>
+        <h3 class="display-up text-xl text-[#FBF1E0] mt-2">Diagnostik.</h3>
+        <p class="mt-2 text-[14px] text-[#FBF1E0]/70 leading-[1.55]">Datenbasis statt Bauchgefühl. Rezeptfrei buchbar.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- MANIFEST -->
+<section data-num="02" class="relative py-[clamp(96px,12vw,160px)]">
+  <div class="max-w-[1480px] mx-auto px-6 lg:px-10">
+    <div class="grid lg:grid-cols-12 gap-10 lg:gap-16">
+      <div class="lg:col-span-3 flex items-start gap-4">
+        <span class="ital text-6xl leading-[0.8]">¶</span>
+        <div class="section-rule pl-5">
+          <div class="micro text-[#D99129]">Manifest</div>
+          <div class="micro text-[#FBF1E0]/45 mt-1">Sektion 02</div>
+        </div>
+      </div>
+      <div class="lg:col-span-9">
+        <h2 class="display text-[clamp(36px,6vw,90px)] text-[#FBF1E0]">Das Problem ist die <span class="text-[#D99129]">Norm.</span><br/>Nicht der Körper.</h2>
+        <blockquote class="mt-20 max-w-3xl">
+          <div class="ital text-7xl leading-[0.5]">"</div>
+          <p class="mt-2 display text-[clamp(28px,4vw,52px)] text-[#FBF1E0] leading-[1.1]">Sechs Termine sind <span class="text-[#D99129]">kein Plan.</span><br/>Sie sind ein Anfang.</p>
+        </blockquote>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIAGNOSTIK CTA -->
+<section data-num="04" class="relative py-[clamp(96px,12vw,160px)]">
+  <div class="max-w-[1480px] mx-auto px-6 lg:px-10">
+    <div class="card-glass rounded-sm p-10 sm:p-14 lg:p-20 border-l-2 border-[#D99129]">
+      <div class="grid lg:grid-cols-12 gap-10 items-center">
+        <div class="lg:col-span-7">
+          <div class="micro text-[#D99129] mb-4">Säule 05 · Diagnostik</div>
+          <h2 class="display text-[clamp(36px,5vw,80px)] text-[#FBF1E0]">Was dein MRT <span class="text-[#D99129]">nicht zeigt</span>, sehen wir in Bewegung.</h2>
+          <p class="mt-7 text-[17px] text-[#FBF1E0]/75 leading-[1.6] max-w-xl">60 Minuten, schriftlicher Befund, rezeptfrei. Die Datengrundlage, mit der wir alle anderen Säulen planen.</p>
+        </div>
+        <div class="lg:col-span-5">
+          <div class="text-[#D99129] display text-[160px] leading-[0.85]">149€</div>
+          <div class="micro text-[#FBF1E0]/55 mt-3">60 Minuten · rezeptfrei</div>
+          <a href="https://termin.docmedico-rezeption.de/j9u4c9m7a" target="_blank" rel="noopener" class="mt-8 inline-flex items-center gap-3 bg-[#D99129] hover:bg-[#C57F1F] transition px-7 py-4 rounded-full text-[#1F342D] font-bold">
+            Diagnostik buchen
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- Footer -->
+<footer class="bg-black border-t border-[#FBF1E0]/10 py-12 mt-16 relative z-10">
+  <div class="max-w-[1480px] mx-auto px-6 lg:px-10 flex flex-wrap items-center justify-between gap-6">
+    <a href="#" class="flex items-center gap-4">
+      <img src="../img/logo-white.png" alt="REHAB FIVE" class="h-6 w-auto"/>
+      <span class="micro text-[#FBF1E0]/45 border-l border-[#FBF1E0]/20 pl-4">Physiotherapie · Münster</span>
+    </a>
+    <p class="text-[#D99129] text-base">Therapie ist nur eine von fünf Säulen.</p>
+    <a href="index.html" class="text-[#FBF1E0]/65 hover:text-[#D99129] ulink text-sm">← Zur Varianten-Übersicht</a>
+  </div>
+</footer>
+
+</body>
+</html>
